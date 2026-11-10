@@ -1,0 +1,6 @@
+export * from "@/db/schema/enums"
+export * from "@/db/schema/persons"
+export * from "@/db/schema/enquiries"
+export * from "@/db/schema/enquiry-course-interests"
+export * from "@/db/schema/follow-ups"
+export * from "@/db/schema/relations"

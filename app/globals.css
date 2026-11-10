@@ -1,17 +1,401 @@
 @import "tailwindcss";
 
-:root {
-  color-scheme: light;
-  background: #f8fafc;
-  color: #111827;
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+@theme {
+  --color-eduvert-canvas-warm: #fffbf7;
+  --color-eduvert-surface-white: #ffffff;
+  --color-eduvert-text-primary: #24252b;
+  --color-eduvert-text-secondary: #53535a;
+  --color-eduvert-border-subtle: #ede7e3;
+  --color-eduvert-brand-blue: #57b7e2;
+  --color-eduvert-brand-magenta: #cf5eb9;
+  --color-eduvert-brand-yellow: #f6cd65;
+  --color-eduvert-action-primary: #a52b86;
+  --color-eduvert-action-hover: #85216b;
+  --color-eduvert-link: #126f96;
+  --color-eduvert-tint-blue: #f2fafe;
+  --color-eduvert-tint-magenta: #fff5fb;
+  --color-eduvert-tint-yellow: #fff5db;
+  --font-eduvert: "DM Sans", sans-serif;
+  --text-eduvert-h1: 52px;
+  --text-eduvert-h1-mobile: 36px;
+  --text-eduvert-h2: 40px;
+  --text-eduvert-h2-mobile: 30px;
+  --text-eduvert-h3: 26px;
+  --text-eduvert-h3-mobile: 23px;
+  --text-eduvert-h4: 21px;
+  --text-eduvert-h4-mobile: 20px;
+  --text-eduvert-body-large: 18px;
+  --text-eduvert-body-large-mobile: 17px;
+  --text-eduvert-body: 16px;
+  --text-eduvert-support: 14px;
+  --text-eduvert-button: 15px;
+  --font-weight-eduvert-400: 400;
+  --font-weight-eduvert-500: 500;
+  --font-weight-eduvert-600: 600;
+  --font-weight-eduvert-700: 700;
+  --tracking-eduvert-h1: -0.025em;
+  --leading-eduvert-h1: 58.24px;
+  --leading-eduvert-h1-mobile: 41.4px;
+  --leading-eduvert-h2: 48px;
+  --leading-eduvert-h2-mobile: 36px;
+  --leading-eduvert-h3: 33.8px;
+  --leading-eduvert-h3-mobile: 29.9px;
+  --leading-eduvert-h4: 28.35px;
+  --leading-eduvert-h4-mobile: 27px;
+  --leading-eduvert-body-large: 29.7px;
+  --leading-eduvert-body-large-mobile: 27.2px;
+  --leading-eduvert-body: 26.4px;
+  --leading-eduvert-body-mobile: 25.6px;
+  --leading-eduvert-support: 21px;
+  --leading-eduvert-button: 21px;
+  --opacity-eduvert-grid: 62%;
+  --breakpoint-eduvert-desktop: 1440px;
+  --container-eduvert-mobile: 342px;
+  --spacing-eduvert-4: 4px;
+  --spacing-eduvert-8: 8px;
+  --spacing-eduvert-12: 12px;
+  --spacing-eduvert-16: 16px;
+  --spacing-eduvert-24: 24px;
+  --spacing-eduvert-32: 32px;
+  --spacing-eduvert-48: 48px;
+  --spacing-eduvert-64: 64px;
+  --spacing-eduvert-80: 80px;
+  --spacing-eduvert-96: 96px;
+  --radius-eduvert-8: 8px;
+  --radius-eduvert-12: 12px;
+  --radius-eduvert-16: 16px;
 }
 
-body {
-  margin: 0;
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: clip;
+    background: var(--color-eduvert-canvas-warm);
+    color: var(--color-eduvert-text-primary);
+    font-family: var(--font-eduvert), sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-eduvert-action-primary);
+    outline-offset: 3px;
+  }
 }
 
-a {
-  color: inherit;
+.studio-grid {
+  opacity: 0.72;
+  background-image:
+    linear-gradient(to right, var(--color-eduvert-border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-eduvert-border-subtle) 1px, transparent 1px);
+  background-position: 28px 28px;
+  background-size: 28px 28px;
+}
+
+.studio-pink {
+  left: 5.556%;
+  top: 18.375%;
+  width: 39.474%;
+  height: 47.703%;
+  background: var(--color-eduvert-brand-magenta);
+  opacity: 0.2;
+}
+
+.studio-yellow {
+  left: 32.456%;
+  top: 20.495%;
+  width: 32.164%;
+  height: 38.869%;
+  background: var(--color-eduvert-brand-yellow);
+  opacity: 0.39;
+}
+
+.studio-blue {
+  left: 55.263%;
+  top: 14.841%;
+  width: 40.351%;
+  height: 48.763%;
+  background: var(--color-eduvert-brand-blue);
+  opacity: 0.24;
+}
+
+.studio-portrait {
+  left: 1.17%;
+  top: 12.367%;
+  width: 97.661%;
+  height: 78.799%;
+}
+
+.studio-kicker {
+  left: 3.509%;
+  top: 4.24%;
+}
+
+.studio-channel {
+  left: 46.199%;
+  top: 57.244%;
+  width: 50%;
+  height: 30.035%;
+}
+
+.studio-footer-rule {
+  left: 3.509%;
+  top: 89.046%;
+  width: 92.69%;
+  height: 1px;
+  background: var(--color-eduvert-border-subtle);
+}
+
+.studio-caption {
+  left: 3.509%;
+  top: 91.873%;
+}
+
+/* Course accordion motion.
+   Plain language: how the course panels stretch, shrink, dissolve and
+   rise into place. Technical: layout end-states below always apply;
+   every transition and keyframe is gated on
+   `prefers-reduced-motion: no-preference`, so reduced-motion users get
+   the same content with instant state changes. */
+
+.course-accordion:not(.is-entered) .course-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.course-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+}
+
+.course-detail.is-open {
+  grid-template-rows: 1fr;
+}
+
+.course-detail-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.course-rail.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.course-panel.is-leaving {
+  opacity: 0;
+}
+
+@keyframes course-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .course-item {
+    transition:
+      flex-grow 0.5s cubic-bezier(0.22, 0.61, 0.21, 1),
+      flex-basis 0.5s cubic-bezier(0.22, 0.61, 0.21, 1),
+      opacity 0.55s ease var(--reveal-delay, 0ms),
+      transform 0.55s ease var(--reveal-delay, 0ms);
+  }
+
+  .course-panel.is-leaving {
+    opacity: 0;
+  }
+
+  .course-rail {
+    transition: opacity 0.22s ease;
+  }
+
+  .course-panel {
+    transition:
+      grid-template-rows 0.5s cubic-bezier(0.22, 0.61, 0.21, 1),
+      opacity 0.22s ease;
+  }
+
+  .course-panel.is-leaving {
+    transition:
+      grid-template-rows 0.5s cubic-bezier(0.22, 0.61, 0.21, 1),
+      opacity 0.14s ease;
+  }
+
+  .course-detail {
+    transition: grid-template-rows 0.45s cubic-bezier(0.22, 0.61, 0.21, 1);
+  }
+
+  .course-stagger .ce-1,
+  .course-stagger .ce-2,
+  .course-stagger .ce-3,
+  .course-stagger .ce-4 {
+    animation: course-enter 0.5s cubic-bezier(0.22, 0.61, 0.21, 1) both;
+  }
+
+  .course-stagger .ce-1 {
+    animation-delay: 0.05s;
+  }
+
+  .course-stagger .ce-2 {
+    animation-delay: 0.12s;
+  }
+
+  .course-stagger .ce-3 {
+    animation-delay: 0.19s;
+  }
+
+  .course-stagger .ce-4 {
+    animation-delay: 0.26s;
+  }
+
+  .course-rail-mark {
+    transition: transform 0.3s ease;
+  }
+
+  .course-rail:hover .course-rail-mark {
+    transform: translateX(8px);
+  }
+
+  .course-glyph {
+    transition: transform 0.25s ease;
+  }
+
+  .course-glyph.is-spun {
+    transform: rotate(90deg);
+  }
+
+  .course-cta {
+    transition:
+      transform 0.15s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .course-cta:active {
+    transform: scale(0.98);
+  }
+}
+
+@media (min-width: 1100px) {
+  .course-item {
+    flex: 0 0 89px;
+  }
+
+  .course-item.is-open {
+    flex: 1 1 0%;
+    min-width: 0;
+  }
+
+  .course-panel {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+
+  .course-panel-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .course-panel.is-expanding {
+    grid-template-rows: 0fr;
+  }
+
+  .course-panel.is-leaving {
+    grid-template-rows: 0fr;
+  }
+
+  .studio-grid {
+    background-position: 44px 44px;
+    background-size: 44px 44px;
+  }
+
+  .studio-pink {
+    left: 6.825%;
+    top: 20.433%;
+    width: 47.329%;
+    height: 49.381%;
+    opacity: 0.2;
+  }
+
+  .studio-yellow {
+    left: 30.415%;
+    top: 14.551%;
+    width: 41.988%;
+    height: 43.808%;
+    opacity: 0.38;
+  }
+
+  .studio-blue {
+    left: 52.522%;
+    top: 24.149%;
+    width: 42.137%;
+    height: 43.963%;
+  }
+
+  .studio-portrait {
+    left: 0.593%;
+    top: 14.861%;
+    width: 98.665%;
+    height: 68.576%;
+  }
+
+  .studio-kicker {
+    left: 3.561%;
+    top: 3.096%;
+  }
+
+  .studio-mark {
+    left: 75.668%;
+    top: 3.406%;
+    width: 20.326%;
+  }
+
+  .studio-header-rule {
+    left: 3.561%;
+    top: 7.895%;
+    width: 92.73%;
+    height: 1px;
+    background: var(--color-eduvert-border-subtle);
+  }
+
+  .studio-footer-rule {
+    left: 3.561%;
+    top: 92.415%;
+    width: 92.73%;
+  }
+
+  .studio-channel {
+    left: 65.727%;
+    top: 56.656%;
+    width: 30.861%;
+    height: 20.433%;
+  }
+
+  .studio-campaign {
+    left: 2.967%;
+    top: 66.409%;
+    width: 34.421%;
+    height: 21.981%;
+  }
+
+  .studio-caption {
+    left: 3.561%;
+    top: 94.427%;
+  }
 }
