@@ -10,7 +10,7 @@ export function SiteFooter() {
             <a href="/" className="w-fit">
               <img src="/images/eduvert-logo.webp" alt="EduVert" width={146} height={43} className="h-[35px] w-[118px] min-[1100px]:h-[43px] min-[1100px]:w-[146px]" />
             </a>
-            <p className="text-[15px] leading-6 text-eduvert-text-secondary min-[1100px]:text-eduvert-support min-[1100px]:leading-[22px] min-[1440px]:w-[216px]">
+            <p className="eduvert-body text-eduvert-text-secondary min-[1100px]:eduvert-support min-[1440px]:w-[216px]">
               Practical Digital Marketing and Data Analytics courses in Navi Mumbai and live online.
             </p>
           </div>
@@ -33,7 +33,7 @@ export function SiteFooter() {
           </FooterColumn>
         </div>
         <div className="flex flex-col gap-5 border-t border-eduvert-border-subtle pt-6 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:justify-between min-[1100px]:gap-6">
-          <p className="order-2 text-eduvert-support leading-[21px] text-eduvert-text-secondary min-[1100px]:order-1 min-[1100px]:shrink-0 min-[1440px]:w-[400px]">
+          <p className="order-2 eduvert-support text-eduvert-text-secondary min-[1100px]:order-1 min-[1100px]:shrink-0 min-[1440px]:w-[400px]">
             © 2026 EduVert. All rights reserved.
           </p>
           <ul className={`${linkListClass} order-1 min-[1100px]:order-2 min-[1100px]:flex-row min-[1100px]:flex-wrap min-[1100px]:justify-end min-[1100px]:gap-6`}>
@@ -52,7 +52,7 @@ export function SiteFooter() {
 function FooterColumn({ title, className, children }: FooterColumnProps) {
   return (
     <div className={`flex flex-col gap-3 ${className}`}>
-      <h2 className="text-eduvert-body leading-6 font-eduvert-600 text-eduvert-text-primary">{title}</h2>
+      <h2 className="eduvert-body font-eduvert-600 text-eduvert-text-primary">{title}</h2>
       {children}
     </div>
   )
@@ -72,10 +72,10 @@ function FooterLinks({ links }: { links: FooterLink[] }) {
   )
 }
 
-const linkListClass = "flex flex-col gap-2.5 text-[16px] leading-6 text-eduvert-text-secondary min-[1100px]:text-[15px] min-[1100px]:leading-[22px]"
+const linkListClass = "flex flex-col gap-2.5 eduvert-body text-eduvert-text-secondary"
 
 const programLinks: FooterLink[] = [
-  { label: "Professional Digital Marketing Program", href: flagshipProgramHref },
+  { label: "Professional Digital Marketing Program with AI", href: flagshipProgramHref },
   { label: "SEO Certification", href: seoCourseHref },
   { label: "SEM Certification", href: semCourseHref },
   { label: "Social Media Marketing", href: smmCourseHref },

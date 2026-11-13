@@ -6,14 +6,14 @@ export function RelatedArticleCard({ article }: RelatedArticleCardProps) {
     <a href={`/blog/${article.slug}`} className="flex h-full flex-col overflow-hidden rounded-eduvert-16 border border-eduvert-border-subtle bg-eduvert-surface-white hover:border-eduvert-action-primary">
       <ArticleMark mark={article.mark} />
       <div className="flex flex-1 flex-col gap-3 px-5 py-5">
-        <p className="text-eduvert-support leading-[21px] text-eduvert-text-secondary">
+        <p className="eduvert-support text-eduvert-text-secondary">
           <span className="font-eduvert-700 text-eduvert-action-primary">{article.category}</span>
           <span aria-hidden="true"> · </span>
           <time dateTime={article.publishedOn}>{formatArticleDate(article.publishedOn)}</time>
         </p>
-        <h3 className="text-[22px] leading-7 font-eduvert-700 tracking-[-0.02em] text-eduvert-text-primary">{article.title}</h3>
-        <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary">{article.summary}</p>
-        <p className="mt-auto pt-2 text-eduvert-button leading-[21px] font-eduvert-700 text-eduvert-action-primary">Read Article →</p>
+        <h3 className="eduvert-h3 tracking-[-0.02em] text-eduvert-text-primary">{article.title}</h3>
+        <p className="eduvert-body text-eduvert-text-secondary">{article.summary}</p>
+        <p className="mt-auto pt-2 eduvert-button text-eduvert-link">Read Article →</p>
       </div>
     </a>
   )
@@ -30,7 +30,7 @@ function ArticleMark({ mark }: { mark: RelatedArticle["mark"] }) {
       )
     case "work":
       return (
-        <div className="flex h-[140px] items-center justify-center bg-eduvert-tint-magenta">
+        <div className="flex h-[140px] items-center justify-center bg-eduvert-tint-soft-blue">
           <p className="text-[40px] leading-none font-eduvert-700 text-eduvert-action-primary">Work</p>
         </div>
       )
@@ -44,7 +44,7 @@ function ArticleMark({ mark }: { mark: RelatedArticle["mark"] }) {
       )
     case "pair":
       return (
-        <div className="flex h-[140px] items-end justify-center gap-3 bg-eduvert-tint-magenta pb-5">
+        <div className="flex h-[140px] items-end justify-center gap-3 bg-eduvert-tint-soft-blue pb-5">
           <p className="text-[52px] leading-none font-eduvert-700 text-eduvert-action-primary">A</p>
           <p className="mb-3 text-[52px] leading-none font-eduvert-700 text-eduvert-action-primary">B</p>
         </div>
@@ -59,7 +59,7 @@ function ArticleMark({ mark }: { mark: RelatedArticle["mark"] }) {
       )
     case "quote":
       return (
-        <div className="relative flex h-[140px] items-center justify-center bg-eduvert-tint-magenta">
+        <div className="relative flex h-[140px] items-center justify-center bg-eduvert-tint-soft-blue">
           <p className="text-[72px] leading-none font-eduvert-700 text-eduvert-action-primary">“</p>
           <p className="absolute right-8 bottom-6 text-[18px] leading-none font-eduvert-700 text-eduvert-action-primary">[ ]</p>
         </div>
@@ -76,7 +76,7 @@ function ArticleMark({ mark }: { mark: RelatedArticle["mark"] }) {
       )
     case "authority":
       return (
-        <div className="flex h-[140px] items-center justify-center gap-3 bg-eduvert-tint-magenta">
+        <div className="flex h-[140px] items-center justify-center gap-3 bg-eduvert-tint-soft-blue">
           <p className="text-[48px] leading-none font-eduvert-700 text-eduvert-action-primary">Aa</p>
           <p className="text-[30px] leading-none font-eduvert-700 text-eduvert-action-primary">✓</p>
         </div>

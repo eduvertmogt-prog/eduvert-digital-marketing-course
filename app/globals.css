@@ -1,22 +1,21 @@
 @import "tailwindcss";
 
-
-@theme {
+@theme static {
   --color-eduvert-canvas-warm: #fffbf7;
   --color-eduvert-surface-white: #ffffff;
   --color-eduvert-text-primary: #24252b;
   --color-eduvert-text-secondary: #53535a;
   --color-eduvert-border-subtle: #ede7e3;
   --color-eduvert-brand-blue: #57b7e2;
-  --color-eduvert-brand-magenta: #cf5eb9;
+  --color-eduvert-brand-blue-deep: #1769c2;
   --color-eduvert-brand-yellow: #f6cd65;
-  --color-eduvert-action-primary: #a52b86;
-  --color-eduvert-action-hover: #85216b;
+  --color-eduvert-action-primary: #1769c2;
+  --color-eduvert-action-hover: #0f4c93;
   --color-eduvert-link: #126f96;
-  --color-eduvert-tint-blue: #f2fafe;
-  --color-eduvert-tint-magenta: #fff5fb;
+  --color-eduvert-tint-blue: #eaf5fe;
+  --color-eduvert-tint-soft-blue: #f4f8fd;
   --color-eduvert-tint-yellow: #fff5db;
-  --font-eduvert: "DM Sans", sans-serif;
+  --font-eduvert: var(--font-dm-sans, "DM Sans"), sans-serif;
   --text-eduvert-h1: 52px;
   --text-eduvert-h1-mobile: 36px;
   --text-eduvert-h2: 40px;
@@ -65,6 +64,82 @@
   --radius-eduvert-8: 8px;
   --radius-eduvert-12: 12px;
   --radius-eduvert-16: 16px;
+  --border-width-eduvert-subtle: 1px;
+}
+
+@utility eduvert-h1 {
+  font-size: var(--text-eduvert-h1-mobile);
+  line-height: var(--leading-eduvert-h1-mobile);
+  font-weight: var(--font-weight-eduvert-700);
+  letter-spacing: var(--tracking-eduvert-h1);
+
+  @media (min-width: 1100px) {
+    font-size: var(--text-eduvert-h1);
+    line-height: var(--leading-eduvert-h1);
+  }
+}
+
+@utility eduvert-h2 {
+  font-size: var(--text-eduvert-h2-mobile);
+  line-height: var(--leading-eduvert-h2-mobile);
+  font-weight: var(--font-weight-eduvert-700);
+
+  @media (min-width: 1100px) {
+    font-size: var(--text-eduvert-h2);
+    line-height: var(--leading-eduvert-h2);
+  }
+}
+
+@utility eduvert-h3 {
+  font-size: var(--text-eduvert-h3-mobile);
+  line-height: var(--leading-eduvert-h3-mobile);
+  font-weight: var(--font-weight-eduvert-600);
+
+  @media (min-width: 1100px) {
+    font-size: var(--text-eduvert-h3);
+    line-height: var(--leading-eduvert-h3);
+  }
+}
+
+@utility eduvert-h4 {
+  font-size: var(--text-eduvert-h4-mobile);
+  line-height: var(--leading-eduvert-h4-mobile);
+  font-weight: var(--font-weight-eduvert-600);
+
+  @media (min-width: 1100px) {
+    font-size: var(--text-eduvert-h4);
+    line-height: var(--leading-eduvert-h4);
+  }
+}
+
+@utility eduvert-body-large {
+  font-size: var(--text-eduvert-body-large-mobile);
+  line-height: var(--leading-eduvert-body-large-mobile);
+
+  @media (min-width: 1100px) {
+    font-size: var(--text-eduvert-body-large);
+    line-height: var(--leading-eduvert-body-large);
+  }
+}
+
+@utility eduvert-body {
+  font-size: var(--text-eduvert-body);
+  line-height: var(--leading-eduvert-body-mobile);
+
+  @media (min-width: 1100px) {
+    line-height: var(--leading-eduvert-body);
+  }
+}
+
+@utility eduvert-support {
+  font-size: var(--text-eduvert-support);
+  line-height: var(--leading-eduvert-support);
+}
+
+@utility eduvert-button {
+  font-size: var(--text-eduvert-button);
+  line-height: var(--leading-eduvert-button);
+  font-weight: var(--font-weight-eduvert-600);
 }
 
 @layer base {
@@ -77,8 +152,9 @@
     overflow-x: clip;
     background: var(--color-eduvert-canvas-warm);
     color: var(--color-eduvert-text-primary);
-    font-family: var(--font-eduvert), sans-serif;
-    font-weight: 400;
+    font-family: var(--font-eduvert);
+    font-size: var(--text-eduvert-body);
+    font-weight: var(--font-weight-eduvert-400);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -89,8 +165,8 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-eduvert-action-primary);
-    outline-offset: 3px;
+    outline: 2px solid var(--color-eduvert-link);
+    outline-offset: 2px;
   }
 }
 
@@ -103,12 +179,12 @@
   background-size: 28px 28px;
 }
 
-.studio-pink {
+.studio-deep-blue {
   left: 5.556%;
   top: 18.375%;
   width: 39.474%;
   height: 47.703%;
-  background: var(--color-eduvert-brand-magenta);
+  background: var(--color-eduvert-brand-blue-deep);
   opacity: 0.2;
 }
 
@@ -208,6 +284,314 @@
   }
 }
 
+/* Demo dialog.
+   Plain words: a centered card on desktop, a bottom sheet that slides up
+   on phones; artwork on the left, form on the right. Native <dialog>
+   gives modal focus, Esc and backdrop for free; entrance/exit travel is
+   gated on no-preference, and content is always visible without JS
+   because the dialog only renders when opened. */
+
+.demo-dialog {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: none;
+  max-height: none;
+  width: fit-content;
+  margin: auto auto 0;
+}
+
+.demo-dialog::backdrop {
+  background: color-mix(in srgb, var(--color-eduvert-text-primary) 50%, transparent);
+}
+
+.demo-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100vw;
+  max-width: 560px;
+  max-height: calc(100dvh - 32px);
+  overflow: hidden auto;
+  border-radius: var(--radius-eduvert-16) var(--radius-eduvert-16) 0 0;
+  background: var(--color-eduvert-surface-white);
+}
+
+.demo-art {
+  display: none;
+}
+
+.demo-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.demo-body {
+  position: relative;
+  padding: 28px 24px;
+}
+
+.demo-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: var(--border-width-eduvert-subtle) solid var(--color-eduvert-border-subtle);
+  background: var(--color-eduvert-surface-white);
+  color: var(--color-eduvert-text-primary);
+}
+
+.demo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.demo-course-chip {
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--color-eduvert-tint-soft-blue);
+  padding: 8px 14px;
+  font-size: var(--text-eduvert-support);
+  line-height: var(--leading-eduvert-support);
+  color: var(--color-eduvert-text-primary);
+}
+
+.demo-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.demo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: var(--radius-eduvert-8);
+  border: var(--border-width-eduvert-subtle) solid var(--color-eduvert-border-subtle);
+  background: var(--color-eduvert-surface-white);
+  padding: 10px 14px;
+}
+
+.eduvert-field:has([aria-invalid="true"], :user-invalid:not([aria-invalid])) {
+  border-color: var(--color-eduvert-action-primary);
+  background: var(--color-eduvert-tint-soft-blue);
+}
+
+.eduvert-field:focus-within {
+  outline: 2px solid var(--color-eduvert-link);
+  outline-offset: -2px;
+}
+
+.demo-field > span {
+  font-size: var(--text-eduvert-support);
+  line-height: var(--leading-eduvert-support);
+  font-weight: var(--font-weight-eduvert-500);
+  color: var(--color-eduvert-text-secondary);
+}
+
+.demo-field input {
+  width: 100%;
+  background: transparent;
+  font-size: var(--text-eduvert-body);
+  line-height: var(--leading-eduvert-body-mobile);
+  color: var(--color-eduvert-text-primary);
+  outline: none;
+}
+
+.demo-field input::placeholder {
+  color: var(--color-eduvert-text-secondary);
+}
+
+.demo-field em {
+  font-style: normal;
+  font-size: var(--text-eduvert-support);
+  line-height: var(--leading-eduvert-support);
+  color: var(--color-eduvert-action-hover);
+}
+
+.demo-times {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.demo-times legend {
+  font-size: var(--text-eduvert-support);
+  line-height: var(--leading-eduvert-support);
+  font-weight: var(--font-weight-eduvert-600);
+  color: var(--color-eduvert-text-primary);
+  padding: 0;
+}
+
+.demo-times legend i {
+  font-style: normal;
+  font-weight: var(--font-weight-eduvert-400);
+  color: var(--color-eduvert-text-secondary);
+}
+
+.demo-times [role="group"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.demo-times [role="group"] button {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  border-radius: 999px;
+  border: var(--border-width-eduvert-subtle) solid var(--color-eduvert-border-subtle);
+  background: var(--color-eduvert-surface-white);
+  padding: 0 16px;
+  font-size: var(--text-eduvert-button);
+  line-height: var(--leading-eduvert-button);
+  font-weight: var(--font-weight-eduvert-600);
+  color: var(--color-eduvert-text-primary);
+}
+
+.demo-times [role="group"] button.is-selected {
+  border-color: var(--color-eduvert-action-primary);
+  background: var(--color-eduvert-action-primary);
+  color: var(--color-eduvert-surface-white);
+}
+
+.demo-error {
+  font-size: var(--text-eduvert-support);
+  line-height: var(--leading-eduvert-support);
+  color: var(--color-eduvert-action-hover);
+}
+
+.demo-submit {
+  display: flex;
+  height: 48px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width-eduvert-subtle) solid transparent;
+  border-radius: var(--radius-eduvert-8);
+  background: var(--color-eduvert-action-primary);
+  padding: 0 20px;
+  font-size: var(--text-eduvert-button);
+  line-height: var(--leading-eduvert-button);
+  font-weight: var(--font-weight-eduvert-600);
+  color: var(--color-eduvert-surface-white);
+}
+
+.demo-submit:disabled,
+.demo-close:disabled {
+  border-color: var(--color-eduvert-border-subtle);
+  background: var(--color-eduvert-tint-soft-blue);
+  color: var(--color-eduvert-text-secondary);
+}
+
+.demo-submit:not(:disabled):hover {
+  background: var(--color-eduvert-action-hover);
+}
+
+.demo-consent {
+  font-size: var(--text-eduvert-support);
+  line-height: var(--leading-eduvert-support);
+  color: var(--color-eduvert-text-secondary);
+}
+
+.demo-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 0 4px;
+}
+
+.demo-tick {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-eduvert-tint-soft-blue);
+  color: var(--color-eduvert-action-primary);
+}
+
+@keyframes cta-arrow-nudge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(3px, -3px);
+  }
+}
+
+@keyframes demo-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes demo-out {
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+}
+
+@keyframes demo-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.shorts-row {
+  scrollbar-width: none;
+}
+
+.shorts-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .demo-field input {
+    line-height: var(--leading-eduvert-body);
+  }
+
+  .demo-dialog {
+    margin: auto;
+  }
+
+  .demo-panel {
+    grid-template-columns: 380px minmax(0, 1fr);
+    width: min(880px, calc(100vw - 64px));
+    max-width: none;
+    border-radius: var(--radius-eduvert-16);
+    max-height: calc(100dvh - 64px);
+  }
+
+  .demo-art {
+    display: block;
+    min-height: 560px;
+  }
+
+  .demo-body {
+    padding: 36px 36px 32px;
+    overflow-y: auto;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .course-item {
     transition:
@@ -280,6 +664,10 @@
     transform: rotate(90deg);
   }
 
+  .cta-arrow {
+    animation: cta-arrow-nudge 1.8s ease-in-out infinite;
+  }
+
   .course-cta {
     transition:
       transform 0.15s ease,
@@ -289,6 +677,29 @@
 
   .course-cta:active {
     transform: scale(0.98);
+  }
+
+  .reveal {
+    transition:
+      opacity 0.55s ease var(--reveal-delay, 0ms),
+      transform 0.55s ease var(--reveal-delay, 0ms);
+  }
+
+  .reveal:not(.is-shown) {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  .demo-dialog[open] .demo-panel {
+    animation: demo-in 0.45s cubic-bezier(0.22, 0.61, 0.21, 1) both;
+  }
+
+  .demo-dialog[open]::backdrop {
+    animation: demo-backdrop-in 0.3s ease both;
+  }
+
+  .demo-dialog.is-closing .demo-panel {
+    animation: demo-out 0.16s ease both;
   }
 }
 
@@ -325,7 +736,7 @@
     background-size: 44px 44px;
   }
 
-  .studio-pink {
+  .studio-deep-blue {
     left: 6.825%;
     top: 20.433%;
     width: 47.329%;

@@ -18,14 +18,14 @@ function Hero() {
     <section aria-labelledby="about-heading" className="bg-eduvert-canvas-warm">
       <div className="mx-auto grid w-full max-w-[1440px] items-center gap-10 px-6 py-12 min-[1100px]:grid-cols-[minmax(0,1fr)_480px] min-[1100px]:gap-16 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
         <div className="flex min-w-0 flex-col gap-5">
-          <p className="text-[12px] leading-[17px] font-eduvert-700 text-eduvert-action-primary">ABOUT EDUVERT</p>
-          <h1 id="about-heading" className="max-w-[620px] text-eduvert-h1-mobile leading-eduvert-h1-mobile font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:text-[46px] min-[1100px]:leading-[54px] min-[1440px]:text-eduvert-h1 min-[1440px]:leading-[59px]">
+          <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">ABOUT EDUVERT</p>
+          <h1 id="about-heading" className="max-w-[620px] eduvert-h1 text-eduvert-text-primary">
             Practical Learning. Real-World Skills.
           </h1>
-          <p className="max-w-[520px] text-eduvert-body-large-mobile leading-[27px] text-eduvert-text-secondary min-[1100px]:text-eduvert-body-large min-[1100px]:leading-[30px]">
+          <p className="max-w-[520px] eduvert-body-large text-eduvert-text-secondary">
             EduVert is a digital marketing training institute in Navi Mumbai. Our courses combine hands-on assignments with industry-relevant digital marketing and data analytics skills.
           </p>
-          <a href={coursesHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 text-eduvert-button leading-[21px] font-eduvert-600 text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-fit">
+          <a href={coursesHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-fit">
             Explore Our Courses
           </a>
         </div>
@@ -37,7 +37,7 @@ function Hero() {
             height={1024}
             className="h-[240px] w-full object-cover object-[center_22%] min-[1100px]:h-[320px]"
           />
-          <figcaption className="absolute right-3 bottom-3 flex h-[26px] items-center rounded-eduvert-8 bg-eduvert-canvas-warm px-3 text-[12px] leading-[17px] font-eduvert-600 text-eduvert-text-secondary">
+          <figcaption className="absolute right-3 bottom-3 flex h-[26px] items-center rounded-eduvert-8 bg-eduvert-canvas-warm px-3 eduvert-support font-eduvert-600 text-eduvert-text-secondary">
             Concept imagery
           </figcaption>
         </figure>
@@ -50,15 +50,15 @@ function Practice() {
   return (
     <section aria-labelledby="practice-heading" className="bg-eduvert-surface-white">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
-        <h2 id="practice-heading" className="text-eduvert-h2-mobile leading-eduvert-h2-mobile font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:text-eduvert-h2 min-[1100px]:leading-eduvert-h2">
+        <h2 id="practice-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
           Learn. Practice. Apply.
         </h2>
         <ol className="grid gap-6 min-[1100px]:grid-cols-3">
           {practiceSteps.map((step) => (
             <li key={step.title} className="flex flex-col gap-3 border-t border-eduvert-border-subtle pt-5">
-              <p className="text-[12px] leading-[17px] font-eduvert-700 text-eduvert-action-primary">{step.number}</p>
-              <h3 className="text-[20px] leading-7 font-eduvert-700 text-eduvert-text-primary">{step.title}</h3>
-              <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary">{step.detail}</p>
+              <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">{step.number}</p>
+              <h3 className="eduvert-h4 text-eduvert-text-primary">{step.title}</h3>
+              <p className="eduvert-body text-eduvert-text-secondary">{step.detail}</p>
             </li>
           ))}
         </ol>
@@ -71,14 +71,14 @@ function Difference() {
   return (
     <section aria-labelledby="difference-heading" className="bg-eduvert-canvas-warm">
       <div className="mx-auto grid w-full max-w-[1440px] gap-8 px-6 py-12 min-[1100px]:grid-cols-[360px_minmax(0,1fr)] min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
-        <h2 id="difference-heading" className="text-eduvert-h2-mobile leading-eduvert-h2-mobile font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:text-eduvert-h2 min-[1100px]:leading-eduvert-h2">
+        <h2 id="difference-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
           What Makes EduVert Different
         </h2>
         <ul className="min-w-0">
           {differences.map((item) => (
             <li key={item.title} className="flex flex-col gap-1 border-t border-eduvert-border-subtle py-5 last:border-b">
-              <h3 className="text-eduvert-body leading-6 font-eduvert-700 text-eduvert-text-primary">{item.title}</h3>
-              <p className="text-eduvert-support leading-[21px] text-eduvert-text-secondary">{item.detail}</p>
+              <h3 className="eduvert-h4 text-eduvert-text-primary">{item.title}</h3>
+              <p className="eduvert-support text-eduvert-text-secondary">{item.detail}</p>
             </li>
           ))}
         </ul>
@@ -92,10 +92,10 @@ function Courses() {
     <section aria-labelledby="about-courses-heading" className="bg-eduvert-surface-white">
       <div className="mx-auto grid w-full max-w-[1440px] gap-8 px-6 py-12 min-[1100px]:grid-cols-[360px_minmax(0,1fr)] min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
         <div className="flex flex-col gap-3.5">
-          <h2 id="about-courses-heading" className="text-eduvert-h2-mobile leading-eduvert-h2-mobile font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:text-eduvert-h2 min-[1100px]:leading-eduvert-h2">
+          <h2 id="about-courses-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
             Courses & Skills
           </h2>
-          <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary">
+          <p className="eduvert-body text-eduvert-text-secondary">
             Explore a complete program or focus on a specific skill.
           </p>
         </div>
@@ -104,10 +104,10 @@ function Courses() {
             <li key={course.href} className="border-t border-eduvert-border-subtle last:border-b">
               <a href={course.href} className="flex items-center justify-between gap-4 py-5 hover:text-eduvert-action-primary">
                 <span>
-                  <span className="block text-eduvert-body leading-6 font-eduvert-700 text-eduvert-text-primary">{course.title}</span>
-                  <span className="mt-1 block text-eduvert-support leading-[21px] text-eduvert-text-secondary">{course.detail}</span>
+                  <span className="block eduvert-body font-eduvert-700 text-eduvert-text-primary">{course.title}</span>
+                  <span className="mt-1 block eduvert-support text-eduvert-text-secondary">{course.detail}</span>
                 </span>
-                <span aria-hidden="true" className="shrink-0 text-[18px] leading-6 text-eduvert-action-primary">↗</span>
+                <span aria-hidden="true" className="shrink-0 eduvert-body-large text-eduvert-action-primary">↗</span>
               </a>
             </li>
           ))}
@@ -121,12 +121,12 @@ function Audience() {
   return (
     <section aria-labelledby="about-audience-heading" className="bg-eduvert-canvas-warm">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
-        <h2 id="about-audience-heading" className="text-eduvert-h2-mobile leading-eduvert-h2-mobile font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:text-eduvert-h2 min-[1100px]:leading-eduvert-h2">
+        <h2 id="about-audience-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
           Who We Help
         </h2>
         <ul className="flex flex-col min-[1100px]:flex-row min-[1100px]:flex-wrap min-[1100px]:gap-x-8">
           {audiences.map((person) => (
-            <li key={person} className="flex items-center gap-3 border-t border-eduvert-border-subtle py-[17px] text-[20px] leading-7 font-eduvert-600 text-eduvert-text-primary min-[1100px]:border-0 min-[1100px]:py-0">
+            <li key={person} className="flex items-center gap-3 border-t border-eduvert-border-subtle py-[17px] eduvert-h4 text-eduvert-text-primary min-[1100px]:border-0 min-[1100px]:py-0">
               <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-eduvert-action-primary" />
               {person}
             </li>
@@ -143,14 +143,14 @@ function TeamCta() {
       <div className="mx-auto w-full max-w-[1440px] px-6 pb-12 min-[1100px]:px-10 min-[1100px]:pb-20 min-[1440px]:px-[120px]">
         <div className="flex flex-col gap-8 rounded-eduvert-16 bg-eduvert-tint-yellow px-6 py-8 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:justify-between min-[1100px]:px-12 min-[1100px]:py-11">
           <div className="flex max-w-[640px] flex-col gap-3">
-            <h2 id="about-cta-heading" className="text-eduvert-h3-mobile leading-[30px] font-eduvert-700 text-eduvert-text-primary min-[1100px]:text-eduvert-h2 min-[1100px]:leading-eduvert-h2">
+            <h2 id="about-cta-heading" className="eduvert-h2 text-eduvert-text-primary">
               Talk to Our Team
             </h2>
-            <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary">
+            <p className="eduvert-body text-eduvert-text-secondary">
               Tell us what you want to learn and we’ll help you explore the course options.
             </p>
           </div>
-          <a href={contactHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 text-eduvert-button leading-[21px] font-eduvert-600 text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-fit">
+          <a href={contactHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-fit">
             Talk to Our Team
           </a>
         </div>
@@ -172,7 +172,7 @@ const differences = [
 ]
 
 const courseLinks = [
-  { title: "Professional Digital Marketing Program", detail: "Campaigns, content, and measurement", href: flagshipProgramHref },
+  { title: "Professional Digital Marketing Program with AI", detail: "Campaigns, content, and measurement", href: flagshipProgramHref },
   { title: "Advanced SEO Course", detail: "Search visibility and website optimization", href: seoCourseHref },
   { title: "SEM & Performance Marketing", detail: "Paid search and campaign measurement", href: semCourseHref },
   { title: "Social Media Marketing", detail: "Social strategy, content, and advertising", href: smmCourseHref },

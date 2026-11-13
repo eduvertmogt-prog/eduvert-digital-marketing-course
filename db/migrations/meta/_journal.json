@@ -8,6 +8,13 @@
       "when": 1794322974564,
       "tag": "0000_graceful_bug",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794384281431,
+      "tag": "0001_medical_gladiator",
+      "breakpoints": true
     }
   ]
 }

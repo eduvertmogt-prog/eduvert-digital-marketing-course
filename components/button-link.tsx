@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import type { AnchorHTMLAttributes, ReactNode } from "react"
 
 export function ButtonLink({
   href,
@@ -8,6 +8,7 @@ export function ButtonLink({
   className = "",
   target,
   rel,
+  ...rest
 }: ButtonLinkProps) {
   return (
     <a
@@ -15,6 +16,7 @@ export function ButtonLink({
       target={target}
       rel={rel}
       className={`${buttonBase} ${buttonVariants[variant]} ${buttonSizes[size]} ${className}`}
+      {...rest}
     >
       {children}
     </a>
@@ -22,12 +24,12 @@ export function ButtonLink({
 }
 
 const buttonBase =
-  "items-center justify-center rounded-eduvert-8 text-eduvert-button leading-eduvert-button font-eduvert-600 transition-colors"
+  "items-center justify-center rounded-eduvert-8 eduvert-button transition-[background-color,color]"
 
 const buttonVariants = {
   primary: "bg-eduvert-action-primary text-eduvert-surface-white hover:bg-eduvert-action-hover",
   secondary:
-    "border border-eduvert-border-subtle bg-eduvert-surface-white text-eduvert-text-primary hover:bg-eduvert-tint-magenta",
+    "border border-eduvert-border-subtle bg-eduvert-surface-white text-eduvert-text-primary hover:bg-eduvert-tint-soft-blue",
 }
 
 const buttonSizes = {
@@ -36,7 +38,7 @@ const buttonSizes = {
   course: "inline-flex h-12 min-w-0 flex-1 min-[1100px]:flex-none",
 }
 
-interface ButtonLinkProps {
+interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
   children: ReactNode
   variant?: keyof typeof buttonVariants

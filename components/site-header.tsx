@@ -20,7 +20,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[15px] leading-[21px] font-eduvert-500 text-eduvert-text-primary hover:text-eduvert-action-primary"
+              className="eduvert-body font-eduvert-500 text-eduvert-text-primary hover:text-eduvert-action-primary"
             >
               {item.label}
             </a>

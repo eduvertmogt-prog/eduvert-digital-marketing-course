@@ -1,6 +1,7 @@
 import type { RelatedArticle } from "@/components/blog/article-types"
+import { generatedJournalArticles } from "@/components/blog/journal.generated"
 
-export const journalArticles: RelatedArticle[] = [
+const publishedJournalArticles: RelatedArticle[] = [
   {
     slug: "meta-muse-ai-a-new-step-in-personal-ai-agents-and-why-it-matters",
     title: "Meta Muse AI: A New Step in Personal AI Agents and Why It Matters",
@@ -163,6 +164,11 @@ export const journalArticles: RelatedArticle[] = [
   },
 ]
 
-export const journalFilters = ["All Articles", "SEO & Search", "AI & Marketing", "Paid Advertising", "Career & Skills"] as const
+export const journalArticles: RelatedArticle[] = [
+  ...publishedJournalArticles,
+  ...generatedJournalArticles.filter((article) => !publishedJournalArticles.some((item) => item.slug === article.slug)),
+]
+
+export const journalFilters = ["All Articles", "SEO & Search", "AI & Marketing", "Paid Advertising", "Career & Skills", "Digital Marketing", "Social Media Marketing", "Analytics"] as const
 
 export type JournalFilter = (typeof journalFilters)[number]

@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react"
 import { ButtonLink } from "@/components/button-link"
 import { CourseMark } from "@/components/course-marks"
+import { FeeFigure } from "@/components/fee-figure"
+import { feeForCourseId } from "@/components/program-fees"
 import { courseCatalog, courseTones } from "@/components/course-catalog"
 import type { Course } from "@/components/course-catalog"
 import { demoHref } from "@/components/site-nav"
@@ -178,8 +180,8 @@ function DesktopRail({ course, visible, onSelect }: DesktopRailProps) {
       inert={!visible}
       className={`course-rail absolute inset-0 hidden w-full cursor-pointer flex-col items-center gap-[19px] overflow-hidden px-[5px] pt-[22px] pb-[18px] font-eduvert min-[1100px]:flex ${visible ? "" : "is-hidden"}`}
     >
-      <span className="text-[12px] leading-4 font-eduvert-700 tracking-[0.09em] text-eduvert-text-secondary">{course.number}</span>
-      <span className="text-center text-[15px] leading-[19px] font-eduvert-700 text-eduvert-text-primary">
+      <span className="eduvert-support font-eduvert-700 tracking-[0.09em] text-eduvert-text-secondary">{course.number}</span>
+      <span className="text-center eduvert-body font-eduvert-700 text-eduvert-text-primary">
         {course.shortName.map((line) => (
           <span key={line} className="block">
             {line}
@@ -205,19 +207,19 @@ function ExpandedPanel({ course, toneClass, programLink, enterKey, frozenWidth }
         className="pointer-events-none absolute top-[31px] right-[7px] h-[353px] w-[384px] opacity-[0.13]"
       />
       <div key={enterKey} className="course-stagger relative z-10 flex flex-col gap-[11px]">
-        <p className="ce-1 hidden text-[12px] leading-4 font-eduvert-700 tracking-[0.09em] text-eduvert-action-primary min-[1100px]:block">
+        <p className="ce-1 hidden eduvert-support font-eduvert-700 tracking-[0.09em] text-eduvert-action-primary min-[1100px]:block">
           {course.eyebrow}
         </p>
-        <h3 className="ce-2 text-[40px] leading-[44px] font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary">
+        <h3 className="ce-2 eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
           {course.title.map((line) => (
             <span key={line} className="block">
               {line}
             </span>
           ))}
         </h3>
-        <p className="ce-3 text-[15px] leading-[23px] text-eduvert-text-secondary">{course.summary}</p>
+        <p className="ce-3 eduvert-body text-eduvert-text-secondary">{course.summary}</p>
         {course.description ? (
-          <p className="ce-3 max-w-[640px] text-[14px] leading-[21px] text-eduvert-text-secondary">{course.description}</p>
+          <p className="ce-3 max-w-[640px] eduvert-support text-eduvert-text-secondary">{course.description}</p>
         ) : null}
         <div className={`ce-4 hidden w-full max-w-[760px] items-start gap-5 border-t pt-[13px] min-[1100px]:flex ${courseTones[course.tone].rule}`}>
           <div className="flex w-[244px] shrink-0 flex-col gap-[3px]">
@@ -231,12 +233,30 @@ function ExpandedPanel({ course, toneClass, programLink, enterKey, frozenWidth }
         <ButtonLink href={course.href} size="course" className="course-cta min-[1100px]:w-[151px]" {...programLink}>
           View Program
         </ButtonLink>
-        <ButtonLink href={demoHref} variant="secondary" size="course" className="course-cta min-[1100px]:w-[161px]">
+        <ButtonLink
+          href={demoHref}
+          variant="secondary"
+          size="course"
+          className="course-cta min-[1100px]:w-[161px]"
+          data-demo-course-slug={courseInterestSlug[course.id]}
+          data-demo-course-label={course.title.join(" ")}
+        >
           Book Free Demo
         </ButtonLink>
       </div>
     </article>
   )
+}
+
+// Course-catalog ids ("seo", "data-analytics", …) predate the detail-page
+// slugs ("seo-course-in-navi-mumbai", "data-analytics-python", …).
+// The dialog records detail-page slugs so enquiries join cleanly later.
+const courseInterestSlug: Record<string, string> = {
+  flagship: "digital-marketing",
+  seo: "seo-course-in-navi-mumbai",
+  sem: "sem-course",
+  smm: "smm-course",
+  "data-analytics": "data-analytics-python",
 }
 
 function MobileCard({ course, open, onSelect, programLink }: MobileCardProps) {
@@ -252,16 +272,16 @@ function MobileCard({ course, open, onSelect, programLink }: MobileCardProps) {
         className="relative flex min-h-[82px] w-full cursor-pointer items-center gap-2.5 overflow-hidden px-[13px] py-[11px] text-left font-eduvert"
       >
         <CourseMark name={course.mark} className="pointer-events-none absolute top-[-5px] right-[29px] h-[96px] w-[104px] opacity-[0.13]" />
-        <span className="relative w-[22px] shrink-0 text-[12px] leading-4 font-eduvert-700 text-eduvert-text-secondary">{course.number}</span>
+        <span className="relative w-[22px] shrink-0 eduvert-support font-eduvert-700 text-eduvert-text-secondary">{course.number}</span>
         <span className="relative flex min-w-0 flex-1 flex-col gap-px">
-          <span className="text-[15px] leading-[18px] font-eduvert-700 text-eduvert-text-primary">
+          <span className="eduvert-body font-eduvert-700 text-eduvert-text-primary">
             {course.mobileName.map((line) => (
               <span key={line} className="block">
                 {line}
               </span>
             ))}
           </span>
-          <span className="text-[12px] leading-[18px] font-eduvert-400 text-eduvert-text-secondary">{course.duration}</span>
+          <span className="eduvert-support font-eduvert-400 text-eduvert-text-secondary">{course.duration}</span>
         </span>
         <span className="relative flex size-9 shrink-0 items-center justify-center rounded-full border border-eduvert-border-subtle bg-eduvert-surface-white text-eduvert-text-primary">
           <CourseGlyph kind={open ? "minus" : "plus"} spin={open} />
@@ -274,12 +294,19 @@ function MobileCard({ course, open, onSelect, programLink }: MobileCardProps) {
               <PriceBlock course={course} />
               <FeatureList course={course} className="gap-[3px]" itemClassName="gap-[7px]" />
             </div>
-            <p className="ce-2 text-[14px] leading-[21px] text-eduvert-text-secondary">{course.summary}</p>
+            <p className="ce-2 eduvert-support text-eduvert-text-secondary">{course.summary}</p>
             <div className="ce-3 flex gap-2">
               <ButtonLink href={course.href} size="course" className="course-cta" {...programLink}>
                 View Program
               </ButtonLink>
-              <ButtonLink href={demoHref} variant="secondary" size="course" className="course-cta">
+              <ButtonLink
+                href={demoHref}
+                variant="secondary"
+                size="course"
+                className="course-cta"
+                data-demo-course-slug={courseInterestSlug[course.id]}
+                data-demo-course-label={course.title.join(" ")}
+              >
                 Book Free Demo
               </ButtonLink>
             </div>
@@ -291,32 +318,17 @@ function MobileCard({ course, open, onSelect, programLink }: MobileCardProps) {
 }
 
 function PriceBlock({ course }: CourseProps) {
-  const isEnquiry = !course.priceNote
+  const fee = feeForCourseId(course.id)
+  if (!fee) return <p className="eduvert-h3 tracking-[-0.025em] text-eduvert-text-primary">{course.price}</p>
 
-  return (
-    <>
-      <p className="flex flex-wrap items-baseline gap-1.5 min-[1100px]:gap-2">
-        <span
-          className={`font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary ${isEnquiry ? "text-[22px] leading-7 min-[1100px]:text-[28px] min-[1100px]:leading-9" : "text-[27px] leading-8 min-[1100px]:text-[35px] min-[1100px]:leading-10"}`}
-        >
-          {course.price}
-        </span>
-        {course.priceNote ? <span className="text-[13px] leading-5 text-eduvert-text-secondary">{course.priceNote}</span> : null}
-      </p>
-      {course.priceCaption ? (
-        <p className="text-[13px] leading-5 text-eduvert-text-secondary min-[1100px]:text-[14px] min-[1100px]:leading-[21px]">
-          {course.priceCaption}
-        </p>
-      ) : null}
-    </>
-  )
+  return <FeeFigure fee={fee} prominent />
 }
 
 function FeatureList({ course, className, itemClassName }: FeatureListProps) {
   return (
     <ul className={`flex flex-col ${className}`}>
       {course.highlights.map((highlight) => (
-        <li key={highlight.label} className={`flex items-center text-[14px] leading-5 font-eduvert-500 text-eduvert-text-primary ${itemClassName}`}>
+        <li key={highlight.label} className={`flex items-center eduvert-support font-eduvert-500 text-eduvert-text-primary ${itemClassName}`}>
           <span className="size-1 shrink-0 rounded-full bg-eduvert-action-primary" aria-hidden="true" />
           {highlight.mobileLabel ? (
             <>

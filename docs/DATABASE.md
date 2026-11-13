@@ -123,6 +123,7 @@ merge two persons with conflicting names — flag for admin review.
 | `type` | `enquiry_type` — see mapping below |
 | `status` | `enquiry_status`, default `'new'` |
 | `subject`, `message` | free text (contact form) |
+| `preferred_time` | `"morning" \| "afternoon" \| "evening"`, null = anytime — from the demo dialog's fixed chips (migration `0001`) |
 | `origin_page`, `origin_form` | e.g. `"/contact"`, `"contact-form v1"` — answers "which CTA converts" without extra tooling |
 | `assigned_to` | TEXT owner label for now → FK to `admin_users` when login exists |
 | `closed_at` | set when status becomes enrolled/closed/spam |
@@ -197,6 +198,29 @@ migrate(drizzle(neon(process.env.DATABASE_URL)), { migrationsFolder: "./db/migra
 
 Note: `.env` values may be single-quoted (valid shell, valid dotenv);
 always `source` the file rather than relying on tooling to parse it.
+
+## Demo dialog write path (added 2026-11-11)
+
+- UI: `components/demo-dialog.tsx` — `DemoDialogProvider` (mounted in
+  `app/layout.tsx`) catches clicks on any `/#book-a-free-demo` link site-wide
+  and opens a native `<dialog>` (art left, form right; bottom sheet on
+  mobile). No-JS still jumps to the hero anchor. Course context travels on
+  `data-demo-course-slug` / `data-demo-course-label` /
+  `data-demo-intent`, tagged on course-page heroes/asides, the flagship
+  hero, the accordion's demo buttons, and `CounsellorActions`
+  (optional `courseSlug`/`courseLabel`/`intent` props).
+- API: `POST /app/api/demo/route.ts` validates (name ≥ 2, email shape,
+  10-digit phone) and calls `createDemoEnquiry()` in
+  `db/demo-enquiries.ts`, which finds-or-creates the person (email, then
+  phone match) and inserts the enquiry + optional course interest.
+  Verified live 6/6 against Neon with self-cleaning probe rows.
+- Intent mapping: Book a Free Demo → `free_demo`, Talk buttons →
+  `counsellor_callback`, course "Enquire About …" CTAs →
+  `course_enquiry`. Preferred-time chips are fixed values so the admin
+  dashboard can filter without normalizing free text.
+- Deploy note: the route reads `DATABASE_URL` from the server
+  environment — fine locally via `.env`, must be exposed as a Worker
+  secret/var at deploy time. No rate limiting or spam protection yet.
 
 ## Deliberate non-goals (v1)
 

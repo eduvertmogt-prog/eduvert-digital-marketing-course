@@ -25,14 +25,14 @@ function SearchWorkspace() {
     <figure className="flex w-full flex-col gap-3">
       <div className="relative overflow-hidden rounded-eduvert-16 bg-eduvert-canvas-warm shadow-[inset_0_0_0_1px_var(--color-eduvert-border-subtle)]">
         <div className="studio-grid absolute inset-0" aria-hidden="true" />
-        <div className="absolute -left-10 top-24 h-44 w-44 rounded-full bg-eduvert-brand-magenta opacity-25" aria-hidden="true" />
+        <div className="absolute -left-10 top-24 h-44 w-44 rounded-full bg-eduvert-brand-blue-deep opacity-25" aria-hidden="true" />
         <div className="absolute top-4 right-8 h-40 w-40 rounded-full bg-eduvert-brand-yellow opacity-40" aria-hidden="true" />
         <div className="absolute right-0 -bottom-8 h-48 w-48 rounded-full bg-eduvert-brand-blue opacity-25" aria-hidden="true" />
         <div className="relative flex flex-col gap-3 p-4 min-[1100px]:h-[370px] min-[1100px]:p-0">
           <p className="text-[10px] leading-[14px] font-eduvert-700 tracking-[0.12em] text-eduvert-text-secondary min-[1100px]:absolute min-[1100px]:top-4 min-[1100px]:left-6">
             SEARCH WORKSPACE
           </p>
-          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:top-12 min-[1100px]:left-6 min-[1100px]:w-[368px]">
+          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:top-12 min-[1100px]:left-6 min-[1100px]:w-[368px]">
             <div className="flex items-center gap-2 rounded-eduvert-8 bg-eduvert-canvas-warm px-2.5 py-2">
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" className="shrink-0 text-eduvert-text-primary">
                 <circle cx="7" cy="7" r="4.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
@@ -57,7 +57,7 @@ function SearchWorkspace() {
               ))}
             </ol>
           </article>
-          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:right-5 min-[1100px]:bottom-5 min-[1100px]:w-[180px]">
+          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:right-5 min-[1100px]:bottom-5 min-[1100px]:w-[180px]">
             <h2 className="text-[15px] leading-5 font-eduvert-700 text-eduvert-text-primary">Website audit</h2>
             <ul className="mt-3 flex flex-col gap-2">
               {auditChecks.map((check) => (
@@ -72,7 +72,7 @@ function SearchWorkspace() {
           </article>
         </div>
       </div>
-      <figcaption className="text-[12px] leading-4 font-eduvert-500 text-eduvert-text-secondary">
+      <figcaption className="eduvert-support font-eduvert-500 text-eduvert-text-secondary">
         Illustrative search results and audit checks
       </figcaption>
     </figure>
@@ -112,12 +112,12 @@ function PaidCampaignStudio() {
         <div className="studio-grid absolute inset-0" aria-hidden="true" />
         <div className="absolute -left-8 top-16 h-40 w-40 rounded-full bg-eduvert-brand-yellow opacity-40" aria-hidden="true" />
         <div className="absolute top-6 right-0 h-36 w-36 rounded-full bg-eduvert-brand-blue opacity-25" aria-hidden="true" />
-        <div className="absolute right-10 -bottom-10 h-40 w-40 rounded-full bg-eduvert-brand-magenta opacity-20" aria-hidden="true" />
+        <div className="absolute right-10 -bottom-10 h-40 w-40 rounded-full bg-eduvert-brand-blue-deep opacity-20" aria-hidden="true" />
         <div className="relative flex flex-col gap-3 p-4 min-[1100px]:h-[393px] min-[1100px]:p-0">
           <p className="text-[10px] leading-[14px] font-eduvert-700 tracking-[0.12em] text-eduvert-text-secondary min-[1100px]:absolute min-[1100px]:top-4 min-[1100px]:left-6">
             PAID ADVERTISING CAMPAIGN STUDIO
           </p>
-          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:top-12 min-[1100px]:left-6 min-[1100px]:w-[300px]">
+          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:top-12 min-[1100px]:left-6 min-[1100px]:w-[300px]">
             <p className="text-[10px] leading-4 font-eduvert-700 tracking-[0.08em] text-eduvert-text-secondary">SPONSORED SEARCH PREVIEW</p>
             <p className="mt-2 text-[16px] leading-6 font-eduvert-700 text-eduvert-link">SEM training in Navi Mumbai</p>
             <p className="text-[13px] leading-5 text-eduvert-text-secondary">Plan campaigns with practical guidance</p>
@@ -133,7 +133,7 @@ function PaidCampaignStudio() {
               ))}
             </ul>
           </article>
-          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:bottom-5 min-[1100px]:left-6 min-[1100px]:w-[230px]">
+          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:bottom-5 min-[1100px]:left-6 min-[1100px]:w-[230px]">
             <p className="text-[10px] leading-4 font-eduvert-700 tracking-[0.08em] text-eduvert-text-secondary">BIDDING & BUDGET</p>
             <p className="mt-2 text-[13px] leading-5 font-eduvert-600 text-eduvert-text-primary">Daily budget control</p>
             <div className="mt-2 flex gap-1.5">
@@ -141,7 +141,7 @@ function PaidCampaignStudio() {
               <span className="rounded-eduvert-8 bg-eduvert-tint-blue px-2 py-1 text-[11px] leading-4 font-eduvert-600 text-eduvert-text-primary">GUIDED</span>
             </div>
           </article>
-          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:right-5 min-[1100px]:bottom-5 min-[1100px]:w-[188px]">
+          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:right-5 min-[1100px]:bottom-5 min-[1100px]:w-[188px]">
             <p className="text-[10px] leading-4 font-eduvert-700 tracking-[0.08em] text-eduvert-text-secondary">CAMPAIGN PERFORMANCE</p>
             <div className="mt-3 flex h-10 items-end gap-1.5" aria-hidden="true">
               {performanceBars.map((bar) => (
@@ -152,7 +152,7 @@ function PaidCampaignStudio() {
           </article>
         </div>
       </div>
-      <figcaption className="text-[12px] leading-4 font-eduvert-500 text-eduvert-text-secondary">
+      <figcaption className="eduvert-support font-eduvert-500 text-eduvert-text-secondary">
         Illustrative campaign preview, not live advertising results
       </figcaption>
     </figure>
@@ -164,20 +164,20 @@ function SocialContentStudio() {
     <figure className="flex w-full flex-col gap-3">
       <div className="relative overflow-hidden rounded-eduvert-16 bg-eduvert-canvas-warm shadow-[inset_0_0_0_1px_var(--color-eduvert-border-subtle)]">
         <div className="studio-grid absolute inset-0" aria-hidden="true" />
-        <div className="absolute -left-8 top-20 h-40 w-40 rounded-full bg-eduvert-brand-magenta opacity-20" aria-hidden="true" />
+        <div className="absolute -left-8 top-20 h-40 w-40 rounded-full bg-eduvert-brand-blue-deep opacity-20" aria-hidden="true" />
         <div className="absolute top-4 right-6 h-36 w-36 rounded-full bg-eduvert-brand-yellow opacity-40" aria-hidden="true" />
         <div className="absolute right-16 -bottom-12 h-40 w-40 rounded-full bg-eduvert-brand-blue opacity-20" aria-hidden="true" />
         <div className="relative flex flex-col gap-3 p-4 min-[1100px]:h-[393px] min-[1100px]:p-0">
           <p className="text-[10px] leading-[14px] font-eduvert-700 tracking-[0.12em] text-eduvert-text-secondary min-[1100px]:absolute min-[1100px]:top-4 min-[1100px]:left-6">
             SOCIAL CONTENT STUDIO
           </p>
-          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:top-12 min-[1100px]:left-6 min-[1100px]:w-[300px]">
+          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:top-12 min-[1100px]:left-6 min-[1100px]:w-[300px]">
             <p className="text-[10px] leading-4 font-eduvert-700 tracking-[0.08em] text-eduvert-text-secondary">CONTENT CALENDAR</p>
             <div className="mt-3 grid grid-cols-3 gap-2">
               {contentDays.map((day) => (
                 <div key={day}>
                   <p className="text-[11px] leading-4 font-eduvert-700 text-eduvert-action-primary">{day}</p>
-                  <div className="mt-1.5 h-10 rounded-eduvert-8 bg-eduvert-tint-magenta" aria-hidden="true" />
+                  <div className="mt-1.5 h-10 rounded-eduvert-8 bg-eduvert-tint-soft-blue" aria-hidden="true" />
                 </div>
               ))}
             </div>
@@ -190,7 +190,7 @@ function SocialContentStudio() {
               <li>Audience</li>
             </ul>
           </article>
-          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:bottom-5 min-[1100px]:left-6 min-[1100px]:right-5">
+          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:bottom-5 min-[1100px]:left-6 min-[1100px]:right-5">
             <p className="text-[10px] leading-4 font-eduvert-700 tracking-[0.08em] text-eduvert-text-secondary">PLATFORMS IN THE SYLLABUS</p>
             <ul className="mt-2 flex list-none flex-wrap gap-1.5">
               {socialPlatforms.map((platform) => (
@@ -202,7 +202,7 @@ function SocialContentStudio() {
           </article>
         </div>
       </div>
-      <figcaption className="text-[12px] leading-4 font-eduvert-500 text-eduvert-text-secondary">
+      <figcaption className="eduvert-support font-eduvert-500 text-eduvert-text-secondary">
         Illustrative content plan, not platform results
       </figcaption>
     </figure>
@@ -216,12 +216,12 @@ function DataAnalysisStudio() {
         <div className="studio-grid absolute inset-0" aria-hidden="true" />
         <div className="absolute -left-8 top-16 h-40 w-40 rounded-full bg-eduvert-brand-blue opacity-25" aria-hidden="true" />
         <div className="absolute top-4 right-8 h-36 w-36 rounded-full bg-eduvert-brand-yellow opacity-40" aria-hidden="true" />
-        <div className="absolute right-16 -bottom-12 h-40 w-40 rounded-full bg-eduvert-brand-magenta opacity-20" aria-hidden="true" />
+        <div className="absolute right-16 -bottom-12 h-40 w-40 rounded-full bg-eduvert-brand-blue-deep opacity-20" aria-hidden="true" />
         <div className="relative flex flex-col gap-3 p-4 min-[1100px]:h-[393px] min-[1100px]:p-0">
           <p className="text-[10px] leading-[14px] font-eduvert-700 tracking-[0.12em] text-eduvert-text-secondary min-[1100px]:absolute min-[1100px]:top-4 min-[1100px]:left-6">
             DATA ANALYSIS STUDIO
           </p>
-          <article className="relative z-10 overflow-hidden rounded-eduvert-12 bg-eduvert-surface-white shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:top-12 min-[1100px]:left-6 min-[1100px]:w-[300px]">
+          <article className="relative z-10 overflow-hidden rounded-eduvert-12 bg-eduvert-surface-white shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:top-12 min-[1100px]:left-6 min-[1100px]:w-[300px]">
             <p className="px-4 pt-4 text-[10px] leading-4 font-eduvert-700 tracking-[0.08em] text-eduvert-text-secondary">WORKSHEET</p>
             <div className="mt-3 grid grid-cols-2 bg-eduvert-tint-blue px-4 py-2 text-[11px] leading-4 font-eduvert-700 text-eduvert-text-secondary">
               <span>Field</span>
@@ -244,7 +244,7 @@ function DataAnalysisStudio() {
               ))}
             </ul>
           </article>
-          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_rgba(36,37,43,0.06)] min-[1100px]:absolute min-[1100px]:bottom-5 min-[1100px]:left-6 min-[1100px]:right-5">
+          <article className="relative z-10 rounded-eduvert-12 bg-eduvert-surface-white p-4 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_6%,transparent)] min-[1100px]:absolute min-[1100px]:bottom-5 min-[1100px]:left-6 min-[1100px]:right-5">
             <p className="text-[10px] leading-4 font-eduvert-700 tracking-[0.08em] text-eduvert-text-secondary">TOOLS IN THE SYLLABUS</p>
             <ul className="mt-2 flex list-none flex-wrap gap-1.5">
               {analysisTools.map((tool) => (
@@ -256,7 +256,7 @@ function DataAnalysisStudio() {
           </article>
         </div>
       </div>
-      <figcaption className="text-[12px] leading-4 font-eduvert-500 text-eduvert-text-secondary">
+      <figcaption className="eduvert-support font-eduvert-500 text-eduvert-text-secondary">
         Illustrative worksheet, not a measured result
       </figcaption>
     </figure>
@@ -275,13 +275,13 @@ function StudioFrame({ kicker, caption, children }: StudioFrameProps) {
           {children}
         </div>
       </div>
-      <figcaption className="text-[12px] leading-4 font-eduvert-500 text-eduvert-text-secondary">{caption}</figcaption>
+      <figcaption className="eduvert-support font-eduvert-500 text-eduvert-text-secondary">{caption}</figcaption>
     </figure>
   )
 }
 
 const searchRows = [
-  { number: "01", title: "Technical SEO checklist", detail: "Crawling and indexing basics", tone: "bg-eduvert-tint-magenta text-eduvert-action-primary" },
+  { number: "01", title: "Technical SEO checklist", detail: "Crawling and indexing basics", tone: "bg-eduvert-tint-soft-blue text-eduvert-action-primary" },
   { number: "02", title: "Website audit guide", detail: "Review titles and internal links", tone: "bg-eduvert-tint-blue text-eduvert-text-primary" },
   { number: "03", title: "Search visibility basics", detail: "Track organic search performance", tone: "bg-eduvert-tint-blue text-eduvert-text-primary" },
 ]

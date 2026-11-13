@@ -10,23 +10,26 @@ export function SkillLabHero() {
       className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-[19px] px-6 pt-[31px] pb-[25px] min-[1100px]:grid-cols-[minmax(0,565fr)_minmax(0,674fr)] min-[1100px]:items-start min-[1100px]:gap-[9px] min-[1100px]:px-[clamp(24px,6.67vw,96px)] min-[1100px]:pt-[108px] min-[1100px]:pb-[158px]"
     >
       <div className="flex min-w-0 flex-col gap-[19px] min-[1100px]:mt-[66px] min-[1100px]:gap-[26px]">
-        <p className="text-[11px] leading-4 font-eduvert-700 tracking-[0.09em] text-eduvert-action-primary min-[1100px]:text-[13px] min-[1100px]:leading-[18px]">
-          DIGITAL MARKETING + DATA ANALYTICS
+        <p className="eduvert-support font-eduvert-700 tracking-[0.09em] text-eduvert-action-primary">
+          DIGITAL MARKETING + AI
         </p>
-        <h1 id="skill-lab-heading" className="flex flex-col">
-          <span className="text-[40px] leading-[44px] font-eduvert-700 tracking-eduvert-h1 whitespace-nowrap text-eduvert-text-primary min-[1100px]:text-[clamp(48px,4.7222vw,68px)] min-[1100px]:leading-[1.0588]">
-            Don&apos;t just learn it.
+        <h1 id="skill-lab-heading" className="flex flex-col text-balance eduvert-h1">
+          <span className="text-eduvert-text-primary">
+            We just don&apos;t teach,
           </span>
-          <span className="text-[40px] leading-[44px] font-eduvert-700 tracking-eduvert-h1 whitespace-nowrap text-eduvert-action-primary min-[1100px]:text-[clamp(48px,4.7222vw,68px)] min-[1100px]:leading-[1.0588]">
-            Build with it.
+          <span className="text-eduvert-action-primary">
+            we build with you.
           </span>
         </h1>
-        <p className="max-w-[520px] text-eduvert-body-large-mobile leading-eduvert-body-large-mobile text-eduvert-text-secondary min-[1100px]:text-eduvert-body-large min-[1100px]:leading-eduvert-body-large">
+        <p className="max-w-[520px] eduvert-body-large text-eduvert-text-secondary">
           Hands-on courses, real projects, and expert guidance. Learn in Seawoods, Navi Mumbai, or live
           online.
         </p>
         <div className="flex gap-3">
-          <ButtonLink href={demoHref}>Book a Free Demo</ButtonLink>
+          <ButtonLink href={demoHref}>
+            Book a Free Demo
+            <ArrowUpRight />
+          </ButtonLink>
           <ButtonLink href={coursesHref} variant="secondary">
             Explore Courses
           </ButtonLink>
@@ -37,20 +40,20 @@ export function SkillLabHero() {
               key={metric.value}
               className={index === 0 ? "pr-2" : "border-l border-eduvert-border-subtle pl-[11px] min-[1100px]:pl-5"}
             >
-              <dd className="text-[23px] leading-[25px] font-eduvert-700 tracking-[-0.04em] text-eduvert-text-primary min-[1100px]:text-[31px] min-[1100px]:leading-[34px]">
+              <dd className="eduvert-h3 tracking-[-0.04em] text-eduvert-text-primary">
                 {metric.value}
               </dd>
-              <dt className="mt-0.5 text-[11px] leading-[15px] font-eduvert-600 text-eduvert-text-primary min-[1100px]:text-eduvert-support min-[1100px]:leading-[19px]">
+              <dt className="mt-0.5 eduvert-support font-eduvert-600 text-eduvert-text-primary">
                 {metric.label}
               </dt>
               {metric.scope ? (
-                <dd className="mt-0.5 text-[10px] leading-[13px] font-eduvert-500 text-eduvert-text-secondary min-[1100px]:text-[12px] min-[1100px]:leading-4">
+                <dd className="mt-0.5 eduvert-support font-eduvert-500 text-eduvert-text-secondary">
                   {metric.scope}
                 </dd>
               ) : (
                 <dd
                   aria-hidden="true"
-                  className="mt-0.5 text-[10px] leading-[13px] min-[1100px]:text-[12px] min-[1100px]:leading-4"
+                  className="mt-0.5 eduvert-support"
                 >
                   &nbsp;
                 </dd>
@@ -61,6 +64,27 @@ export function SkillLabHero() {
       </div>
       <LearningStudio />
     </section>
+  )
+}
+
+function ArrowUpRight() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      className="cta-arrow ml-2 shrink-0"
+    >
+      <path
+        d="M4 12 12 4m0 0H6m6 0v6"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   )
 }
 

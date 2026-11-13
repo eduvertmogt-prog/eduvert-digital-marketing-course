@@ -24,18 +24,18 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <h2 className="text-[26px] leading-[34px] font-eduvert-700 text-eduvert-text-primary">Send us a message</h2>
+      <h2 className="eduvert-h3 text-eduvert-text-primary">Send us a message</h2>
       <div className="grid gap-3 min-[700px]:grid-cols-2">
         <Field label="Name" name="name" autoComplete="name" />
         <Field label="Phone" name="phone" type="tel" autoComplete="tel" />
       </div>
       <Field label="Email" name="email" type="email" autoComplete="email" />
       <Field label="Message" name="message" multiline />
-      <button type="submit" className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 text-eduvert-button leading-[21px] font-eduvert-600 text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-fit">
+      <button type="submit" className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-fit">
         Send Message
       </button>
       {status === "ready" ? (
-        <p className="text-eduvert-support leading-[21px] text-eduvert-text-secondary" role="status">
+        <p className="eduvert-support text-eduvert-text-secondary" role="status">
           Your email app should open with this enquiry. You can also call or email EduVert directly.
         </p>
       ) : null}
@@ -44,11 +44,11 @@ export function ContactForm() {
 }
 
 function Field({ label, name, type = "text", autoComplete, multiline = false }: FieldProps) {
-  const controlClass = "w-full bg-transparent text-eduvert-body leading-6 text-eduvert-text-primary outline-none placeholder:text-transparent"
+  const controlClass = "w-full bg-transparent eduvert-body text-eduvert-text-primary outline-none placeholder:text-eduvert-text-secondary"
 
   return (
-    <label className="flex flex-col gap-1 rounded-eduvert-8 border border-eduvert-border-subtle bg-eduvert-surface-white px-3.5 py-2.5">
-      <span className="text-[12px] leading-4 font-eduvert-500 text-eduvert-text-secondary">{label}</span>
+    <label className="eduvert-field flex flex-col gap-1 rounded-eduvert-8 border border-eduvert-border-subtle bg-eduvert-surface-white px-3.5 py-2.5">
+      <span className="eduvert-support font-eduvert-500 text-eduvert-text-secondary">{label}</span>
       {multiline ? (
         <textarea name={name} required rows={4} className={`${controlClass} resize-y`} />
       ) : (

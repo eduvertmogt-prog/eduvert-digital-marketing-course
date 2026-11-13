@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { programFeeSummary } from "@/components/program-fees"
 import { demoHref } from "@/components/site-nav"
 
 export function CourseFaq() {
@@ -10,10 +11,10 @@ export function CourseFaq() {
     <section id="faq" aria-labelledby="faq-heading" className="flex justify-center bg-eduvert-canvas-warm px-6 py-[68px] min-[1100px]:px-10 min-[1100px]:pt-24 min-[1100px]:pb-[104px] min-[1440px]:px-[60px]">
       <div className="flex w-full max-w-[342px] flex-col items-start gap-[30px] min-[1100px]:max-w-[1200px] min-[1100px]:flex-row min-[1100px]:gap-10 min-[1440px]:gap-20">
         <div className="flex flex-col gap-2.5 min-[1100px]:w-[34%] min-[1100px]:shrink-0 min-[1100px]:gap-3.5 min-[1440px]:w-[408px]">
-          <h2 id="faq-heading" className="max-w-[320px] text-eduvert-h2-mobile leading-eduvert-h2-mobile font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:max-w-[374px] min-[1100px]:text-eduvert-h2 min-[1100px]:leading-eduvert-h2">
+          <h2 id="faq-heading" className="max-w-[320px] eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:max-w-[374px]">
             Frequently Asked Questions
           </h2>
-          <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary min-[1100px]:max-w-[330px] min-[1100px]:text-eduvert-body-large min-[1100px]:leading-[30px]">
+          <p className="eduvert-body text-eduvert-text-secondary min-[1100px]:max-w-[330px] min-[1100px]:eduvert-body-large">
             A few things you may want to know before choosing a course.
           </p>
         </div>
@@ -30,7 +31,7 @@ export function CourseFaq() {
                     onClick={() => setOpenId(question.id)}
                     className="flex w-full items-center gap-3.5 py-[15px] text-left min-[1100px]:gap-5 min-[1100px]:py-[19px]"
                   >
-                    <span className={`min-w-0 flex-1 text-[17px] leading-6 font-eduvert-600 min-[1100px]:text-eduvert-body-large min-[1100px]:leading-[26px] ${isOpen ? "text-eduvert-action-primary" : "text-eduvert-text-primary"}`}>
+                    <span className={`min-w-0 flex-1 eduvert-body-large font-eduvert-600 ${isOpen ? "text-eduvert-action-primary" : "text-eduvert-text-primary"}`}>
                       {question.question}
                     </span>
                     <span className={isOpen ? "text-eduvert-action-primary" : "text-eduvert-text-secondary"}>
@@ -39,14 +40,14 @@ export function CourseFaq() {
                   </button>
                   {isOpen ? (
                     <div id={`faq-${question.id}`} className="max-w-[334px] pb-5 min-[1100px]:max-w-[620px] min-[1100px]:pb-6">
-                      <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary min-[1100px]:leading-[27px]">{question.answer}</p>
+                      <p className="eduvert-body text-eduvert-text-secondary">{question.answer}</p>
                     </div>
                   ) : null}
                 </div>
               )
             })}
           </div>
-          <a href={demoHref} className="inline-flex h-11 w-fit items-center text-eduvert-button leading-[21px] font-eduvert-700 text-eduvert-action-primary underline decoration-1">
+          <a href={demoHref} data-demo-intent="counsellor_callback" className="inline-flex h-11 w-fit items-center eduvert-button text-eduvert-link underline decoration-1">
             Talk to Our Counsellor
           </a>
         </div>
@@ -85,7 +86,7 @@ const courseQuestions: CourseQuestion[] = [
     id: "fees",
     question: "What are the fees, and is EMI available?",
     answer:
-      "The Professional Digital Marketing Program fee is ₹44,000 + 18% GST, and an EMI option is available. Fees for the other courses are shared on enquiry.",
+      programFeeSummary,
   },
   {
     id: "practical",

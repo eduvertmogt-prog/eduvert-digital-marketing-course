@@ -6,10 +6,10 @@ export function CareerPreparation() {
       <div className="flex w-full max-w-[342px] flex-col gap-8 min-[1100px]:max-w-[1200px] min-[1100px]:gap-11">
         <div className="flex flex-col gap-[38px] min-[1100px]:gap-[60px]">
           <div className="flex flex-col gap-3 min-[1100px]:w-[740px] min-[1100px]:gap-3.5">
-            <h2 id="placements-heading" className="max-w-[275px] text-eduvert-h2-mobile leading-eduvert-h2-mobile font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:max-w-none min-[1100px]:text-eduvert-h2 min-[1100px]:leading-eduvert-h2">
+            <h2 id="placements-heading" className="max-w-[275px] eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:max-w-none">
               Career Preparation at EduVert
             </h2>
-            <p className="text-eduvert-body leading-[26px] text-[#5b6070] min-[1100px]:text-eduvert-body-large min-[1100px]:leading-[30px]">
+            <p className="eduvert-body text-eduvert-text-secondary min-[1100px]:eduvert-body-large">
               In the Professional Digital Marketing Program, practical projects are complemented by resume support, mock interview sessions, and job referral assistance.
             </p>
           </div>
@@ -18,23 +18,23 @@ export function CareerPreparation() {
             {careerSteps.map((step) => (
               <li key={step.index} className="relative flex min-w-0 flex-col gap-[5px] pl-[30px] min-[1100px]:flex-1 min-[1100px]:pt-[29px] min-[1100px]:pl-0 min-[1440px]:w-[276px] min-[1440px]:shrink-0 min-[1440px]:flex-none">
                 <span className={`absolute top-[5px] left-0 size-3 rounded-full min-[1100px]:top-0 ${step.dot}`} aria-hidden="true" />
-                <span className="text-eduvert-support leading-[21px] font-eduvert-600 tracking-[0.055em] text-[#5b6070]">{step.index}</span>
-                <h3 className="text-eduvert-h4-mobile leading-[26px] font-eduvert-600 tracking-[-0.013em] text-eduvert-text-primary min-[1100px]:text-[21px] min-[1100px]:leading-[27px]">
+                <span className="eduvert-support font-eduvert-600 tracking-[0.055em] text-eduvert-text-secondary">{step.index}</span>
+                <h3 className="eduvert-h4 tracking-[-0.013em] text-eduvert-text-primary">
                   {step.title}
                 </h3>
-                <p className={`text-eduvert-body leading-[26px] text-[#5b6070] min-[1100px]:leading-[27px] ${step.detailWidth}`}>{step.detail}</p>
+                <p className={`eduvert-body text-eduvert-text-secondary ${step.detailWidth}`}>{step.detail}</p>
               </li>
             ))}
           </ol>
         </div>
         <div className="flex flex-col min-[1100px]:pt-1.5">
-          <a href={careerHref} className="inline-flex h-11 w-fit items-center gap-2.5 text-eduvert-button leading-[21px] font-eduvert-700 text-eduvert-action-primary">
+          <a href={careerHref} className="inline-flex h-11 w-fit items-center gap-2.5 eduvert-button text-eduvert-link">
             Explore Career Support
             <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" className="shrink-0">
               <path d="M3.5 9h10.3M9.5 4.7 14 9l-4.5 4.3" fill="none" stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <p className="max-w-[239px] text-eduvert-support leading-[21px] text-[#5b6070] min-[1100px]:max-w-[550px]">
+          <p className="max-w-[239px] eduvert-support text-eduvert-text-secondary min-[1100px]:max-w-[550px]">
             Placement assistance does not guarantee employment.
           </p>
         </div>
@@ -58,7 +58,7 @@ const careerSteps: CareerStep[] = [
     title: "Resume Support",
     detail: "Get guidance on preparing your resume for digital marketing opportunities.",
     detailWidth: "min-[1100px]:max-w-[221px]",
-    dot: "bg-eduvert-brand-magenta",
+    dot: "bg-eduvert-brand-blue-deep",
   },
   {
     index: "03",

@@ -9,18 +9,18 @@ export function LearningFormats() {
           <div className="flex flex-col gap-8 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:gap-10 min-[1440px]:gap-[88px]">
             <div className="flex min-w-0 flex-1 flex-col gap-5 min-[1440px]:max-w-[500px]">
               <div className="flex flex-col gap-2">
-                <h2 id="learning-formats-heading" className="text-eduvert-h2-mobile leading-eduvert-h2-mobile font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:text-eduvert-h2 min-[1100px]:leading-eduvert-h2">
+                <h2 id="learning-formats-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
                   How You'll Learn
                 </h2>
-                <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary min-[1100px]:leading-[27px]">
+                <p className="eduvert-body text-eduvert-text-secondary">
                   Build skills through hands-on assignments, practical projects, and trainer guidance.
                 </p>
               </div>
               {learningFormats.map((format) => (
                 <div key={format.eyebrow} className="flex flex-col gap-1">
-                  <p className="text-[12px] leading-[17px] font-eduvert-700 text-eduvert-action-primary">{format.eyebrow}</p>
-                  <h3 className="text-eduvert-h4-mobile leading-[27px] font-eduvert-600 text-eduvert-text-primary min-[1100px]:text-eduvert-h4 min-[1100px]:leading-[28px]">{format.title}</h3>
-                  <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary">{format.detail}</p>
+                  <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">{format.eyebrow}</p>
+                  <h3 className="eduvert-h4 text-eduvert-text-primary">{format.title}</h3>
+                  <p className="eduvert-body text-eduvert-text-secondary">{format.detail}</p>
                 </div>
               ))}
             </div>
@@ -32,10 +32,10 @@ export function LearningFormats() {
         <div className="mx-auto w-full max-w-[1440px] px-6 py-9 min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:py-14">
           <div className="flex flex-col gap-6 rounded-eduvert-16 bg-eduvert-tint-yellow px-6 py-8 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:justify-between min-[1100px]:gap-[35px] min-[1100px]:px-10 min-[1100px]:py-10">
             <div className="flex max-w-[570px] flex-col gap-2.5">
-              <h2 id="start-heading" className="text-eduvert-h3-mobile leading-[30px] font-eduvert-700 text-eduvert-text-primary min-[1100px]:text-eduvert-h3 min-[1100px]:leading-[34px]">
+              <h2 id="start-heading" className="eduvert-h3 text-eduvert-text-primary">
                 Not Sure Where to Start?
               </h2>
-              <p className="text-eduvert-body leading-[26px] text-eduvert-text-secondary min-[1100px]:leading-[27px]">
+              <p className="eduvert-body text-eduvert-text-secondary">
                 Talk to our team about your goals, course content, fees, and available batches.
               </p>
             </div>

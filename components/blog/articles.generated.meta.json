@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "see-how-eduvert-turns-learners-into-working-professionals-through-practical-learning",
+    "sourceUrl": "https://www.eduvert.co/see-how-eduvert-turns-learners-into-working-professionals-through-practical-learning/",
+    "wordpressId": 19560,
+    "contentSource": "api",
+    "coverage": 1,
+    "editorialFlags": [],
+    "notes": [],
+    "featuredImage": {
+      "sourceUrl": "https://www.eduvert.co/wp-content/uploads/2026/03/What-Does-a-Digital-Marketing-Career-Look-Like-Skills-and-Opportunities-Explained-80.png",
+      "localPath": "/images/blog/What-Does-a-Digital-Marketing-Career-Look-Like-Skills-and-Opportunities-Explained-80.png",
+      "alt": "Eduvert hands-on training program"
+    },
+    "inlineImages": [],
+    "imageFailures": [],
+    "unmappedLinks": []
+  },
+  {
+    "slug": "digital-marketing-for-small-business-owners-skills-every-entrepreneur-should-have",
+    "sourceUrl": "https://www.eduvert.co/digital-marketing-for-small-business-owners-skills-every-entrepreneur-should-have/",
+    "wordpressId": 19497,
+    "contentSource": "api",
+    "coverage": 1,
+    "editorialFlags": [],
+    "notes": [],
+    "featuredImage": {
+      "sourceUrl": "https://www.eduvert.co/wp-content/uploads/2026/03/What-Does-a-Digital-Marketing-Career-Look-Like-Skills-and-Opportunities-Explained-73.png",
+      "localPath": "/images/blog/What-Does-a-Digital-Marketing-Career-Look-Like-Skills-and-Opportunities-Explained-73.png",
+      "alt": "Small business owner managing digital marketing online"
+    },
+    "inlineImages": [],
+    "imageFailures": [],
+    "unmappedLinks": []
+  },
+  {
+    "slug": "psychology-behind-viral-reels-how-to-hack-the-algorithm-in-a-smart-sustainable-way",
+    "sourceUrl": "https://www.eduvert.co/psychology-behind-viral-reels-how-to-hack-the-algorithm-in-a-smart-sustainable-way/",
+    "wordpressId": 19494,
+    "contentSource": "api",
+    "coverage": 0.9998,
+    "editorialFlags": [],
+    "notes": [],
+    "featuredImage": {
+      "sourceUrl": "https://www.eduvert.co/wp-content/uploads/2026/02/What-Does-a-Digital-Marketing-Career-Look-Like-Skills-and-Opportunities-Explained-74.png",
+      "localPath": "/images/blog/What-Does-a-Digital-Marketing-Career-Look-Like-Skills-and-Opportunities-Explained-74.png",
+      "alt": "Content creator planning viral reels strategy"
+    },
+    "inlineImages": [],
+    "imageFailures": [],
+    "unmappedLinks": []
+  }
+]

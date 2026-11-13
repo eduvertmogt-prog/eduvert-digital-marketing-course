@@ -1,4 +1,6 @@
 import type { ArticleBlock, ArticleRecord, RelatedArticle } from "@/components/blog/article-types"
+import { generatedArticles } from "@/components/blog/articles.generated"
+import { journalArticles } from "@/components/blog/journal"
 
 export const portfolioArticle: ArticleRecord = {
   slug: "build-a-standout-digital-marketing-portfolio-with-zero-work-experience-with-eduvert",
@@ -15992,7 +15994,9 @@ export const searchEverywhereArticle: ArticleRecord = {
   ] satisfies ArticleBlock[],
 }
 
-const articles = [portfolioArticle, metaMuseArticle, jobsArticle, aiToolsArticle, adCopyArticle, overviewsArticle, mentionsArticle, coreUpdateArticle, decodeArticle, aiRankArticle, voiceArticle, adsConversionsArticle, searchBehaviorArticle, funnelPsychologyArticle, hiddenFactorsArticle, interviewArticle, heatmapsArticle, zeroClickArticle, afterCourseArticle, eeatArticle, searchEverywhereArticle]
+const handwrittenArticles = [portfolioArticle, metaMuseArticle, jobsArticle, aiToolsArticle, adCopyArticle, overviewsArticle, mentionsArticle, coreUpdateArticle, decodeArticle, aiRankArticle, voiceArticle, adsConversionsArticle, searchBehaviorArticle, funnelPsychologyArticle, hiddenFactorsArticle, interviewArticle, heatmapsArticle, zeroClickArticle, afterCourseArticle, eeatArticle, searchEverywhereArticle]
+
+const articles = [...handwrittenArticles, ...generatedArticles.filter((article) => !handwrittenArticles.some((item) => item.slug === article.slug))]
 
 export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug)
@@ -16004,7 +16008,7 @@ export function getArticleSlugs() {
 
 export function getRelatedArticles(slugs: string[]) {
   return slugs.flatMap((slug) => {
-    const article = relatedArticles.find((item) => item.slug === slug)
+    const article = relatedArticles.find((item) => item.slug === slug) ?? journalArticles.find((item) => item.slug === slug)
     return article ? [article] : []
   })
 }

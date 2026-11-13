@@ -2,7 +2,7 @@ export function LearningStudio() {
   return (
     <figure className="relative aspect-[342/283] w-full overflow-hidden rounded-eduvert-16 bg-eduvert-canvas-warm shadow-[inset_0_0_0_1px_var(--color-eduvert-border-subtle)] min-[1100px]:aspect-[674/646]">
       <div className="studio-grid absolute inset-0" aria-hidden="true" />
-      <div className="studio-pink absolute rounded-full" aria-hidden="true" />
+      <div className="studio-deep-blue absolute rounded-full" aria-hidden="true" />
       <div className="studio-yellow absolute rounded-full" aria-hidden="true" />
       <div className="studio-blue absolute rounded-full" aria-hidden="true" />
       <img
@@ -58,13 +58,13 @@ const channelBars: ChannelBar[] = [
   { height: 15, tone: "blue" },
   { height: 25, tone: "blue" },
   { height: 21, tone: "blue" },
-  { height: 31, tone: "magenta" },
+  { height: 31, tone: "blueDeep" },
   { height: 26, tone: "blue" },
 ]
 
 const barTones = {
   blue: "bg-eduvert-brand-blue opacity-[0.62]",
-  magenta: "bg-eduvert-action-primary",
+  blueDeep: "bg-eduvert-brand-blue-deep",
 }
 
 interface ChannelBar {

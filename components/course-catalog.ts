@@ -1,4 +1,5 @@
 import type { CourseMarkName } from "@/components/course-marks"
+import { programFees } from "@/components/program-fees"
 import { dataCourseHref, flagshipProgramHref, semCourseHref, seoCourseHref, smmCourseHref } from "@/components/site-nav"
 
 export const courseCatalog: Course[] = [
@@ -12,9 +13,9 @@ export const courseCatalog: Course[] = [
     summary: "4 Months · 120+ Hours · Classroom (Seawoods) & Live Online",
     summaryLines: ["4 Months · 120+ Hours", "Classroom (Seawoods) & Live Online"],
     duration: "4 Months · 120+ Hours",
-    price: "₹44,000",
-    priceNote: "+ 18% GST",
-    priceCaption: "EMI Option Available",
+    price: programFees.flagship.base,
+    priceNote: programFees.flagship.note,
+    priceCaption: programFees.flagship.caption,
     highlights: [
       { label: "80+ Tools Covered" },
       { label: "Live Projects & Capstone", mobileLabel: "Live Projects" },
@@ -23,7 +24,7 @@ export const courseCatalog: Course[] = [
       { label: "Placement Assistance" },
     ],
     href: flagshipProgramHref,
-    tone: "magenta",
+    tone: "soft-blue",
     mark: "flagship",
   },
   {
@@ -38,7 +39,9 @@ export const courseCatalog: Course[] = [
     duration: "4–5 Weeks",
     description:
       "Learn to improve search visibility through keyword research, website optimization, technical SEO and practical audits.",
-    price: "Enquire for Fees",
+    price: programFees.seo.base,
+    priceNote: programFees.seo.note,
+    priceCaption: programFees.seo.caption,
     highlights: [
       { label: "Keyword Research & Competitor Analysis" },
       { label: "On-Page & Technical SEO" },
@@ -62,7 +65,9 @@ export const courseCatalog: Course[] = [
     duration: "4–5 Weeks",
     description:
       "Learn to create, manage and optimize paid search campaigns using targeting, bidding, tracking and performance analysis.",
-    price: "Enquire for Fees",
+    price: programFees.sem.base,
+    priceNote: programFees.sem.note,
+    priceCaption: programFees.sem.caption,
     highlights: [
       { label: "Google Ads & Bing Ads" },
       { label: "Keyword Research & Ad Creation" },
@@ -86,7 +91,9 @@ export const courseCatalog: Course[] = [
     duration: "4–5 Weeks",
     description:
       "Develop social media strategies, create engaging content and manage paid campaigns across major platforms.",
-    price: "Enquire for Fees",
+    price: programFees.smm.base,
+    priceNote: programFees.smm.note,
+    priceCaption: programFees.smm.caption,
     highlights: [
       { label: "Facebook & Instagram Marketing" },
       { label: "Meta Ads & Audience Targeting" },
@@ -95,7 +102,7 @@ export const courseCatalog: Course[] = [
       { label: "Live Campaigns & Performance Analytics" },
     ],
     href: smmCourseHref,
-    tone: "blush",
+    tone: "warm",
     mark: "smm",
   },
   {
@@ -110,7 +117,9 @@ export const courseCatalog: Course[] = [
     duration: "30 Hours",
     description:
       "Build foundational data analysis skills using Python and Excel, from data cleaning to visualization and interpretation.",
-    price: "Enquire for Fees",
+    price: programFees.data.base,
+    priceNote: programFees.data.note,
+    priceCaption: programFees.data.caption,
     highlights: [
       { label: "Excel for Data Analysis" },
       { label: "Python Fundamentals & Jupyter" },
@@ -119,17 +128,17 @@ export const courseCatalog: Course[] = [
       { label: "Data Visualization & Project Assessment" },
     ],
     href: dataCourseHref,
-    tone: "slate",
+    tone: "white",
     mark: "data",
   },
 ]
 
 export const courseTones = {
-  magenta: {
-    rail: "bg-eduvert-tint-magenta",
-    open: "border-[#ebcfe3] bg-eduvert-tint-magenta",
-    rule: "border-[#ebcfe3]",
-    fill: "bg-[#ebcfe3]",
+  "soft-blue": {
+    rail: "bg-eduvert-tint-soft-blue",
+    open: "border-eduvert-border-subtle bg-eduvert-tint-soft-blue",
+    rule: "border-eduvert-border-subtle",
+    fill: "bg-eduvert-border-subtle",
   },
   blue: {
     rail: "bg-eduvert-tint-blue",
@@ -143,15 +152,15 @@ export const courseTones = {
     rule: "border-eduvert-border-subtle",
     fill: "bg-eduvert-border-subtle",
   },
-  blush: {
-    rail: "bg-[#fcf0f8]",
-    open: "border-eduvert-border-subtle bg-[#fcf0f8]",
+  warm: {
+    rail: "bg-eduvert-canvas-warm",
+    open: "border-eduvert-border-subtle bg-eduvert-canvas-warm",
     rule: "border-eduvert-border-subtle",
     fill: "bg-eduvert-border-subtle",
   },
-  slate: {
-    rail: "bg-[#f1f4f8]",
-    open: "border-eduvert-border-subtle bg-[#f1f4f8]",
+  white: {
+    rail: "bg-eduvert-surface-white",
+    open: "border-eduvert-border-subtle bg-eduvert-surface-white",
     rule: "border-eduvert-border-subtle",
     fill: "bg-eduvert-border-subtle",
   },

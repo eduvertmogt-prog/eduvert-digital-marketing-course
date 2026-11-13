@@ -1,4 +1,5 @@
 import { CareerPreparation } from "@/components/career-preparation"
+import { WallOfWins } from "@/components/wall-of-wins"
 import { CourseFaq } from "@/components/course-faq"
 import { ExploreCourses } from "@/components/explore-courses"
 import { SiteHeader } from "@/components/site-header"
@@ -22,6 +23,7 @@ export default function Home() {
         <LearningBeyond />
         <WhatYouLearn />
         <StudentReviews />
+        <WallOfWins />
         <CareerPreparation />
         <LearningOptions />
         <CourseFaq />

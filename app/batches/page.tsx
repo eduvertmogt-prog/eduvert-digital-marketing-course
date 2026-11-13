@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "Batches · EduVert",
-  description: "Published weekday and weekend timings for the EduVert Professional Digital Marketing Program. Confirm current availability with the team.",
+  description: "Published weekday and weekend timings for the EduVert Professional Digital Marketing Program with AI. Confirm current availability with the team.",
 }
 
 export default function BatchesRoute() {

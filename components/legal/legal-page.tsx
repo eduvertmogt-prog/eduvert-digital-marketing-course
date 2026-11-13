@@ -5,7 +5,7 @@ export function LegalPage({ document }: LegalPageProps) {
     <article className="bg-eduvert-canvas-warm">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <header className="max-w-[860px]">
-          <h1 className="text-[32px] leading-[38px] font-eduvert-700 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:text-[46px] min-[1100px]:leading-[52px] min-[1440px]:text-[54px] min-[1440px]:leading-[60px]">
+          <h1 className="eduvert-h1 text-eduvert-text-primary">
             {document.title}
           </h1>
         </header>
@@ -23,7 +23,7 @@ function LegalBlockView({ block }: { block: LegalBlock }) {
   switch (block.type) {
     case "paragraph":
       return (
-        <p className={block.highlight ? "rounded-eduvert-12 bg-eduvert-tint-magenta px-4 py-3 text-[18px] leading-[30px] font-eduvert-700 text-eduvert-action-primary" : "text-[18px] leading-[30px] text-eduvert-text-primary"}>
+        <p className={block.highlight ? "rounded-eduvert-12 bg-eduvert-tint-soft-blue px-4 py-3 eduvert-body-large font-eduvert-700 text-eduvert-action-primary" : "eduvert-body-large text-eduvert-text-primary"}>
           {block.inlines.map((inline, index) => <InlineView key={`${inline.type}-${index}`} inline={inline} />)}
         </p>
       )
@@ -42,13 +42,13 @@ function LegalHeadingView({ heading }: { heading: LegalHeading }) {
   switch (heading.level) {
     case 2:
       return (
-        <h2 id={heading.id} className="scroll-mt-28 pt-4 text-[28px] leading-9 font-eduvert-700 tracking-[-0.02em] text-eduvert-text-primary min-[1100px]:text-[34px] min-[1100px]:leading-[42px]">
+        <h2 id={heading.id} className="scroll-mt-28 pt-4 eduvert-h2 tracking-[-0.02em] text-eduvert-text-primary">
           {heading.text}
         </h2>
       )
     case 3:
       return (
-        <h3 id={heading.id} className="scroll-mt-28 pt-2 text-[20px] leading-7 font-eduvert-700 text-eduvert-text-primary min-[1100px]:text-[22px]">
+        <h3 id={heading.id} className="scroll-mt-28 pt-2 eduvert-h3 text-eduvert-text-primary">
           {heading.text}
         </h3>
       )
@@ -63,7 +63,7 @@ function LegalListView({ block }: { block: Extract<LegalBlock, { type: "list" }>
   const ListTag = block.ordered ? "ol" : "ul"
   const marker = block.ordered ? "list-decimal" : "list-disc"
   return (
-    <ListTag className={`${marker} space-y-2 pl-6 text-[18px] leading-[30px] text-eduvert-text-primary`}>
+    <ListTag className={`${marker} space-y-2 pl-6 eduvert-body-large text-eduvert-text-primary`}>
       {block.items.map((item) => (
         <li key={listItemKey(item)}>{typeof item === "string" ? item : item.map((inline, index) => <InlineView key={`${inline.type}-${index}`} inline={inline} />)}</li>
       ))}

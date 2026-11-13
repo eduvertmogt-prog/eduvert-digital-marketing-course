@@ -5,6 +5,8 @@
  * Internal review notes stay out of this file so they cannot render on the site.
  */
 
+import { programFees } from "@/components/program-fees"
+
 export type CourseHeroVisual =
   | "learning-studio"
   | "search-workspace"
@@ -58,8 +60,8 @@ export const courses: Course[] = [
     description:
       "Learn digital marketing through hands-on campaigns, analytics, practical assignments, and live projects covering social media, paid search, SEO, email, and mobile marketing.",
     heroVisual: "learning-studio",
-    duration: "120+ hours",
-    price: "₹44,000 + 18% GST",
+    duration: "4 months · 120+ hours",
+    price: programFees.flagship.detail,
     learningMode: "Classroom and live online options",
     highlights: [
       "Hands-on live campaigns and projects",
@@ -138,8 +140,8 @@ export const courses: Course[] = [
           "The institute advertises resume support, mock interviews, and job referrals. Placement assistance is not a job guarantee.",
       },
       {
-        question: "How can I check fees and batches?",
-        answer: "Contact EduVert to confirm the current fee, applicable taxes, batch schedule, and enrollment details.",
+        question: "What is the fee, and is EMI available?",
+        answer: programFees.flagship.detail,
       },
     ],
     ctaLabel: "Book a Free Demo",
@@ -153,8 +155,8 @@ export const courses: Course[] = [
     description:
       "Learn keyword research, on-page and off-page optimization, technical SEO, website audits, local SEO, and search performance analysis through practical training.",
     heroVisual: "search-workspace",
-    duration: null,
-    price: null,
+    duration: "4–5 Weeks",
+    price: programFees.seo.detail,
     learningMode: null,
     highlights: [
       "Keyword and competitor research",
@@ -207,6 +209,10 @@ export const courses: Course[] = [
         question: "Will I receive a certificate?",
         answer: "EduVert states that its Advanced SEO Certification Program provides a certificate upon successful completion.",
       },
+      {
+        question: "What is the fee?",
+        answer: programFees.seo.detail,
+      },
     ],
     ctaLabel: "Enquire About SEO",
   },
@@ -219,8 +225,8 @@ export const courses: Course[] = [
     description:
       "Learn to create and optimize paid search campaigns using keyword research, targeting, bid management, testing, conversion tracking, and performance reporting.",
     heroVisual: "paid-campaign-studio",
-    duration: "Typically 4–6 weeks; varies by batch",
-    price: null,
+    duration: "4–5 Weeks",
+    price: programFees.sem.detail,
     learningMode: null,
     highlights: [
       "Google Ads and paid search fundamentals",
@@ -261,7 +267,7 @@ export const courses: Course[] = [
       },
       {
         question: "How long does the course usually take?",
-        answer: "The published FAQ says typically 4–6 weeks, depending on the batch and depth of content.",
+        answer: "The course runs for 4–5 weeks.",
       },
       {
         question: "What practical skills will I learn?",
@@ -270,6 +276,10 @@ export const courses: Course[] = [
       {
         question: "Does it include practical projects?",
         answer: "Yes. EduVert states that its SEM courses include live projects and case studies.",
+      },
+      {
+        question: "What is the fee?",
+        answer: programFees.sem.detail,
       },
     ],
     ctaLabel: "Enquire About SEM",
@@ -283,8 +293,8 @@ export const courses: Course[] = [
     description:
       "Learn social media strategy, content planning, audience targeting, paid social advertising, engagement techniques, and performance measurement.",
     heroVisual: "social-content-studio",
-    duration: null,
-    price: null,
+    duration: "4–5 Weeks",
+    price: programFees.smm.detail,
     learningMode: null,
     highlights: [
       "Facebook and Instagram marketing",
@@ -335,6 +345,10 @@ export const courses: Course[] = [
         question: "Does the course include certification?",
         answer: "EduVert describes a social media marketing certification on its course page; confirm the current issuing details with the team.",
       },
+      {
+        question: "What is the fee?",
+        answer: programFees.smm.detail,
+      },
     ],
     ctaLabel: "Enquire About SMM",
   },
@@ -347,8 +361,8 @@ export const courses: Course[] = [
     description:
       "Develop foundational data analysis skills using Python and Excel, from understanding datasets and cleaning information to visualization and basic statistical interpretation.",
     heroVisual: "data-analysis-studio",
-    duration: "30 hours of topics",
-    price: null,
+    duration: "30 Hours",
+    price: programFees.data.detail,
     learningMode: null,
     highlights: [
       "Excel for data analysis",
@@ -404,7 +418,11 @@ export const courses: Course[] = [
       { question: "Is there a project?", answer: "Yes. The published syllabus includes an assignment/project assessment." },
       {
         question: "How long is the course?",
-        answer: "The published syllabus is labeled 'Topics Covered in 30 Hours'. Confirm the current timetable and total duration with EduVert.",
+        answer: "The course covers 30 hours. Ask EduVert for the current timetable.",
+      },
+      {
+        question: "What is the fee?",
+        answer: programFees.data.detail,
       },
     ],
     ctaLabel: "Enquire About Data Analytics",

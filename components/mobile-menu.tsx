@@ -38,7 +38,7 @@ export function MobileMenu() {
               <li key={item.href} className="border-b border-eduvert-border-subtle last:border-b-0">
                 <a
                   href={item.href}
-                  className="block py-3 text-[15px] leading-[21px] font-eduvert-500 text-eduvert-text-primary"
+                  className="block py-3 eduvert-body font-eduvert-500 text-eduvert-text-primary"
                   onClick={closeMenu}
                 >
                   {item.label}

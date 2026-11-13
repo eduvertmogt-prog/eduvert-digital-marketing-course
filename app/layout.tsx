@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
+import { DemoDialogProvider } from "@/components/demo-dialog"
 import "./globals.css"
 
 const dmSans = DM_Sans({
@@ -18,7 +19,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={dmSans.variable}>
-      <body className={`${dmSans.className} font-eduvert`}>{children}</body>
+      <body className="font-eduvert">
+        <DemoDialogProvider>{children}</DemoDialogProvider>
+      </body>
     </html>
   )
 }

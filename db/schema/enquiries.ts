@@ -28,6 +28,13 @@ export const enquiries = pgTable(
     subject: text("subject"),
     /** The visitor's message, if they wrote one. */
     message: text("message"),
+    /**
+     * Preferred callback window from the demo dialog
+     * ("morning" | "afternoon" | "evening"). Null = anytime / not asked.
+     * Fixed chips in the UI (not free text) so the admin dashboard can
+     * filter on this column without normalizing ("after 5", "evening pls").
+     */
+    preferredTime: text("preferred_time"),
     /** Site path the enquiry originated from, e.g. "/contact". */
     originPage: text("origin_page"),
     /** Form/CTA identifier + version, e.g. "contact-form v1". */

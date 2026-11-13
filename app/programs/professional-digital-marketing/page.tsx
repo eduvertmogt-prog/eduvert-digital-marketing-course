@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import { FlagshipStickyDemo } from "@/components/programs/flagship-booking"
+import { FlagshipComparison } from "@/components/programs/flagship-comparison"
 import { PageFaq } from "@/components/programs/page-faq"
 import { PracticalLearning } from "@/components/programs/practical-learning"
 import { ProgramBatches } from "@/components/programs/program-batches"
@@ -10,8 +12,8 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
-  title: "Professional Digital Marketing Program · EduVert",
-  description: "Plan campaigns, measure what works, and build a portfolio through hands-on assignments, live projects, and a capstone.",
+  title: "Professional Digital Marketing Program with AI · EduVert",
+  description: "Learn digital marketing with AI in four months. Explore seven modules, live campaigns, a capstone, certification, and placement support in Navi Mumbai or live online.",
 }
 
 export default function ProfessionalDigitalMarketingPage() {
@@ -22,16 +24,25 @@ export default function ProfessionalDigitalMarketingPage() {
         <ProgramHero />
         <PracticalLearning />
         <ProgramCurriculum />
-        <ProgramBatches />
+        <FlagshipComparison />
         <ProgramCareer />
         <PageFaq
           id="flagship-questions"
           headingId="flagship-questions-heading"
-          eyebrow="COMMON QUESTIONS"
           title="Program FAQs"
           questions={flagshipQuestions}
+          groupHeadings={{
+            beginner: "Who the program is for",
+            included: "Course work and certification",
+            "career-support": "Career support",
+            "live-online": "Class formats and fees",
+          }}
         />
-        <EnrolmentBand />
+        <div id="flagship-enrolment">
+          <ProgramBatches />
+          <EnrolmentBand />
+        </div>
+        <FlagshipStickyDemo />
       </main>
       <SiteFooter />
     </>

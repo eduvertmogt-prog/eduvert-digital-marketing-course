@@ -31,7 +31,7 @@ export function ArticleContents({ headings }: ArticleContentsProps) {
     <nav aria-label="On this page" className="min-[1100px]:sticky min-[1100px]:top-24">
       <button
         type="button"
-        className="flex w-full items-center justify-between text-left text-[17px] leading-6 font-eduvert-700 text-eduvert-text-primary min-[1100px]:hidden"
+        className="flex w-full items-center justify-between text-left eduvert-body-large font-eduvert-700 text-eduvert-text-primary min-[1100px]:hidden"
         aria-expanded={isOpen}
         aria-controls={contentsId}
         onClick={() => setIsOpen((current) => !current)}
@@ -39,7 +39,7 @@ export function ArticleContents({ headings }: ArticleContentsProps) {
         On this page
         <span aria-hidden="true" className="text-eduvert-action-primary">{isOpen ? "–" : "+"}</span>
       </button>
-      <p className="hidden text-[18px] leading-6 font-eduvert-700 text-eduvert-text-primary min-[1100px]:block">On this page</p>
+      <p className="hidden eduvert-body-large font-eduvert-700 text-eduvert-text-primary min-[1100px]:block">On this page</p>
       <ol id={contentsId} className={`mt-4 flex flex-col gap-3 ${isOpen ? "" : "hidden"} min-[1100px]:flex`}>
         {headings.map((heading) => {
           const isActive = heading.id === activeId
@@ -48,7 +48,7 @@ export function ArticleContents({ headings }: ArticleContentsProps) {
               <a
                 href={`#${heading.id}`}
                 aria-current={isActive ? "location" : undefined}
-                className={`block text-[15px] leading-[22px] ${isActive ? "font-eduvert-700 text-eduvert-action-primary" : "font-eduvert-500 text-eduvert-text-secondary hover:text-eduvert-text-primary"}`}
+                className={`block eduvert-body ${isActive ? "font-eduvert-700 text-eduvert-action-primary" : "font-eduvert-500 text-eduvert-text-secondary hover:text-eduvert-text-primary"}`}
               >
                 {heading.text}
               </a>
