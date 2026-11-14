@@ -40,13 +40,17 @@ export function WhyEduvert() {
 function LearnByDoing() {
   return (
     <article className="flex w-full flex-col overflow-hidden rounded-eduvert-16 bg-eduvert-surface-white min-[1100px]:h-[444px] min-[1100px]:min-w-0 min-[1100px]:flex-1 min-[1440px]:w-[612px] min-[1440px]:shrink-0 min-[1440px]:flex-none">
-      <div className="relative h-[174px] shrink-0 min-[1100px]:h-[310px]">
+      <div className="relative aspect-[2/1] max-h-[174px] shrink-0 min-[1100px]:aspect-auto min-[1100px]:h-[310px] min-[1100px]:max-h-none">
         <img
-          src="/images/why-learn-by-doing.jpg"
-          alt="Three students gathered around a laptop while one points at the screen"
-          width={1536}
-          height={1024}
-          className="absolute inset-0 h-full w-full object-cover object-[center_22%] min-[1100px]:object-[center_18%]"
+          src="/images/seawoods/classroom-home-1440.webp"
+          srcSet="/images/seawoods/classroom-home-768.webp 768w, /images/seawoods/classroom-home-1440.webp 1440w"
+          sizes="(min-width: 1440px) 612px, (min-width: 1100px) calc(54vw - 75px), calc(100vw - 48px)"
+          alt="Rows of desks facing the EduVert display in the Seawoods classroom"
+          width={1440}
+          height={720}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-[60%_36%]"
         />
       </div>
       <div className="relative flex min-h-[96px] shrink-0 flex-col gap-1 overflow-hidden px-3.5 py-3 min-[1100px]:h-[134px] min-[1100px]:gap-1.5 min-[1100px]:px-6 min-[1100px]:py-5">
