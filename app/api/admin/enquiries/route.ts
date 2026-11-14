@@ -1,3 +1,6 @@
+import { batchConflict } from "@/db/admin-batches"
+import { getAdmissionsReport } from "@/db/admin-reporting"
+import { reportPeriods, type ReportPeriod, type ReportScope } from "@/components/admin/reporting-model"
 import { getAdminIdentity } from "@/app/admin/access"
 import { createDb, resolveConnectionString } from "@/db/client"
 import { getEnquiry, listEnquiries, updateEnquiry } from "@/db/admin-enquiries"
@@ -22,9 +25,22 @@ export async function GET(request: Request) {
   const requested = params.get("view") ?? "active"
   const view: View = Object.hasOwn(viewLabels, requested) ? requested as View : "active"
   const page = Math.min(10_000, Math.max(0, Math.floor(Number(params.get("page")) || 0)))
+  const rawPeriod = params.get("period") ?? "30"
+  if (!Object.hasOwn(reportPeriods, rawPeriod)) return respond({ error: "Invalid reporting period." }, 400)
+  const period = rawPeriod as ReportPeriod
+  const dimension = params.get("dimension")
+  const key = params.get("key")
+  let scope: ReportScope | undefined
+  if (dimension !== null || key !== null) {
+    if ((dimension !== "course" && dimension !== "source") || key === null || key.length > 200) {
+      return respond({ error: "Invalid report filter." }, 400)
+    }
+    scope = { period, dimension, key }
+  }
   try {
     const db = createDb(resolveConnectionString())
-    if (!id) return respond(await listEnquiries(db, user, view, params.get("q")?.trim().slice(0, 120) ?? "", page))
+    if (params.get("report") === "1") return respond(await getAdmissionsReport(db, period))
+    if (!id) return respond(await listEnquiries(db, user, view, params.get("q")?.trim().slice(0, 120) ?? "", page, scope))
     const detail = await getEnquiry(db, id)
     return detail ? respond(detail) : respond({ error: "Enquiry not found." }, 404)
   } catch {
@@ -51,7 +67,9 @@ export async function PATCH(request: Request) {
       return respond({ error: "This enquiry changed. Reopen it to load the latest details." }, 409)
     }
     return respond(await getEnquiry(db, id))
-  } catch {
+  } catch (error) {
+    const conflict = batchConflict(error)
+    if (conflict) return respond({ error: conflict }, 409)
     return respond({ error: "Unable to confirm the save. Reopen the enquiry to check the latest details." }, 500)
   }
 }

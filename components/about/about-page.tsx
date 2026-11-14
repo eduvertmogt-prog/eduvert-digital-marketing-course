@@ -29,18 +29,15 @@ function Hero() {
             Explore Our Courses
           </a>
         </div>
-        <figure className="relative overflow-hidden rounded-eduvert-16">
-          <img
-            src="/images/why-learn-by-doing.jpg"
-            alt="Students working together around a laptop"
-            width={1536}
-            height={1024}
-            className="h-[240px] w-full object-cover object-[center_22%] min-[1100px]:h-[320px]"
-          />
-          <figcaption className="absolute right-3 bottom-3 flex h-[26px] items-center rounded-eduvert-8 bg-eduvert-canvas-warm px-3 eduvert-support font-eduvert-600 text-eduvert-text-secondary">
-            Concept imagery
-          </figcaption>
-        </figure>
+        <img
+          src="/images/seawoods/reception-1440.webp"
+          srcSet="/images/seawoods/reception-768.webp 768w, /images/seawoods/reception-1440.webp 1440w"
+          sizes="(min-width: 1100px) 480px, calc(100vw - 48px)"
+          alt="EduVert’s Seawoods reception with a gold wall sign and a colorful front desk"
+          width={1440}
+          height={810}
+          className="aspect-[8/5] w-full rounded-eduvert-16 object-cover saturate-[0.90] min-[1100px]:aspect-[3/2]"
+        />
       </div>
     </section>
   )

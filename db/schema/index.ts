@@ -4,3 +4,7 @@ export * from "@/db/schema/enquiries"
 export * from "@/db/schema/enquiry-course-interests"
 export * from "@/db/schema/follow-ups"
 export * from "@/db/schema/relations"
+export * from "@/db/schema/batches"
+export * from "@/db/schema/fees"
+
+export * from "@/db/schema/admin-auth"

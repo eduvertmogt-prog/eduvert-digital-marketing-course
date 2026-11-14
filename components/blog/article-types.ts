@@ -57,12 +57,13 @@ export interface RelatedArticle {
   publishedOn: string
   summary: string
   mark: ArticleMark
+  featuredImage?: ArticleImage | null
 }
 
 export interface ArticleRecord extends RelatedArticle {
   blocks: ArticleBlock[]
   hero: ArticleImage | null
-  featuredImage: ArticleImage
+  featuredImage: ArticleImage | null
   relatedSlugs: string[]
 }
 

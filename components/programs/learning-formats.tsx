@@ -24,7 +24,30 @@ export function LearningFormats() {
                 </div>
               ))}
             </div>
-            <img src="/images/program-workspace.png" alt="Concept imagery" width={1951} height={806} className="h-[220px] w-full rounded-eduvert-16 object-cover min-[1100px]:h-[240px] min-[1100px]:w-[46%] min-[1100px]:max-w-[580px] min-[1100px]:shrink-0" />
+            <div className="grid w-full gap-3 min-[1100px]:w-[46%] min-[1100px]:shrink-0">
+              <img
+                src="/images/seawoods/classroom-screen-1440.webp"
+                srcSet="/images/seawoods/classroom-screen-768.webp 768w, /images/seawoods/classroom-screen-1440.webp 1440w"
+                sizes="(min-width: 1440px) 552px, (min-width: 1100px) calc(46vw - 37px), calc(100vw - 48px)"
+                alt="Training desks facing the EduVert display in the Seawoods classroom"
+                width={1440}
+                height={810}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[8/5] w-full rounded-eduvert-16 object-cover object-[60%_center] brightness-[1.07] contrast-[0.96] saturate-[0.92]"
+              />
+              <img
+                src="/images/seawoods/classroom-aisle-1440.webp"
+                srcSet="/images/seawoods/classroom-aisle-768.webp 768w, /images/seawoods/classroom-aisle-1440.webp 1440w"
+                sizes="(min-width: 1440px) 552px, (min-width: 1100px) calc(46vw - 37px), calc(100vw - 48px)"
+                alt="Classroom aisle between rows of desks leading to the Create Innovate wall"
+                width={1440}
+                height={810}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[2/1] w-full rounded-eduvert-16 object-cover object-[center_72%] brightness-[1.06] contrast-[0.95] saturate-[0.94] min-[1100px]:aspect-[5/2]"
+              />
+            </div>
           </div>
         </div>
       </section>

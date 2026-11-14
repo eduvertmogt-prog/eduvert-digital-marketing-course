@@ -38,3 +38,20 @@ If the migration fails, see [the database guide](docs/DATABASE.md) before deploy
 
 Open the Worker URL reported by the CLI and verify the homepage, a course page, and a test demo enquiry. For later code-only deployments, run `pnpm run deploy`; the existing Worker secret remains in place.
 
+## Admissions dashboard
+
+Open `/admin` and sign in with a staff username and password. All Admissions APIs require an active session. You can keep an existing Cloudflare Access policy as an additional gate.
+
+Before deploying the login update, apply the migration and, if you have no owner yet, provision the first one. Confirm that `.env` points to the database used by the Worker.
+
+```sh
+(unset DATABASE_URL && node --env-file=.env --run db:migrate) &&
+  (unset DATABASE_URL && node --env-file=.env scripts/create-admin-owner.mjs)
+```
+
+The bootstrap command prints the temporary password once. The owner must replace it on first sign-in, then can create or remove staff logins from **Staff accounts**.
+
+Apply the pending database migrations before deploying the Batches workspace. In **Batches**, create a batch for a course, set its dates and capacity, and open its roster. In the **Enquiries CRM**, open an enquiry to assign an enrolled learner a seat or add a learner to a waitlist. Promote the first learner from the roster after their enquiry is marked enrolled and a seat is free. The enquiry history records each placement change. Batch schedules here are internal to Admissions.
+
+Apply the fee tracking migration before deploying **Fees and payments**. Open an enrolled enquiry, select the course, and save the student's agreed fee including GST. Record each deposit or instalment once received. The ledger is shared by the student's enquiries for that course. Void an incorrect entry with a reason to restore the balance while keeping the original entry in the history.
+

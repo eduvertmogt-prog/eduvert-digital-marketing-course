@@ -1,32 +1,47 @@
-import { createRemoteJWKSet, jwtVerify } from "jose"
+import { createHash, randomBytes } from "node:crypto"
+import { and, eq, gt, sql } from "drizzle-orm"
+import { createDb, resolveConnectionString, type Db } from "@/db/client"
+import { adminAccounts, adminSessions } from "@/db/schema/admin-auth"
 
-const accessKeys = new Map<string, ReturnType<typeof createRemoteJWKSet>>()
+const cookieName = "eduvert_admin_session"
+const sessionSeconds = 8 * 60 * 60
+const digest = (value: string) => createHash("sha256").update(value).digest("hex")
+export const adminDb = () => createDb(resolveConnectionString())
 
-export async function getAdminIdentity(headers: Headers): Promise<string | null> {
-  const issuer = process.env.ADMIN_ACCESS_ISSUER?.trim().replace(/\/$/, "")
-  const audience = process.env.ADMIN_ACCESS_AUDIENCE?.trim()
-  const token = headers.get("cf-access-jwt-assertion")
+export function sessionHash(headers: Headers) {
+  const token = headers.get("cookie")?.match(/(?:^|;\s*)eduvert_admin_session=([\w-]{43})(?:;|$)/)?.[1]
+  return token ? digest(token) : null
+}
 
-  if (!issuer || !/^https:\/\/[a-z0-9-]+\.cloudflareaccess\.com$/i.test(issuer) || !audience || !token) {
-    return null
-  }
+export function sessionCookie(request: Request, token = "") {
+  const local = process.env.NODE_ENV !== "production" && new URL(request.url).origin === "http://localhost:5173"
+  return `${cookieName}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${token ? sessionSeconds : 0}${local ? "" : "; Secure"}`
+}
 
-  try {
-    let jwks = accessKeys.get(issuer)
-    if (!jwks) {
-      jwks = createRemoteJWKSet(new URL("/cdn-cgi/access/certs", issuer))
-      accessKeys.set(issuer, jwks)
-    }
-    const { payload } = await jwtVerify(token, jwks, {
-      issuer,
-      audience,
-      algorithms: ["RS256"],
-      requiredClaims: ["exp", "sub", "email"],
-    })
-    return typeof payload.email === "string" && payload.email.includes("@")
-      ? payload.email.toLowerCase()
-      : null
-  } catch {
-    return null
-  }
+export async function getAdminSession(headers: Headers, db?: Db) {
+  const hash = sessionHash(headers)
+  if (!hash) return null
+  const [session] = await (db ?? adminDb()).select({
+    id: adminAccounts.id, username: adminAccounts.username, owner: adminAccounts.owner,
+    needsPasswordChange: adminAccounts.needsPasswordChange,
+  }).from(adminSessions).innerJoin(adminAccounts, and(eq(adminAccounts.id, adminSessions.accountId), eq(adminAccounts.credentialVersion, adminSessions.credentialVersion)))
+    .where(and(eq(adminSessions.tokenHash, hash), gt(adminSessions.expiresAt, sql`now()`))).limit(1)
+  return session ?? null
+}
+
+export async function getAdminIdentity(headers: Headers) {
+  const session = await getAdminSession(headers)
+  return session && !session.needsPasswordChange ? session.username : null
+}
+
+export async function createAdminSession(db: Db, accountId: string, verifiedHash: string) {
+  const token = randomBytes(32).toString("base64url")
+  const result = await db.execute(sql`
+    WITH cleanup AS (DELETE FROM admin_sessions WHERE expires_at <= now())
+    INSERT INTO admin_sessions (token_hash, account_id, credential_version, expires_at)
+    SELECT ${digest(token)}, id, credential_version, now() + interval '8 hours' FROM admin_accounts
+    WHERE id = ${accountId} AND password_hash = ${verifiedHash} FOR UPDATE
+    RETURNING token_hash
+  `)
+  return result.rows.length ? token : null
 }

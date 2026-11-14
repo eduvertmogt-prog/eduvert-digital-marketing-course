@@ -15,7 +15,7 @@ export function ExploreCourses() {
           </div>
           <p className="eduvert-support font-eduvert-500 text-eduvert-text-secondary">
             <span className="min-[1100px]:hidden">Tap a course to expand it</span>
-            <span className="hidden min-[1100px]:inline">Select a course to expand it. One course opens at a time.</span>
+
           </p>
         </div>
         <CourseList />

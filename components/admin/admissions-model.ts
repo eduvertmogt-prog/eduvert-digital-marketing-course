@@ -41,6 +41,7 @@ export interface Enquiry {
   type: string
   status: Status
   courses: string[]
+  courseSlugs: string[]
   originPage: string | null
   preferredTime: string | null
   assignedTo: string | null

@@ -67,6 +67,8 @@ export function editorialFlags(title: string, publishedOn: string, text: string)
   const years = normalizedTitle.match(/\b20(?:1\d|2[0-5])\b/g)
   if (years) flags.push(`Title cites ${[...new Set(years)].join(", ")}`)
   if (/\bcovid(?:-19)?\b/.test(normalizedTitle) || /\bcovid(?:-19)?\b/.test(normalizedText)) flags.push("Mentions COVID-19")
+  const bodyYears = normalizedText.match(/\b20(?:1\d|2[0-4])\b/g)
+  if (bodyYears) flags.push(`Body cites ${[...new Set(bodyYears)].join(", ")}, which may be outdated`)
   if (/\b(guaranteed rankings?|skyrocket|100%|unstoppable|overnight success|get rich|instant results|secret to)\b/.test(`${normalizedTitle} ${normalizedText}`)) {
     flags.push("Contains an unsupported absolute claim")
   }

@@ -1,17 +1,17 @@
 {
   "dryRun": false,
   "apply": true,
-  "limit": 3,
-  "all": false,
+  "limit": null,
+  "all": true,
   "totals": {
     "totalFetched": 213,
     "alreadyExisting": 21,
-    "eligible": 98,
+    "eligible": 78,
     "excludedStudyAbroad": 36,
     "duplicates": 2,
     "needsReview": 56,
-    "imported": 3,
-    "failed": 0,
+    "imported": 78,
+    "failed": 20,
     "readyToImport": 0
   },
   "note": "Applied the selected import. Existing handwritten articles were left unchanged.",
@@ -673,7 +673,7 @@
       "slug": "search-ad-copywriting-tricks-that-turn-clicks-into-customers",
       "title": "Search Ad Copywriting Tricks That Turn Clicks into Customers",
       "publishedOn": "2026-02-28",
-      "status": "eligible",
+      "status": "imported",
       "category": "Paid Advertising",
       "wordpressCategories": "Search Engine Marketing",
       "sourceUrl": "https://www.eduvert.co/search-ad-copywriting-tricks-that-turn-clicks-into-customers/",
@@ -689,7 +689,7 @@
       "slug": "strategies-to-improve-google-discover-visibility-after-the-february-2026-update",
       "title": "Strategies to Improve Google Discover Visibility After the February 2026 Update",
       "publishedOn": "2026-02-27",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Google Discover Update",
       "sourceUrl": "https://www.eduvert.co/strategies-to-improve-google-discover-visibility-after-the-february-2026-update/",
@@ -705,7 +705,7 @@
       "slug": "e-commerce-seo-hacks-that-skyrocket-product-page-rankings",
       "title": "E-Commerce SEO Hacks That Skyrocket Product Page Rankings",
       "publishedOn": "2026-02-04",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "E-Commerce SEO",
       "sourceUrl": "https://www.eduvert.co/e-commerce-seo-hacks-that-skyrocket-product-page-rankings/",
@@ -723,7 +723,7 @@
       "slug": "how-to-build-your-first-digital-marketing-portfolio-without-work-experience",
       "title": "How to Build Your First Digital Marketing Portfolio Without Work Experience",
       "publishedOn": "2026-02-04",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Digital Marketing Career",
       "sourceUrl": "https://www.eduvert.co/how-to-build-your-first-digital-marketing-portfolio-without-work-experience/",
@@ -771,7 +771,7 @@
       "slug": "learn-the-secret-to-unstoppable-ad-success-with-google-ads-ai",
       "title": "Learn the Secret to Unstoppable Ad Success with Google Ads AI",
       "publishedOn": "2026-01-15",
-      "status": "eligible",
+      "status": "imported",
       "category": "Paid Advertising",
       "wordpressCategories": "Google Ads AI",
       "sourceUrl": "https://www.eduvert.co/learn-the-secret-to-unstoppable-ad-success-with-google-ads-ai/",
@@ -789,7 +789,7 @@
       "slug": "metas-andromeda-update-explained-why-interest-targeting-is-officially-losing-its-power",
       "title": "Meta’s Andromeda Update Explained: Why Interest Targeting Is Officially Losing Its Power?",
       "publishedOn": "2026-01-12",
-      "status": "eligible",
+      "status": "imported",
       "category": "Paid Advertising",
       "wordpressCategories": "Meta’s Andromeda Update",
       "sourceUrl": "https://www.eduvert.co/metas-andromeda-update-explained-why-interest-targeting-is-officially-losing-its-power/",
@@ -837,7 +837,7 @@
       "slug": "7-powerful-reasons-why-every-working-professional-should-learn-digital-marketing",
       "title": "7 Powerful Reasons Why Every Working Professional Should Learn Digital Marketing",
       "publishedOn": "2026-01-03",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/7-powerful-reasons-why-every-working-professional-should-learn-digital-marketing/",
@@ -869,7 +869,7 @@
       "slug": "simple-steps-to-instantly-boost-your-brand-authority-e-e-a-t-made-easy",
       "title": "Simple Steps to Instantly Boost Your Brand Authority: E-E-A-T Made Easy",
       "publishedOn": "2026-01-03",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/simple-steps-to-instantly-boost-your-brand-authority-e-e-a-t-made-easy/",
@@ -885,7 +885,7 @@
       "slug": "the-3-second-rule-mastering-the-hook-that-stops-the-scroll",
       "title": "The 3-Second Rule “Mastering the Hook That Stops the Scroll”",
       "publishedOn": "2026-01-03",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/the-3-second-rule-mastering-the-hook-that-stops-the-scroll/",
@@ -965,7 +965,7 @@
       "slug": "how-to-use-ugc-user-generated-content-for-social-media-marketing",
       "title": "How to Use UGC (User-Generated Content) for Social Media Marketing",
       "publishedOn": "2025-12-03",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "User-Generated Content",
       "sourceUrl": "https://www.eduvert.co/how-to-use-ugc-user-generated-content-for-social-media-marketing/",
@@ -981,7 +981,7 @@
       "slug": "the-future-of-search-why-aeo-is-the-next-big-thing-in-digital-marketing",
       "title": "The Future of Search Why AEO Is the Next Big Thing in Digital Marketing?",
       "publishedOn": "2025-12-03",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Answer Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/the-future-of-search-why-aeo-is-the-next-big-thing-in-digital-marketing/",
@@ -1013,7 +1013,7 @@
       "slug": "what-is-keyword-cannibalization-and-why-its-killing-your-seo",
       "title": "What is Keyword Cannibalization and Why It’s Killing Your SEO?",
       "publishedOn": "2025-11-07",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Keyword Cannibalization",
       "sourceUrl": "https://www.eduvert.co/what-is-keyword-cannibalization-and-why-its-killing-your-seo/",
@@ -1029,7 +1029,7 @@
       "slug": "how-learning-digital-marketing-can-land-you-a-high-paying-job-in-2026",
       "title": "How Learning Digital Marketing Can Land You a High-Paying Job in 2026",
       "publishedOn": "2025-11-06",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/how-learning-digital-marketing-can-land-you-a-high-paying-job-in-2026/",
@@ -1045,7 +1045,7 @@
       "slug": "everything-you-should-know-about-seo-aeo-and-geo",
       "title": "Everything You Should Know About SEO, AEO and GEO",
       "publishedOn": "2025-10-30",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "SEO, AEO and GEO",
       "sourceUrl": "https://www.eduvert.co/everything-you-should-know-about-seo-aeo-and-geo/",
@@ -1077,7 +1077,7 @@
       "slug": "digital-marketing-a-job-oriented-professional-course-for-fresh-graduates",
       "title": "Digital Marketing – A Job-Oriented Professional Course for Fresh Graduates",
       "publishedOn": "2025-09-29",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/digital-marketing-a-job-oriented-professional-course-for-fresh-graduates/",
@@ -1093,7 +1093,7 @@
       "slug": "how-to-build-a-strong-linkedin-profile-as-a-student-graduate",
       "title": "How to Build a Strong LinkedIn Profile as a Student/Graduate?",
       "publishedOn": "2025-09-29",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "LinkedIn Profile",
       "sourceUrl": "https://www.eduvert.co/how-to-build-a-strong-linkedin-profile-as-a-student-graduate/",
@@ -1109,7 +1109,7 @@
       "slug": "how-to-build-your-personal-brand-online-while-youre-still-learning",
       "title": "How to Build Your Personal Brand Online While You’re Still Learning",
       "publishedOn": "2025-09-29",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/how-to-build-your-personal-brand-online-while-youre-still-learning/",
@@ -1125,7 +1125,7 @@
       "slug": "15-hidden-gem-ai-tools-for-creators-in-2025",
       "title": "15 Hidden-Gem AI Tools for Creators in 2025",
       "publishedOn": "2025-09-26",
-      "status": "eligible",
+      "status": "imported",
       "category": "AI & Marketing",
       "wordpressCategories": "AI Tools",
       "sourceUrl": "https://www.eduvert.co/15-hidden-gem-ai-tools-for-creators-in-2025/",
@@ -1143,7 +1143,7 @@
       "slug": "aeo-vs-seo-whats-the-difference-and-why-both-matter",
       "title": "AEO vs SEO: What’s the Difference and Why Both Matter",
       "publishedOn": "2025-08-22",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/aeo-vs-seo-whats-the-difference-and-why-both-matter/",
@@ -1175,7 +1175,7 @@
       "slug": "tracking-engagement-vs-conversions-what-metrics-matter-most-in-social-media-marketing",
       "title": "Tracking Engagement vs Conversions: What Metrics Matter Most in Social Media Marketing?",
       "publishedOn": "2025-08-22",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/tracking-engagement-vs-conversions-what-metrics-matter-most-in-social-media-marketing/",
@@ -1191,7 +1191,7 @@
       "slug": "using-whatsapp-business-for-marketing-a-small-business-success-story",
       "title": "Using WhatsApp Business for Marketing: A Small Business Success Story",
       "publishedOn": "2025-08-21",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/using-whatsapp-business-for-marketing-a-small-business-success-story/",
@@ -1207,7 +1207,7 @@
       "slug": "mastering-local-seo-strategies-for-small-business-clients",
       "title": "Mastering Local SEO: Strategies for Small Business Clients",
       "publishedOn": "2025-08-05",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/mastering-local-seo-strategies-for-small-business-clients/",
@@ -1255,7 +1255,7 @@
       "slug": "ethics-in-ai-marketing-what-you-need-to-know",
       "title": "Ethics in AI Marketing: What You Need to Know?",
       "publishedOn": "2025-07-11",
-      "status": "eligible",
+      "status": "imported",
       "category": "AI & Marketing",
       "wordpressCategories": "Artificial Intelligence (AI)",
       "sourceUrl": "https://www.eduvert.co/ethics-in-ai-marketing-what-you-need-to-know/",
@@ -1271,7 +1271,7 @@
       "slug": "top-ai-tools-every-digital-marketer-should-learn-in-2025",
       "title": "Top AI Tools Every Digital Marketer Should Learn in 2025",
       "publishedOn": "2025-07-11",
-      "status": "eligible",
+      "status": "imported",
       "category": "AI & Marketing",
       "wordpressCategories": "Artificial Intelligence (AI)",
       "sourceUrl": "https://www.eduvert.co/top-ai-tools-every-digital-marketer-should-learn-in-2025/",
@@ -1321,7 +1321,7 @@
       "slug": "common-mistakes-in-performance-max-campaigns-and-how-to-fix-them-for-better-conversions",
       "title": "Common Mistakes in Performance Max Campaigns and How to Fix Them for Better Conversions",
       "publishedOn": "2025-06-24",
-      "status": "eligible",
+      "status": "imported",
       "category": "Paid Advertising",
       "wordpressCategories": "Search Engine Marketing",
       "sourceUrl": "https://www.eduvert.co/common-mistakes-in-performance-max-campaigns-and-how-to-fix-them-for-better-conversions/",
@@ -1337,7 +1337,7 @@
       "slug": "from-keywords-to-conversions-the-power-of-intent-based-keyword-research",
       "title": "From Keywords to Conversions: The Power of Intent-Based Keyword Research",
       "publishedOn": "2025-06-24",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Keyword Research",
       "sourceUrl": "https://www.eduvert.co/from-keywords-to-conversions-the-power-of-intent-based-keyword-research/",
@@ -1353,7 +1353,7 @@
       "slug": "how-smart-keyword-segmentation-boosts-your-organic-search-performance",
       "title": "How Smart Keyword Segmentation Boosts Your Organic Search Performance",
       "publishedOn": "2025-06-24",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/how-smart-keyword-segmentation-boosts-your-organic-search-performance/",
@@ -1387,7 +1387,7 @@
       "slug": "how-freelancers-are-earning-through-digital-marketing",
       "title": "How Freelancers Are Earning Through Digital Marketing?",
       "publishedOn": "2025-06-03",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/how-freelancers-are-earning-through-digital-marketing/",
@@ -1405,7 +1405,7 @@
       "slug": "how-to-optimize-your-google-business-profile-for-local-seo",
       "title": "How to Optimize Your Google Business Profile for Local SEO",
       "publishedOn": "2025-06-03",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/how-to-optimize-your-google-business-profile-for-local-seo/",
@@ -1439,7 +1439,7 @@
       "slug": "best-ai-tools-to-boost-your-social-media-performance",
       "title": "Best AI Tools to Boost Your Social Media Performance",
       "publishedOn": "2025-05-06",
-      "status": "eligible",
+      "status": "imported",
       "category": "AI & Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/best-ai-tools-to-boost-your-social-media-performance/",
@@ -1487,7 +1487,7 @@
       "slug": "step-by-step-guide-to-optimizing-your-search-campaign-for-maximum-results",
       "title": "Step-by-Step Guide to Optimizing Your Search Campaign for Maximum Results",
       "publishedOn": "2025-05-02",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Search Engine Marketing",
       "sourceUrl": "https://www.eduvert.co/step-by-step-guide-to-optimizing-your-search-campaign-for-maximum-results/",
@@ -1503,7 +1503,7 @@
       "slug": "how-can-you-effectively-grow-your-youtube-channel",
       "title": "How Can You Effectively Grow Your YouTube Channel?",
       "publishedOn": "2025-04-30",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/how-can-you-effectively-grow-your-youtube-channel/",
@@ -1519,7 +1519,7 @@
       "slug": "why-digital-marketing-is-a-must-have-skill-in-todays-world",
       "title": "Why Digital Marketing is a Must-Have Skill in Today’s World",
       "publishedOn": "2025-04-30",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/why-digital-marketing-is-a-must-have-skill-in-todays-world/",
@@ -1567,7 +1567,7 @@
       "slug": "google-ads-bidding-strategies-explained-which-one-should-you-use",
       "title": "Google Ads Bidding Strategies Explained: Which One Should You Use?",
       "publishedOn": "2025-04-12",
-      "status": "eligible",
+      "status": "imported",
       "category": "Paid Advertising",
       "wordpressCategories": "Search Engine Marketing",
       "sourceUrl": "https://www.eduvert.co/google-ads-bidding-strategies-explained-which-one-should-you-use/",
@@ -1583,7 +1583,7 @@
       "slug": "how-chatbots-and-conversational-marketing-are-revolutionizing-customer-engagement",
       "title": "How Chatbots and Conversational Marketing Are Revolutionizing Customer Engagement",
       "publishedOn": "2025-04-12",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/how-chatbots-and-conversational-marketing-are-revolutionizing-customer-engagement/",
@@ -1599,7 +1599,7 @@
       "slug": "the-role-of-content-length-in-seo-how-long-should-your-articles-be",
       "title": "The Role of Content-Length in SEO: How Long Should Your Articles Be?",
       "publishedOn": "2025-04-12",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/the-role-of-content-length-in-seo-how-long-should-your-articles-be/",
@@ -1615,7 +1615,7 @@
       "slug": "why-guest-posting-is-still-a-must-have-off-page-seo-strategy",
       "title": "Why Guest Posting Is Still a Must-Have Off-Page SEO Strategy?",
       "publishedOn": "2025-04-12",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/why-guest-posting-is-still-a-must-have-off-page-seo-strategy/",
@@ -1679,7 +1679,7 @@
       "slug": "top-mistakes-to-avoid-when-running-meta-ads-campaigns",
       "title": "Top Mistakes to Avoid When Running Meta Ads Campaigns",
       "publishedOn": "2025-02-22",
-      "status": "eligible",
+      "status": "imported",
       "category": "Paid Advertising",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/top-mistakes-to-avoid-when-running-meta-ads-campaigns/",
@@ -1695,7 +1695,7 @@
       "slug": "10-ways-to-use-google-search-console-to-boost-your-website-traffic",
       "title": "10 Ways to Use Google Search Console to Boost Your Website Traffic",
       "publishedOn": "2025-02-06",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Google Search Console",
       "sourceUrl": "https://www.eduvert.co/10-ways-to-use-google-search-console-to-boost-your-website-traffic/",
@@ -1711,7 +1711,7 @@
       "slug": "how-off-page-submissions-drive-traffic-and-improve-organic-rankings",
       "title": "How Off-Page Submissions Drive Traffic and Improve Organic Rankings",
       "publishedOn": "2025-02-05",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Off-Page SEO Submissions",
       "sourceUrl": "https://www.eduvert.co/how-off-page-submissions-drive-traffic-and-improve-organic-rankings/",
@@ -1727,7 +1727,7 @@
       "slug": "on-page-seo-vs-off-page-seo-understanding-the-difference",
       "title": "On-Page SEO vs. Off-Page SEO: Understanding the Difference",
       "publishedOn": "2025-02-05",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "On-Page SEO vs. Off-Page SEO",
       "sourceUrl": "https://www.eduvert.co/on-page-seo-vs-off-page-seo-understanding-the-difference/",
@@ -1743,7 +1743,7 @@
       "slug": "what-consumers-expect-from-an-ideal-digital-marketer-in-2025",
       "title": "What Consumers Expect from an Ideal Digital Marketer in 2025?",
       "publishedOn": "2025-02-04",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/what-consumers-expect-from-an-ideal-digital-marketer-in-2025/",
@@ -1761,7 +1761,7 @@
       "slug": "ai-and-content-discovery-strategies-for-creators-in-the-age-of-algorithmic-search",
       "title": "AI and Content Discovery: Strategies for Creators in the Age of Algorithmic Search",
       "publishedOn": "2025-01-23",
-      "status": "eligible",
+      "status": "imported",
       "category": "AI & Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/ai-and-content-discovery-strategies-for-creators-in-the-age-of-algorithmic-search/",
@@ -1777,7 +1777,7 @@
       "slug": "email-marketing-for-e-commerce-boosting-sales-and-engagement",
       "title": "Email Marketing for E-commerce: Boosting Sales and Engagement",
       "publishedOn": "2025-01-23",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Email Marketing",
       "sourceUrl": "https://www.eduvert.co/email-marketing-for-e-commerce-boosting-sales-and-engagement/",
@@ -1793,7 +1793,7 @@
       "slug": "social-media-marketing-the-dynamic-trend-that-keeps-evolving",
       "title": "Social Media Marketing: The Dynamic Trend That Keeps Evolving",
       "publishedOn": "2025-01-23",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/social-media-marketing-the-dynamic-trend-that-keeps-evolving/",
@@ -1809,7 +1809,7 @@
       "slug": "the-changing-face-of-seo-whats-new-and-what-still-works",
       "title": "The Changing Face of SEO: What’s New and What Still Works?",
       "publishedOn": "2025-01-23",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/the-changing-face-of-seo-whats-new-and-what-still-works/",
@@ -1825,7 +1825,7 @@
       "slug": "why-every-entrepreneur-needs-digital-marketing-skills-in-2025",
       "title": "Why Every Entrepreneur Needs Digital Marketing Skills in 2025",
       "publishedOn": "2025-01-23",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/why-every-entrepreneur-needs-digital-marketing-skills-in-2025/",
@@ -1843,7 +1843,7 @@
       "slug": "why-social-media-marketing-is-the-new-age-word-of-mouth",
       "title": "Why Social Media Marketing is the New Age Word of Mouth",
       "publishedOn": "2025-01-23",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/why-social-media-marketing-is-the-new-age-word-of-mouth/",
@@ -1861,7 +1861,7 @@
       "slug": "google-november-2024-core-update-what-you-should-know",
       "title": "Google November 2024 Core Update: What You Should Know",
       "publishedOn": "2025-01-22",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/google-november-2024-core-update-what-you-should-know/",
@@ -1879,7 +1879,7 @@
       "slug": "how-to-improve-your-google-ads-quality-score-quickly",
       "title": "How to Improve Your Google Ads Quality Score Quickly",
       "publishedOn": "2025-01-22",
-      "status": "eligible",
+      "status": "imported",
       "category": "Paid Advertising",
       "wordpressCategories": "Search Engine Marketing",
       "sourceUrl": "https://www.eduvert.co/how-to-improve-your-google-ads-quality-score-quickly/",
@@ -1895,7 +1895,7 @@
       "slug": "skills-every-digital-marketer-needs-in-the-age-of-ai",
       "title": "Skills Every Digital Marketer Needs in the Age of AI",
       "publishedOn": "2025-01-22",
-      "status": "eligible",
+      "status": "imported",
       "category": "AI & Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/skills-every-digital-marketer-needs-in-the-age-of-ai/",
@@ -1911,7 +1911,7 @@
       "slug": "seo-in-2025-experts-reveal-key-trends-and-insights",
       "title": "SEO in 2025: Experts Reveal Key Trends and Insights",
       "publishedOn": "2025-01-21",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/seo-in-2025-experts-reveal-key-trends-and-insights/",
@@ -1929,7 +1929,7 @@
       "slug": "the-power-of-headers-in-on-page-seo-how-to-use-h1-h2-and-h3-tags",
       "title": "The Power of Headers in On-Page SEO: How to Use H1, H2, and H3 Tags",
       "publishedOn": "2025-01-21",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Search Engine Optimization",
       "sourceUrl": "https://www.eduvert.co/the-power-of-headers-in-on-page-seo-how-to-use-h1-h2-and-h3-tags/",
@@ -1945,7 +1945,7 @@
       "slug": "what-does-a-digital-marketing-career-look-like-skills-and-opportunities-explained",
       "title": "What Does a Digital Marketing Career Look Like? Skills and Opportunities Explained",
       "publishedOn": "2025-01-11",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/what-does-a-digital-marketing-career-look-like-skills-and-opportunities-explained/",
@@ -1961,7 +1961,7 @@
       "slug": "how-to-create-the-ultimate-social-media-strategy-that-drives-brand-awareness-roi",
       "title": "How to Create the Ultimate Social Media Strategy that Drives Brand Awareness & ROI",
       "publishedOn": "2024-07-27",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course | Digital Marketing Trends | Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/how-to-create-the-ultimate-social-media-strategy-that-drives-brand-awareness-roi/",
@@ -1977,7 +1977,7 @@
       "slug": "the-role-of-ai-in-social-media-marketing",
       "title": "The Role of AI in Social Media Marketing",
       "publishedOn": "2024-07-20",
-      "status": "eligible",
+      "status": "imported",
       "category": "AI & Marketing",
       "wordpressCategories": "AI in Social Media Marketing | Digital Marketing Course | Digital Marketing Trends | Role of Digital Marketing | Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/the-role-of-ai-in-social-media-marketing/",
@@ -1993,7 +1993,7 @@
       "slug": "the-power-of-analytics-understanding-data-in-digital-marketing-course",
       "title": "The Power of Analytics: Understanding Data in Digital Marketing Course",
       "publishedOn": "2024-06-29",
-      "status": "eligible",
+      "status": "imported",
       "category": "Analytics",
       "wordpressCategories": "Alternative Keyword Research SEO | Alternative of Google Analytics | Digital Marketing Career | Digital Marketing Course | Digital Marketing Trends | Role of Digital Marketing | Social Media Marketing | Uncategorized",
       "sourceUrl": "https://www.eduvert.co/the-power-of-analytics-understanding-data-in-digital-marketing-course/",
@@ -2009,7 +2009,7 @@
       "slug": "how-digital-marketing-course-can-help-housewives-and-stay-at-home-moms-to-begin-career",
       "title": "How Digital Marketing Course Can Help Housewives and Stay-at-Home Moms to Begin Career?",
       "publishedOn": "2024-05-25",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course | Digital Marketing Trends | E-Commerce SEO | Email Marketing | SEO Freelancing | Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/how-digital-marketing-course-can-help-housewives-and-stay-at-home-moms-to-begin-career/",
@@ -2025,7 +2025,7 @@
       "slug": "top-10-youtube-channels-every-digital-marketer-should-subscribe-to",
       "title": "Top 10 YouTube Channels Every Digital Marketer Should Subscribe To!",
       "publishedOn": "2024-04-26",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Content Marketing | Digital Marketing Career | Digital Marketing Course | Digital Marketing Trends | Email Marketing | SEO Freelancing | Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/top-10-youtube-channels-every-digital-marketer-should-subscribe-to/",
@@ -2041,7 +2041,7 @@
       "slug": "the-10-powerful-chatgpt-prompts-will-help-you-create-seo-content-faster",
       "title": "The 10 Powerful ChatGPT Prompts Will Help You Create SEO Content Faster",
       "publishedOn": "2024-04-13",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Alternative Keyword Research SEO | Alternative of Google Analytics | Content Marketing | Digital Marketing Career | Digital Marketing Course | Digital Marketing Skills for Students | Digital Marketing Trends | Mistakes of Digital Marketer | Role of Digital Marketing | SEO Freelancing | Uncategorized",
       "sourceUrl": "https://www.eduvert.co/the-10-powerful-chatgpt-prompts-will-help-you-create-seo-content-faster/",
@@ -2057,7 +2057,7 @@
       "slug": "the-value-of-hands-on-learning-exploring-live-projects-in-digital-marketing-courses",
       "title": "The Value of Hands on Learning: Exploring Live Projects in Digital Marketing Courses",
       "publishedOn": "2024-04-02",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course | Digital Marketing Skills for Students | Role of Digital Marketing | SEO Freelancing | Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/the-value-of-hands-on-learning-exploring-live-projects-in-digital-marketing-courses/",
@@ -2073,7 +2073,7 @@
       "slug": "from-beginner-to-expert-the-best-progressive-seo-courses-to-elevate-your-knowledge",
       "title": "­­­­From Beginner to Expert: The Best Progressive SEO Courses to Elevate Your Knowledge",
       "publishedOn": "2024-03-05",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course | Digital Marketing Skills for Students | SEO Freelancing",
       "sourceUrl": "https://www.eduvert.co/from-beginner-to-expert-the-best-progressive-seo-courses-to-elevate-your-knowledge/",
@@ -2089,7 +2089,7 @@
       "slug": "exploring-the-power-of-social-media-marketing-in-the-digital-age",
       "title": "Exploring the Power of Social Media Marketing in the Digital Age",
       "publishedOn": "2024-02-14",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Skills for Students | Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/exploring-the-power-of-social-media-marketing-in-the-digital-age/",
@@ -2105,7 +2105,7 @@
       "slug": "live-projects-and-real-world-experience-institutes-offering-immersion-into-digital-marketing-campaigns",
       "title": "Live Projects and Real-World Experience: Institutes Offering Immersion into Digital Marketing Campaigns",
       "publishedOn": "2024-02-06",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/live-projects-and-real-world-experience-institutes-offering-immersion-into-digital-marketing-campaigns/",
@@ -2121,7 +2121,7 @@
       "slug": "career-development-in-digital-marketing-practical-skills-for-professional-growth-and-success",
       "title": "Career Development in Digital Marketing: Practical Skills for Professional Growth and Success",
       "publishedOn": "2024-01-30",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/career-development-in-digital-marketing-practical-skills-for-professional-growth-and-success/",
@@ -2137,7 +2137,7 @@
       "slug": "how-digital-marketing-classes-can-help-for-your-dream-job",
       "title": "How Digital Marketing Classes Can Help for Your Dream Job",
       "publishedOn": "2024-01-22",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/how-digital-marketing-classes-can-help-for-your-dream-job/",
@@ -2153,7 +2153,7 @@
       "slug": "unlocking-advanced-digital-marketing-courses-dive-into-specialised-training-modules-offered-by-institutes-in-navi-mumbai",
       "title": "Unlocking Advanced Digital Marketing Courses: Dive into Specialised Training Modules offered by Institutes in Navi Mumbai",
       "publishedOn": "2024-01-11",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course | Digital Marketing Skills for Students",
       "sourceUrl": "https://www.eduvert.co/unlocking-advanced-digital-marketing-courses-dive-into-specialised-training-modules-offered-by-institutes-in-navi-mumbai/",
@@ -2169,7 +2169,7 @@
       "slug": "the-importance-of-data-analytics-in-digital-marketing",
       "title": "The Importance of Data Analytics in Digital Marketing",
       "publishedOn": "2024-01-10",
-      "status": "eligible",
+      "status": "imported",
       "category": "Analytics",
       "wordpressCategories": "Digital Marketing Career | Digital Marketing Course | Digital Marketing Skills for Students",
       "sourceUrl": "https://www.eduvert.co/the-importance-of-data-analytics-in-digital-marketing/",
@@ -2363,7 +2363,7 @@
       "slug": "5-best-free-ai-powered-tools-for-beginners-to-boost-your-content-writing-skills",
       "title": "5 Best Free AI Powered Tools for Beginners to Boost your Content Writing Skills",
       "publishedOn": "2023-07-26",
-      "status": "eligible",
+      "status": "failed",
       "category": "AI & Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/5-best-free-ai-powered-tools-for-beginners-to-boost-your-content-writing-skills/",
@@ -2373,7 +2373,13 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched AI & Marketing from the title"
+        "Matched AI & Marketing from the title",
+        "https://www.eduvert.co/wp-content/uploads/2023/07/image-4.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2023/07/image-3.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2023/07/image-2.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2023/07/image-1.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2023/07/image.png: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2453,7 +2459,7 @@
       "slug": "practical-training-vs-theoretical-knowledge-in-digital-marketing-striking-the-right-balance",
       "title": "Practical Training vs. Theoretical Knowledge in Digital Marketing: Striking the Right Balance",
       "publishedOn": "2023-05-30",
-      "status": "eligible",
+      "status": "failed",
       "category": "Digital Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/practical-training-vs-theoretical-knowledge-in-digital-marketing-striking-the-right-balance/",
@@ -2463,7 +2469,9 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "https://www.eduvert.co/wp-content/uploads/2023/05/digital-marketing-gb3fb19f2e_1280-1024x682.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2579,7 +2587,7 @@
       "slug": "skills-to-build-a-successful-career-in-digital-marketing",
       "title": "Skills To Build A Successful Career In Digital Marketing",
       "publishedOn": "2023-01-17",
-      "status": "eligible",
+      "status": "failed",
       "category": "Career & Skills",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/skills-to-build-a-successful-career-in-digital-marketing/",
@@ -2589,7 +2597,9 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched Career & Skills from the title"
+        "Matched Career & Skills from the title",
+        "https://www.eduvert.co/wp-content/uploads/2023/01/pexels-dominika-roseclay-905163-1-scaled.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2597,7 +2607,7 @@
       "slug": "top-5-careers-in-digital-marketing-in-2025",
       "title": "TOP 5 CAREERS IN DIGITAL MARKETING IN 2025",
       "publishedOn": "2023-01-17",
-      "status": "eligible",
+      "status": "failed",
       "category": "Career & Skills",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/top-5-careers-in-digital-marketing-in-2025/",
@@ -2608,7 +2618,9 @@
         "Title cites 2025"
       ],
       "reasons": [
-        "Matched Career & Skills from the title"
+        "Matched Career & Skills from the title",
+        "https://www.eduvert.co/wp-content/uploads/2023/01/TOP-5-CAREERS-1-1024x576.png: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2616,7 +2628,7 @@
       "slug": "top-5-benefits-of-a-digital-marketing-course-for-students-in-2023",
       "title": "Top 5 Benefits of a Digital Marketing Course for Students in 2023",
       "publishedOn": "2023-01-16",
-      "status": "eligible",
+      "status": "failed",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/top-5-benefits-of-a-digital-marketing-course-for-students-in-2023/",
@@ -2627,7 +2639,9 @@
         "Title cites 2023"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "https://www.eduvert.co/wp-content/uploads/2023/01/Untitled-design-61-min-1.png: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2653,7 +2667,7 @@
       "slug": "top-100-digital-marketing-terminologies-you-need-to-know-in-2025",
       "title": "Top 100+ Digital Marketing Terminologies You Need to Know in 2025",
       "publishedOn": "2022-12-17",
-      "status": "eligible",
+      "status": "failed",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Course",
       "sourceUrl": "https://www.eduvert.co/top-100-digital-marketing-terminologies-you-need-to-know-in-2025/",
@@ -2664,7 +2678,28 @@
         "Title cites 2025"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/AMP-min-1-edited.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Brand-Awareness-min-edited.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Chatbot-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/cta-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Display-Network-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Email-Marketing-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Facebook-Ads-Manager-min-edited.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Google-Analytics-min-1.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/hashtag-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/influencer-marketing-min-edited.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/keywords-in-digital-marketing-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/lead-generation-min-1.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Marketing-Funnel-min-1-1.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Push-Marketing-min-2-edited.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Quality-Score-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Return-on-Investment-min-3.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/7378449_32006-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Social-Media-Marketing-min-1.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Technical-SEO-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/12/Web-Hosting-min.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2672,7 +2707,7 @@
       "slug": "youtube-seo-how-to-rank-your-videos-on-the-top-of-youtube",
       "title": "YouTube SEO: How to Rank Your Videos on the Top of YouTube",
       "publishedOn": "2022-08-10",
-      "status": "eligible",
+      "status": "failed",
       "category": "SEO & Search",
       "wordpressCategories": "Digital Marketing Trends",
       "sourceUrl": "https://www.eduvert.co/youtube-seo-how-to-rank-your-videos-on-the-top-of-youtube/",
@@ -2682,7 +2717,11 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched SEO & Search from the title"
+        "Matched SEO & Search from the title",
+        "https://www.eduvert.co/wp-content/uploads/2022/08/7800184_3751179-min-1-1024x545.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/08/4015724_154-min-1024x552.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/08/13907848_2432-min-1024x666.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2690,7 +2729,7 @@
       "slug": "ultimate-guide-on-influencer-marketing-for-2025",
       "title": "Ultimate Guide on Influencer Marketing for 2025",
       "publishedOn": "2022-07-23",
-      "status": "eligible",
+      "status": "failed",
       "category": "Social Media Marketing",
       "wordpressCategories": "Digital Marketing Trends",
       "sourceUrl": "https://www.eduvert.co/ultimate-guide-on-influencer-marketing-for-2025/",
@@ -2701,7 +2740,11 @@
         "Title cites 2025"
       ],
       "reasons": [
-        "Matched Social Media Marketing from the title"
+        "Matched Social Media Marketing from the title",
+        "https://www.eduvert.co/wp-content/uploads/2022/07/social-media-icons-fly-city-downtown-showing-people-engagement-connection-min-1024x576.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/07/influencer-dancing-posting-social-media-min-1024x545.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/07/vlogger-home-with-smartphone-unboxing-clothes-min-1024x683.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2743,7 +2786,7 @@
       "slug": "top-12-best-free-keyword-research-tools-you-dont-want-to-miss",
       "title": "Top 12 Best Free Keyword Research Tools You Don’t Want To Miss",
       "publishedOn": "2022-06-17",
-      "status": "eligible",
+      "status": "failed",
       "category": "SEO & Search",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/top-12-best-free-keyword-research-tools-you-dont-want-to-miss/",
@@ -2753,7 +2796,11 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched SEO & Search from the title"
+        "Matched SEO & Search from the title",
+        "https://eduvert.co/wp-content/uploads/2022/06/Keyword-Research-Tool1-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/06/Keyword-Research-Tool1-min.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/06/Keyword-Reseaechh-Tool-min-1024x576.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2761,7 +2808,7 @@
       "slug": "8-ways-to-optimize-your-social-media-marketing-strategy",
       "title": "8 Ways to Optimize Your Social Media Marketing Strategy",
       "publishedOn": "2022-05-23",
-      "status": "eligible",
+      "status": "failed",
       "category": "Social Media Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/8-ways-to-optimize-your-social-media-marketing-strategy/",
@@ -2771,7 +2818,9 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched Social Media Marketing from the title"
+        "Matched Social Media Marketing from the title",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/hand-button-man-multimedia-mail-min-1024x683.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2795,7 +2844,7 @@
       "slug": "top-10-digital-marketing-tools-you-need-to-be-using-in-2023",
       "title": "Top 10 Digital Marketing Tools You Need to Be Using in 2023",
       "publishedOn": "2022-05-10",
-      "status": "eligible",
+      "status": "failed",
       "category": "Digital Marketing",
       "wordpressCategories": "Digital Marketing Trends",
       "sourceUrl": "https://www.eduvert.co/top-10-digital-marketing-tools-you-need-to-be-using-in-2023/",
@@ -2806,7 +2855,18 @@
         "Title cites 2023"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-2.57.55-PM-1024x505.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.11.20-PM-1024x512.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.17.59-PM-1024x500.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.20.18-PM-1024x461.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.21.21-PM-1024x513.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.27.39-PM-1024x558.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.35.33-PM-1024x459.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.37.33-PM-1024x463.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.39.30-PM-1024x536.png: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/05/Screenshot-2022-05-10-at-3.59.31-PM-1024x509.png: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2851,7 +2911,7 @@
       "slug": "is-digital-marketing-a-viable-career-option",
       "title": "Is Digital Marketing A Viable Career Option?",
       "publishedOn": "2022-04-16",
-      "status": "eligible",
+      "status": "failed",
       "category": "Career & Skills",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/is-digital-marketing-a-viable-career-option/",
@@ -2861,7 +2921,10 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched Career & Skills from the title"
+        "Matched Career & Skills from the title",
+        "https://eduvert.co/wp-content/uploads/2022/04/seo-search-engine-optimization-online-marketing-concept-modern-graphic-interface-showing-symbol-keyword-research-website-promotion-by-optimize-customer-searching-analyze-market-strategy-min-1024x522.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/04/seo-search-engine-optimization-online-marketing-concept-modern-graphic-interface-showing-symbol-keyword-research-website-promotion-by-optimize-customer-searching-analyze-market-strategy-min-1024x522.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2905,7 +2968,7 @@
       "slug": "10-tips-to-optimize-content-for-social-media-platforms",
       "title": "10 Tips to Optimize Content for Social Media Platforms",
       "publishedOn": "2022-03-26",
-      "status": "eligible",
+      "status": "failed",
       "category": "Social Media Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/10-tips-to-optimize-content-for-social-media-platforms/",
@@ -2915,7 +2978,10 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched Social Media Marketing from the title"
+        "Matched Social Media Marketing from the title",
+        "https://eduvert.co/wp-content/uploads/2022/03/social-media-icons-around-smart-phone-3d-premium-photo-1024x614.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/03/social-media-icons-around-smart-phone-3d-premium-photo-1024x614.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2939,7 +3005,7 @@
       "slug": "building-resilient-brands-in-the-new-normal",
       "title": "Building Resilient Brands in the New Normal",
       "publishedOn": "2022-03-22",
-      "status": "eligible",
+      "status": "failed",
       "category": "Digital Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/building-resilient-brands-in-the-new-normal/",
@@ -2950,7 +3016,10 @@
         "Mentions COVID-19"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "https://eduvert.co/wp-content/uploads/2022/03/edu1-min-1024x454.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/03/edu1-min-1024x454.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -2974,7 +3043,7 @@
       "slug": "how-to-create-an-effective-social-media-strategy-for-your-brand-in-2025",
       "title": "How to Create an Effective Social Media Strategy for Your Brand in 2025",
       "publishedOn": "2022-03-07",
-      "status": "eligible",
+      "status": "failed",
       "category": "Social Media Marketing",
       "wordpressCategories": "Social Media Marketing",
       "sourceUrl": "https://www.eduvert.co/how-to-create-an-effective-social-media-strategy-for-your-brand-in-2025/",
@@ -2985,7 +3054,10 @@
         "Title cites 2025"
       ],
       "reasons": [
-        "Matched Social Media Marketing from the title"
+        "Matched Social Media Marketing from the title",
+        "https://eduvert.co/wp-content/uploads/2022/03/sm123-2-1024x683.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2022/03/sm123-2-1024x683.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -3084,7 +3156,7 @@
       "slug": "guide-for-e-commerce-seo-for-beginners",
       "title": "Guide for E-commerce SEO for Beginners",
       "publishedOn": "2021-12-21",
-      "status": "eligible",
+      "status": "failed",
       "category": "SEO & Search",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/guide-for-e-commerce-seo-for-beginners/",
@@ -3094,7 +3166,10 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched SEO & Search from the title"
+        "Matched SEO & Search from the title",
+        "https://eduvert.co/wp-content/uploads/2021/12/Raw1-1024x576.jpg: Image request returned 404",
+        "https://www.eduvert.co/wp-content/uploads/2021/12/Raw1-1024x576.jpg: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -3251,7 +3326,7 @@
       "slug": "all-one-must-know-before-pursuing-the-digital-marketing-course",
       "title": "All one must know before pursuing the “Digital Marketing Course”",
       "publishedOn": "2021-11-19",
-      "status": "eligible",
+      "status": "failed",
       "category": "Digital Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/all-one-must-know-before-pursuing-the-digital-marketing-course/",
@@ -3261,7 +3336,9 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "https://img1.wsimg.com/isteam/ip/b4a0f4e6-addc-468b-a6fc-5e070812ec51/Flair%20Collective%20(2).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -3269,7 +3346,7 @@
       "slug": "choose-for-affordable-seo-not-for-cheap",
       "title": "Choose for Affordable SEO not for Cheap",
       "publishedOn": "2021-11-19",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/choose-for-affordable-seo-not-for-cheap/",
@@ -3287,7 +3364,7 @@
       "slug": "have-you-optimized-your-website-for-conversion",
       "title": "Have You Optimized Your Website For Conversion?",
       "publishedOn": "2021-11-19",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/have-you-optimized-your-website-for-conversion/",
@@ -3305,7 +3382,7 @@
       "slug": "how-to-pursue-a-career-in-digital-marketing-managerial-view",
       "title": "How to Pursue a Career in Digital Marketing: Managerial View",
       "publishedOn": "2021-11-19",
-      "status": "eligible",
+      "status": "imported",
       "category": "Career & Skills",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/how-to-pursue-a-career-in-digital-marketing-managerial-view/",
@@ -3339,7 +3416,7 @@
       "slug": "scope-of-digital-marketing-careers-in-2025",
       "title": "Scope of Digital Marketing Careers in 2025",
       "publishedOn": "2021-11-19",
-      "status": "eligible",
+      "status": "failed",
       "category": "Career & Skills",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/scope-of-digital-marketing-careers-in-2025/",
@@ -3351,7 +3428,9 @@
         "Mentions COVID-19"
       ],
       "reasons": [
-        "Matched Career & Skills from the title"
+        "Matched Career & Skills from the title",
+        "https://img1.wsimg.com/isteam/ip/b4a0f4e6-addc-468b-a6fc-5e070812ec51/Post%201.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -3359,7 +3438,7 @@
       "slug": "significant-role-of-emerging-digital-marketing-technologies",
       "title": "Significant Role of Emerging Digital Marketing Technologies",
       "publishedOn": "2021-11-19",
-      "status": "eligible",
+      "status": "failed",
       "category": "Digital Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/significant-role-of-emerging-digital-marketing-technologies/",
@@ -3369,7 +3448,9 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "https://img1.wsimg.com/isteam/ip/b4a0f4e6-addc-468b-a6fc-5e070812ec51/innovative%20digital%20marketing%20trends%20of%202021%20(1.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -3377,7 +3458,7 @@
       "slug": "social-media-smo-effective-solution-for-seo",
       "title": "Social Media (SMO) Effective Solution for SEO",
       "publishedOn": "2021-11-19",
-      "status": "eligible",
+      "status": "imported",
       "category": "SEO & Search",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/social-media-smo-effective-solution-for-seo/",
@@ -3447,7 +3528,7 @@
       "slug": "how-can-remarketing-help-you-grow-conversions",
       "title": "How can remarketing help you grow conversions?",
       "publishedOn": "2021-11-18",
-      "status": "eligible",
+      "status": "failed",
       "category": "Paid Advertising",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/how-can-remarketing-help-you-grow-conversions/",
@@ -3457,7 +3538,9 @@
         "Published before 2024"
       ],
       "reasons": [
-        "Matched Paid Advertising from the title"
+        "Matched Paid Advertising from the title",
+        "https://img1.wsimg.com/isteam/ip/b4a0f4e6-addc-468b-a6fc-5e070812ec51/How%20retargeting%20can%20help%20you%20increase%20con-0001.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280: Image request returned 404",
+        "Featured image could not be downloaded"
       ]
     },
     {
@@ -3499,7 +3582,7 @@
       "slug": "the-importance-of-social-media-marketing-for-your-business-2",
       "title": "The Importance of Social Media Marketing for Your Business",
       "publishedOn": "2021-11-18",
-      "status": "eligible",
+      "status": "imported",
       "category": "Social Media Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/the-importance-of-social-media-marketing-for-your-business-2/",
@@ -3517,7 +3600,7 @@
       "slug": "top-latest-digital-marketing-trends-in-2021-part-3",
       "title": "Top & Latest Digital Marketing Trends in 2021 Part-3",
       "publishedOn": "2021-11-18",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/top-latest-digital-marketing-trends-in-2021-part-3/",
@@ -3528,7 +3611,11 @@
         "Title cites 2021"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "Inline image failed: Image request returned 404",
+        "Inline image failed: Image request returned 404",
+        "Inline image failed: Image request returned 404",
+        "Inline image failed: Image request returned 404"
       ]
     },
     {
@@ -3536,7 +3623,7 @@
       "slug": "top-latest-digital-marketing-trends-in-2021-part-4",
       "title": "Top & Latest Digital Marketing Trends in 2021 (Part 4)",
       "publishedOn": "2021-11-18",
-      "status": "eligible",
+      "status": "imported",
       "category": "Digital Marketing",
       "wordpressCategories": "Uncategorized",
       "sourceUrl": "https://www.eduvert.co/top-latest-digital-marketing-trends-in-2021-part-4/",
@@ -3547,7 +3634,11 @@
         "Title cites 2021"
       ],
       "reasons": [
-        "Matched Digital Marketing from the title"
+        "Matched Digital Marketing from the title",
+        "Inline image failed: Image request returned 404",
+        "Inline image failed: Image request returned 404",
+        "Inline image failed: Image request returned 404",
+        "Inline image failed: Image request returned 404"
       ]
     },
     {

@@ -15,6 +15,34 @@
       "when": 1794384281431,
       "tag": "0001_medical_gladiator",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794580173099,
+      "tag": "0002_batch_management",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1794581206417,
+      "tag": "0003_student_fee_tracking",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794583820914,
+      "tag": "0004_admin_credentials",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794584163294,
+      "tag": "0005_admin_password_crypto",
+      "breakpoints": true
     }
   ]
 }

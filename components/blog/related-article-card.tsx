@@ -1,10 +1,11 @@
 import type { RelatedArticle } from "@/components/blog/article-types"
+import { EditorialCover } from "@/components/blog/editorial-cover"
 import { formatArticleDate } from "@/components/blog/format-article-date"
 
 export function RelatedArticleCard({ article }: RelatedArticleCardProps) {
   return (
     <a href={`/blog/${article.slug}`} className="flex h-full flex-col overflow-hidden rounded-eduvert-16 border border-eduvert-border-subtle bg-eduvert-surface-white hover:border-eduvert-action-primary">
-      <ArticleMark mark={article.mark} />
+      {article.featuredImage === null ? <EditorialCover title={article.title} category={article.category} variant="card" /> : <ArticleMark mark={article.mark} />}
       <div className="flex flex-1 flex-col gap-3 px-5 py-5">
         <p className="eduvert-support text-eduvert-text-secondary">
           <span className="font-eduvert-700 text-eduvert-action-primary">{article.category}</span>

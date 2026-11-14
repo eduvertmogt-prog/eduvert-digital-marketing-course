@@ -2,6 +2,7 @@ export interface ProgramFee {
   base: string
   gst: string
   total: string
+  totalPaise: number
   note: string
   caption: string
   line: string
@@ -35,6 +36,7 @@ function formatFee(baseAmount: number, emi = false): ProgramFee {
     base,
     gst,
     total,
+    totalPaise: totalAmount * 100,
     note: `+ 18% GST (${gst})`,
     caption,
     line: `${base} + 18% GST`,

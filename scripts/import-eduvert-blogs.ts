@@ -7,6 +7,7 @@ import { writeGeneratedModules, writeMetadata } from "./eduvert-import/generate.
 import { clipText, extractWebpageArticle, normalizeImageUrl, parseArticleHtml, plainText } from "./eduvert-import/html.ts"
 import { readImageManifest, storeImages, writeImageManifest } from "./eduvert-import/images.ts"
 import { buildReport, writeReport } from "./eduvert-import/report.ts"
+import { retryFailed } from "./eduvert-import/retry-failed.ts"
 import type { ExistingArticle, MigrationRow, ParsedArticle, RemoteImage, WordpressCategory, WordpressPost } from "./eduvert-import/types.ts"
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
@@ -22,6 +23,10 @@ async function main() {
   const options = readOptions(process.argv.slice(2))
   if (options.help) {
     console.log(usage)
+    return
+  }
+  if (options.retryFailed) {
+    await retryFailed({ root, apply: options.apply, dryRun: options.dryRun, allowMissingFeatured: options.allowMissingFeatured })
     return
   }
   const existing = await readExistingArticles(resolve(root, "components/blog/articles.ts"), resolve(root, "components/blog/journal.ts"))
@@ -346,7 +351,7 @@ async function request(url: string) {
 }
 
 function readOptions(argv: string[]) {
-  if (argv.includes("--help")) return { help: true, apply: false, dryRun: true, all: false, limit: null }
+  if (argv.includes("--help")) return { help: true, apply: false, dryRun: true, all: false, limit: null, retryFailed: false, allowMissingFeatured: false }
   const requestedApply = argv.includes("--apply")
   const dryRun = !requestedApply || argv.includes("--dry-run")
   const limitIndex = argv.indexOf("--limit")
@@ -354,8 +359,11 @@ function readOptions(argv: string[]) {
   const limit = limitText === undefined ? null : Number(limitText)
   if (limit !== null && (!Number.isInteger(limit) || limit < 1)) throw new Error("--limit expects a positive integer")
   const all = argv.includes("--all")
-  if (requestedApply && !dryRun && !all && limit === null) throw new Error("Refusing to apply without --limit or --all. Dry-run remains the default.")
-  return { help: false, apply: requestedApply && !dryRun, dryRun, all, limit }
+  const retryFailed = argv.includes("--retry-failed")
+  const allowMissingFeatured = argv.includes("--allow-missing-featured")
+  if (allowMissingFeatured && !retryFailed) throw new Error("--allow-missing-featured requires --retry-failed")
+  if (requestedApply && !dryRun && !all && limit === null && !retryFailed) throw new Error("Refusing to apply without --limit, --all, or --retry-failed. Dry-run remains the default.")
+  return { help: false, apply: requestedApply && !dryRun, dryRun, all, limit, retryFailed, allowMissingFeatured }
 }
 
 function byDate(left: { publishedOn: string, slug: string }, right: { publishedOn: string, slug: string }) {
@@ -400,11 +408,13 @@ const categoryMarks: Record<string, ArticleMark> = {
   "Career & Skills": "work",
 }
 
-const usage = `Usage: node --experimental-strip-types scripts/import-eduvert-blogs.ts [--limit N] [--all] [--apply]
+const usage = `Usage: node --experimental-strip-types scripts/import-eduvert-blogs.ts [--limit N] [--all] [--retry-failed] [--apply]
 
 Dry-run is the default and writes only scripts/reports/eduvert-blog-migration.json and .csv.
 --limit N writes the first N eligible articles. Running it again rewrites those same articles.
 --all writes every eligible article that is not already handwritten.
+--retry-failed retries only the failed rows in scripts/reports/eduvert-blog-migration.json and appends recovered articles.
+--allow-missing-featured with --retry-failed imports those articles when every original image URL is unavailable.
 --apply writes components/blog/articles.generated.ts, journal cards, images, and metadata.`
 
 main().catch((error: unknown) => {

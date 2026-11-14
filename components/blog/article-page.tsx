@@ -1,5 +1,6 @@
 import { ArticleContents } from "@/components/blog/article-contents"
 import { articleDescription } from "@/components/blog/articles"
+import { EditorialCover } from "@/components/blog/editorial-cover"
 import { formatArticleDate } from "@/components/blog/format-article-date"
 import { RelatedArticleCard } from "@/components/blog/related-article-card"
 import type { ArticleBlock, ArticleHeading, ArticleInline, ArticleListItem, ArticleRecord, RelatedArticle } from "@/components/blog/article-types"
@@ -26,13 +27,17 @@ export function ArticlePage({ article, related }: ArticlePageProps) {
               {article.title}
             </h1>
           </header>
-          <img
-            src={image.src}
-            alt={image.alt || article.title}
-            width={image.width}
-            height={image.height}
-            className="h-auto w-full rounded-eduvert-16"
-          />
+          {image ? (
+            <img
+              src={image.src}
+              alt={image.alt || article.title}
+              width={image.width}
+              height={image.height}
+              className="h-auto w-full rounded-eduvert-16"
+            />
+          ) : (
+            <EditorialCover title={article.title} category={article.category} variant="hero" />
+          )}
           <div className="grid gap-10 min-[1100px]:grid-cols-[minmax(0,1fr)_280px] min-[1100px]:gap-16">
             <div className="order-2 flex min-w-0 flex-col gap-5 min-[1100px]:order-1">
               {article.blocks.map((block, index) => (

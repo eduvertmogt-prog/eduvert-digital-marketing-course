@@ -1,3 +1,5 @@
+import { reportEnquiryFilter } from "@/db/admin-reporting"
+import type { ReportScope } from "@/components/admin/reporting-model"
 import { and, asc, count, desc, eq, gte, inArray, lt, or, sql, type SQL } from "drizzle-orm"
 import type { Db } from "@/db/client"
 import { enquiries, enquiryCourseInterests, followUps, persons } from "@/db/schema"
@@ -19,7 +21,11 @@ const selection = {
   courses: sql<string[]>`array(
     select i.course_label from enquiry_course_interests i
     where i.enquiry_id = ${enquiries.id}
-    order by i.course_label
+    order by i.course_label, i.course_slug
+  )`,
+  courseSlugs: sql<string[]>`array(
+    select i.course_slug from enquiry_course_interests i where i.enquiry_id = ${enquiries.id}
+    order by i.course_label, i.course_slug
   )`,
   originPage: enquiries.originPage,
   preferredTime: enquiries.preferredTime,
@@ -39,7 +45,7 @@ function serialize(row: Omit<Enquiry, "createdAt" | "updatedAt"> & { createdAt: 
 }
 
 export async function listEnquiries(
-  db: Db, email: string, view: View, search: string, page: number,
+  db: Db, email: string, view: View, search: string, page: number, scope?: ReportScope,
 ): Promise<EnquiryPage> {
   const now = new Date().toISOString()
   const end = istDayEnd().toISOString()
@@ -60,10 +66,12 @@ export async function listEnquiries(
     sql`${persons.email} ilike ${pattern}`,
     sql`${persons.phone} ilike ${pattern}`,
     sql`${enquiries.assignedTo} ilike ${pattern}`,
+    sql`${enquiries.originPage} ilike ${pattern}`,
     sql`exists (select 1 from enquiry_course_interests i
       where i.enquiry_id = ${enquiries.id} and i.course_label ilike ${pattern})`,
   ) : undefined
-  const filtered = and(conditions[view], matches)
+  const cohort = scope ? reportEnquiryFilter(scope) : undefined
+  const filtered = and(conditions[view], matches, cohort)
   const [rows, [total], [counts]] = await Promise.all([
     db.select(selection).from(enquiries).innerJoin(persons, eq(persons.id, enquiries.personId))
       .where(filtered)
@@ -80,7 +88,7 @@ export async function listEnquiries(
       mine: countWhere(conditions.mine),
       enrolled: countWhere(conditions.enrolled),
       all: count(),
-    }).from(enquiries),
+    }).from(enquiries).where(cohort),
   ])
   return { rows: rows.map(serialize), total: total.value, counts }
 }

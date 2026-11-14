@@ -14,6 +14,26 @@ export interface ImageFailure {
   reason: string
 }
 
+export interface ImageManifestEntry {
+  sourceUrl: string
+  localPath: string
+  width: number
+  height: number
+  bytes: number
+}
+
+export type ImageDownload = {
+  ok: true
+  status: number
+  bytes: Uint8Array
+  width: number
+  height: number
+} | {
+  ok: false
+  status: number | null
+  reason: string
+}
+
 export async function readImageManifest(path: string) {
   try {
     const source = await readFile(path, "utf8")
@@ -26,7 +46,47 @@ export async function readImageManifest(path: string) {
   }
 }
 
-export async function writeImageManifest(path: string, entries: ManifestEntry[]) {
+export async function downloadImage(url: string): Promise<ImageDownload> {
+  let response: Response
+  try {
+    response = await fetch(url, { headers: { "user-agent": userAgent }, signal: AbortSignal.timeout(20000) })
+  } catch (error) {
+    return { ok: false, status: null, reason: error instanceof Error ? error.message : "Image request failed" }
+  }
+  if (!response.ok) return { ok: false, status: response.status, reason: `Image request returned ${response.status}` }
+  const type = response.headers.get("content-type") ?? ""
+  if (type.includes("text/html") || type.includes("application/json")) return { ok: false, status: response.status, reason: `Response was ${type || "not an image"}` }
+  const bytes = new Uint8Array(await response.arrayBuffer())
+  if (bytes.byteLength === 0 || bytes.byteLength > 12_000_000) return { ok: false, status: response.status, reason: "Image file is empty or larger than 12MB" }
+  if (looksLikeHtml(bytes)) return { ok: false, status: response.status, reason: "Response was HTML, not an image" }
+  let size: { width?: number, height?: number }
+  try {
+    size = imageSize(bytes)
+  } catch (error) {
+    return { ok: false, status: response.status, reason: error instanceof Error ? error.message : "Could not read image dimensions" }
+  }
+  if (!size.width || !size.height) return { ok: false, status: response.status, reason: "Image dimensions are missing" }
+  return { ok: true, status: response.status, bytes, width: size.width, height: size.height }
+}
+
+export async function saveDownloadedImage(input: SaveImageInput) {
+  const existing = input.manifest.find((entry) => entry.sourceUrl === input.sourceUrl)
+  if (existing) {
+    const saved = await readOptionalFile(localFile(input.root, existing.localPath))
+    if (saved) return { src: existing.localPath, alt: input.alt, width: existing.width, height: existing.height, sourceUrl: input.sourceUrl }
+  }
+  const filename = uniqueFilename(input.sourceUrl, input.slug, input.manifest, input.root)
+  const localPath = `/images/blog/${filename}`
+  await mkdir(resolve(input.root, "public/images/blog"), { recursive: true })
+  await writeFile(resolve(input.root, "public/images/blog", filename), input.bytes)
+  const entry = { sourceUrl: input.sourceUrl, localPath, width: input.width, height: input.height, bytes: input.bytes.byteLength }
+  const previous = input.manifest.findIndex((item) => item.sourceUrl === input.sourceUrl)
+  if (previous >= 0) input.manifest.splice(previous, 1, entry)
+  else input.manifest.push(entry)
+  return { src: localPath, alt: input.alt, width: input.width, height: input.height, sourceUrl: input.sourceUrl }
+}
+
+export async function writeImageManifest(path: string, entries: ImageManifestEntry[]) {
   const unique = new Map(entries.map((entry) => [entry.sourceUrl, entry]))
   const sorted = [...unique.values()].sort((left, right) => left.sourceUrl.localeCompare(right.sourceUrl))
   await mkdir(dirname(path), { recursive: true })
@@ -54,38 +114,30 @@ async function storeImage(input: StoreImagesInput & { image: RemoteImage }): Pro
     const bytes = await readOptionalFile(localFile(input.root, existing.localPath))
     if (bytes) return { src: existing.localPath, alt: input.image.alt, width: existing.width, height: existing.height, sourceUrl: input.image.sourceUrl }
   }
-  let response: Response
-  try {
-    response = await fetch(input.image.sourceUrl, { headers: { "user-agent": userAgent }, signal: AbortSignal.timeout(20000) })
-  } catch (error) {
-    return { error: error instanceof Error ? error.message : "Image request failed" }
-  }
-  if (!response.ok) return { error: `Image request returned ${response.status}` }
-  const bytes = new Uint8Array(await response.arrayBuffer())
-  if (bytes.byteLength === 0 || bytes.byteLength > 12_000_000) return { error: "Image file is empty or larger than 12MB" }
-  let size: { width?: number, height?: number }
-  try {
-    size = imageSize(bytes)
-  } catch (error) {
-    return { error: error instanceof Error ? error.message : "Could not read image dimensions" }
-  }
-  if (!size.width || !size.height) return { error: "Image dimensions are missing" }
-  const filename = uniqueFilename(input.image.sourceUrl, input.slug, input.manifest, input.root)
-  const localPath = `/images/blog/${filename}`
-  await mkdir(resolve(input.root, "public/images/blog"), { recursive: true })
-  await writeFile(resolve(input.root, "public/images/blog", filename), bytes)
-  const entry = { sourceUrl: input.image.sourceUrl, localPath, width: size.width, height: size.height, bytes: bytes.byteLength }
-  const previous = input.manifest.findIndex((item) => item.sourceUrl === input.image.sourceUrl)
-  if (previous >= 0) input.manifest.splice(previous, 1, entry)
-  else input.manifest.push(entry)
-  return { src: localPath, alt: input.image.alt, width: size.width, height: size.height, sourceUrl: input.image.sourceUrl }
+  const download = await downloadImage(input.image.sourceUrl)
+  if (!download.ok) return { error: download.reason }
+  return saveDownloadedImage({
+    root: input.root,
+    slug: input.slug,
+    sourceUrl: input.image.sourceUrl,
+    alt: input.image.alt,
+    bytes: download.bytes,
+    width: download.width,
+    height: download.height,
+    manifest: input.manifest,
+  })
+}
+
+function looksLikeHtml(bytes: Uint8Array) {
+  const start = new TextDecoder().decode(bytes.slice(0, 64)).trimStart().toLowerCase()
+  return start.startsWith("<!doctype html") || start.startsWith("<html") || start.startsWith("<head")
 }
 
 function localFile(root: string, localPath: string) {
   return resolve(root, "public", localPath.replace(/^\//, ""))
 }
 
-function uniqueFilename(sourceUrl: string, slug: string, manifest: ManifestEntry[], root: string) {
+function uniqueFilename(sourceUrl: string, slug: string, manifest: ImageManifestEntry[], root: string) {
   const base = filenameFromUrl(sourceUrl)
   const candidates = [base, `${slug}-${base}`, `${slug}-${manifest.length}-${base}`]
   for (const candidate of candidates) {
@@ -115,9 +167,9 @@ async function readOptionalFile(path: string) {
   }
 }
 
-function isManifestEntry(value: unknown): value is ManifestEntry {
+function isManifestEntry(value: unknown): value is ImageManifestEntry {
   if (typeof value !== "object" || value === null) return false
-  const entry = value as Partial<ManifestEntry>
+  const entry = value as Partial<ImageManifestEntry>
   return typeof entry.sourceUrl === "string" && typeof entry.localPath === "string" && typeof entry.width === "number" && typeof entry.height === "number" && typeof entry.bytes === "number"
 }
 
@@ -125,19 +177,22 @@ function isMissingFile(error: unknown) {
   return typeof error === "object" && error !== null && "code" in error && error.code === "ENOENT"
 }
 
-interface ManifestEntry {
-  sourceUrl: string
-  localPath: string
-  width: number
-  height: number
-  bytes: number
-}
-
 interface StoreImagesInput {
   root: string
   slug: string
   images: RemoteImage[]
-  manifest: ManifestEntry[]
+  manifest: ImageManifestEntry[]
+}
+
+interface SaveImageInput {
+  root: string
+  slug: string
+  sourceUrl: string
+  alt: string
+  bytes: Uint8Array
+  width: number
+  height: number
+  manifest: ImageManifestEntry[]
 }
 
 const userAgent = "EduVertBlogImport/1.0"

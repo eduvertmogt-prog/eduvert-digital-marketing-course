@@ -6,6 +6,9 @@ next-env.d.ts
 /dist/
 .vinext/
 .cloudflare/
+*.tsbuildinfo
+.DS_Store
+/exports/
 
 # wrangler files
 .wrangler

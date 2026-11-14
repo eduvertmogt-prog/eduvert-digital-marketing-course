@@ -1,11 +1,18 @@
 "use client"
 
-import { useEffect, useState, type FormEvent } from "react"
+import { useEffect, useRef, useState, type FormEvent } from "react"
 import {
   channelLabels, fromIstInput, isOpen, pageSize, statusLabels, toIstInput, viewLabels,
   type Channel, type Enquiry, type EnquiryDetail, type EnquiryPage, type EnquiryUpdate, type Status, type View,
 } from "./admissions-model"
-import { applySampleUpdate, createSampleEnquiries, samplePage } from "./sample-enquiries"
+import { EnquiryFees, type DemoFees } from "./enquiry-fees"
+import type { FeeLedger } from "./fee-model"
+import { AdmissionsBatches, EnquiryBatchPlacement } from "./admissions-batches"
+import { useBatchData, type BatchData } from "./batch-data"
+import { AdminAccountSettings, AdminSignOut } from "./admin-credentials"
+import { AdmissionsReporting } from "./admissions-reporting"
+import { reportPeriods, type AdmissionsReport, type ReportDrilldown, type ReportPeriod } from "./reporting-model"
+import { applySampleUpdate, createSampleEnquiries, samplePage, sampleReport } from "./sample-enquiries"
 
 const queueTabs: View[] = ["active", "new", "due", "overdue", "mine", "enrolled", "all"]
 const metrics: { view: View; note: string }[] = [
@@ -47,8 +54,16 @@ async function api<T>(params: URLSearchParams, signal?: AbortSignal, body?: Enqu
   return data as T
 }
 
-export function AdmissionsDashboard({ identity, demo = false }: { identity: string; demo?: boolean }) {
+function loadReport(period: ReportPeriod, signal: AbortSignal) {
+  return api<AdmissionsReport>(new URLSearchParams({ report: "1", period }), signal)
+}
+
+export function AdmissionsDashboard({ identity, owner, demo = false }: { identity: string; owner: boolean; demo?: boolean }) {
+  const [demoFees, setDemoFees] = useState<DemoFees>({})
   const [records, setRecords] = useState(() => demo ? createSampleEnquiries() : [])
+  const [section, setSection] = useState<"crm" | "reports" | "batches" | "account">("crm")
+  const [period, setPeriod] = useState<ReportPeriod>("30")
+  const [scope, setScope] = useState<ReportDrilldown | null>(null)
   const [view, setView] = useState<View>("active")
   const [term, setTerm] = useState("")
   const [query, setQuery] = useState("")
@@ -60,14 +75,23 @@ export function AdmissionsDashboard({ identity, demo = false }: { identity: stri
   const [selected, setSelected] = useState<string | null>(null)
   const [detail, setDetail] = useState<EnquiryDetail | null>(null)
   const [detailError, setDetailError] = useState("")
+  const [detailRevision, setDetailRevision] = useState(0)
   const [notice, setNotice] = useState("")
+  const trigger = useRef<HTMLButtonElement>(null)
+  const queueHeading = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    if (demo) return
+    if (demo || section !== "crm") return
     const controller = new AbortController()
     setLoading(true)
     setQueueError("")
-    api<EnquiryPage>(new URLSearchParams({ view, q: query, page: String(page) }), controller.signal)
+    const params = new URLSearchParams({ view, q: query, page: String(page) })
+    if (scope) {
+      params.set("period", scope.period)
+      params.set("dimension", scope.dimension)
+      params.set("key", scope.key)
+    }
+    api<EnquiryPage>(params, controller.signal)
       .then(data => {
         if (controller.signal.aborted) return
         if (page > 0 && page * pageSize >= data.total) {
@@ -79,7 +103,7 @@ export function AdmissionsDashboard({ identity, demo = false }: { identity: stri
       .catch(error => { if (!controller.signal.aborted) setQueueError(error.message) })
       .finally(() => { if (!controller.signal.aborted) setLoading(false) })
     return () => controller.abort()
-  }, [demo, page, query, revision, view])
+  }, [demo, page, query, revision, scope, section, view])
 
   useEffect(() => {
     if (demo || !selected) return
@@ -88,25 +112,59 @@ export function AdmissionsDashboard({ identity, demo = false }: { identity: stri
       .then(data => { if (!controller.signal.aborted) setDetail(data) })
       .catch(error => { if (!controller.signal.aborted) setDetailError(error.message) })
     return () => controller.abort()
-  }, [demo, selected])
+  }, [demo, detailRevision, selected])
 
-  const queue = demo ? samplePage(records, view, query, page) : result
+  const queue = demo ? samplePage(records, view, query, page, scope ?? undefined) : result
   const activeDetail = demo ? records.find(row => row.enquiry.id === selected) : detail ?? undefined
+
+  const batchData = useBatchData(demo, records, (id, note) => {
+    setRecords(items => items.map(item => item.enquiry.id === id ? {
+      ...item,
+      activity: [{
+        id: crypto.randomUUID(), author: identity, channel: "other", note,
+        nextActionAt: item.enquiry.nextActionAt, createdAt: new Date().toISOString(),
+      }, ...item.activity],
+    } : item))
+  })
 
   function chooseView(next: View) {
     setView(next)
     setPage(0)
   }
 
-  function openRecord(id: string) {
+  function drillIntoCrm(filter: ReportDrilldown) {
+    setScope(filter)
+    chooseView(filter.outcome)
+    setTerm("")
+    setQuery("")
+    setSection("crm")
+    requestAnimationFrame(() => queueHeading.current?.focus({ preventScroll: true }))
+  }
+
+  function openRecord(id: string, button: HTMLButtonElement) {
+    trigger.current = button
     setDetail(null)
     setDetailError("")
     setNotice("")
     setSelected(id)
   }
 
+  function closeRecord() {
+    setSelected(null)
+    requestAnimationFrame(() => {
+      const target = trigger.current?.isConnected ? trigger.current : queueHeading.current
+      target?.focus()
+    })
+  }
+
   async function save(id: string, change: EnquiryUpdate) {
-    if (demo) setRecords(items => items.map(item => item.enquiry.id === id ? applySampleUpdate(item, change) : item))
+    if (demo) {
+      if (batchData.placements.some(item => item.enquiryId === id &&
+        (change.status === "spam" || change.status === "closed" || (item.state === "seated" && change.status !== "enrolled")))) {
+        throw new Error("Release the seat or remove the waitlist place before changing to this status.")
+      }
+      setRecords(items => items.map(item => item.enquiry.id === id ? applySampleUpdate(item, change) : item))
+    }
     else {
       const updated = await api<EnquiryDetail>(new URLSearchParams({ id }), undefined, change)
       setDetail(current => current?.enquiry.id === id ? updated : current)
@@ -123,7 +181,7 @@ export function AdmissionsDashboard({ identity, demo = false }: { identity: stri
             <span className="grid size-9 place-items-center rounded-eduvert-8 bg-eduvert-action-primary eduvert-button text-eduvert-surface-white" aria-hidden="true">E</span>
             <p className="eduvert-body font-eduvert-700">EduVert <span className="font-eduvert-400 text-eduvert-text-secondary">/ Admissions</span></p>
           </div>
-          <p className="break-all eduvert-support text-eduvert-text-secondary">{demo ? "Fictional data · Changes reset on reload" : identity}</p>
+          <div className="flex flex-wrap items-center gap-3"><p className="break-all eduvert-support text-eduvert-text-secondary">{identity}</p><AdminSignOut /></div>
         </div>
       </header>
 
@@ -133,76 +191,106 @@ export function AdmissionsDashboard({ identity, demo = false }: { identity: stri
           <p className="mt-2 eduvert-body text-eduvert-text-secondary">Triage enquiries, assign follow-ups, and track who enrols.</p>
         </div>
 
-        <div className="grid grid-cols-2 overflow-hidden rounded-eduvert-16 border border-eduvert-border-subtle bg-eduvert-surface-white lg:grid-cols-4">
-          {metrics.map(({ view: key, note }, index) => (
-            <button key={key} type="button" onClick={() => chooseView(key)} aria-pressed={view === key}
-              className={`min-w-0 border-eduvert-border-subtle p-3 text-left hover:bg-eduvert-tint-blue sm:p-5 ${index % 2 === 0 ? "border-r" : ""} ${index < 2 ? "border-b lg:border-b-0" : ""} ${index === 1 ? "lg:border-r" : ""} ${view === key ? "bg-eduvert-tint-blue" : key === "overdue" ? "bg-eduvert-tint-yellow" : ""}`}>
-              <span className="block eduvert-support font-eduvert-700">{viewLabels[key]}</span>
-              <span className="block eduvert-h2 tabular-nums">{queue?.counts[key] ?? "—"}</span>
-              <span className="mt-1 hidden eduvert-support text-eduvert-text-secondary sm:block">{note}</span>
-            </button>
-          ))}
-        </div>
-
-        <section aria-labelledby="queue-heading" className="min-w-0 rounded-eduvert-16 border border-eduvert-border-subtle bg-eduvert-surface-white">
-          <div className="grid gap-4 p-4 sm:p-6">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h2 id="queue-heading" className="eduvert-h3">{viewLabels[view]}</h2>
-              {!demo ? <button type="button" className={buttonClass} onClick={() => setRevision(value => value + 1)}>Refresh</button> : null}
-            </div>
-            <div aria-label="Filter enquiries" className="flex flex-wrap gap-2">
-              {queueTabs.map(key => (
-                <button key={key} type="button" onClick={() => chooseView(key)} aria-pressed={view === key}
-                  className={`${buttonClass} ${view === key ? "border-eduvert-action-primary text-eduvert-action-primary" : ""}`}>{viewLabels[key]}</button>
-              ))}
-            </div>
-            <form className="flex flex-wrap items-end gap-2" onSubmit={event => {
-              event.preventDefault()
-              setQuery(term.trim())
-              setPage(0)
-            }}>
-              <label className="grid min-w-0 flex-1 basis-48 gap-1 eduvert-support font-eduvert-600">
-                Search enquiries
-                <input className={fieldClass} value={term} onChange={event => setTerm(event.target.value)} maxLength={120}
-                  placeholder="Name, contact, course or owner" />
-              </label>
-              <button className={buttonClass}>Search</button>
-              {query ? <button type="button" className={buttonClass} onClick={() => { setQuery(""); setTerm(""); setPage(0) }}>Clear</button> : null}
-            </form>
+        <nav aria-label="Admissions workspace" className="flex flex-wrap gap-2 border-b border-eduvert-border-subtle pb-3">
+          <button type="button" aria-pressed={section === "crm"} onClick={() => setSection("crm")}
+            className={section === "crm" ? primaryClass : buttonClass}>Enquiries CRM</button>
+          <button type="button" aria-pressed={section === "batches"} onClick={() => setSection("batches")}
+            className={section === "batches" ? primaryClass : buttonClass}>Batches</button>
+          <button type="button" aria-pressed={section === "reports"} onClick={() => setSection("reports")}
+            className={section === "reports" ? primaryClass : buttonClass}>Course and source reports</button>
+          <button type="button" aria-pressed={section === "account"} onClick={() => setSection("account")}
+            className={section === "account" ? primaryClass : buttonClass}>{owner ? "Staff accounts" : "My account"}</button>
+        </nav>
+        {section === "account" ? <AdminAccountSettings owner={owner} /> : section === "batches" ? (
+          <AdmissionsBatches data={batchData} onOpenEnquiry={openRecord} revision={revision} />
+        ) : section === "reports" ? (
+          <AdmissionsReporting period={period} onPeriod={setPeriod} onDrilldown={drillIntoCrm}
+            loadReport={loadReport} sample={demo ? sampleReport(records, period) : undefined} />
+        ) : <>
+          <div className="grid grid-cols-2 overflow-hidden rounded-eduvert-16 border border-eduvert-border-subtle bg-eduvert-surface-white lg:grid-cols-4">
+            {metrics.map(({ view: key, note }, index) => (
+              <button key={key} type="button" onClick={() => chooseView(key)} aria-pressed={view === key}
+                className={`min-w-0 border-eduvert-border-subtle p-3 text-left hover:bg-eduvert-tint-blue sm:p-5 ${index % 2 === 0 ? "border-r" : ""} ${index < 2 ? "border-b lg:border-b-0" : ""} ${index === 1 ? "lg:border-r" : ""} ${view === key ? "bg-eduvert-tint-blue" : key === "overdue" ? "bg-eduvert-tint-yellow" : ""}`}>
+                <span className="block eduvert-support font-eduvert-700">{viewLabels[key]}</span>
+                <span className="block eduvert-h2 tabular-nums">{queue?.counts[key] ?? "—"}</span>
+                <span className="mt-1 hidden eduvert-support text-eduvert-text-secondary sm:block">{note}</span>
+              </button>
+            ))}
           </div>
 
-          <div aria-busy={loading} className="border-t border-eduvert-border-subtle">
-            {queueError ? <p role="alert" className="p-4 eduvert-body text-eduvert-text-secondary">{queueError}</p> :
-              loading ? <p role="status" className="p-4 eduvert-body text-eduvert-text-secondary">Loading enquiries…</p> :
-                !queue?.rows.length ? <p className="p-4 eduvert-body text-eduvert-text-secondary">No enquiries match this view.</p> :
-                  <EnquiryRows rows={queue.rows} onOpen={openRecord} />}
-          </div>
-          {queue && !queueError && !loading ? (
-            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-eduvert-border-subtle px-4 py-3 sm:px-6">
-              <p className="eduvert-support text-eduvert-text-secondary">{queue.total ? `${page * pageSize + 1}–${page * pageSize + queue.rows.length} of ${queue.total}` : "0 enquiries"}</p>
-              {queue.total > pageSize ? <div className="flex gap-2">
-                <button type="button" className={buttonClass} disabled={page === 0} onClick={() => setPage(page - 1)}>Previous</button>
-                <button type="button" className={buttonClass} disabled={(page + 1) * pageSize >= queue.total} onClick={() => setPage(page + 1)}>Next</button>
-              </div> : null}
+          <section aria-labelledby="queue-heading" className="min-w-0 rounded-eduvert-16 border border-eduvert-border-subtle bg-eduvert-surface-white">
+            <div className="grid gap-4 p-4 sm:p-6">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h2 id="queue-heading" ref={queueHeading} tabIndex={-1} className="eduvert-h3">{viewLabels[view]}</h2>
+                {!demo ? <button type="button" className={buttonClass} onClick={() => setRevision(value => value + 1)}>Refresh</button> : null}
+              </div>
+              {scope ? (
+                <div className="flex flex-wrap items-center gap-2 rounded-eduvert-8 bg-eduvert-tint-blue p-3">
+                  <p className="min-w-0 flex-1 basis-40 [overflow-wrap:anywhere] eduvert-support">
+                    <strong>{scope.label}</strong> · {reportPeriods[scope.period]} · Spam excluded
+                  </p>
+                  <button type="button" className={buttonClass} onClick={() => setSection("reports")}>Back to reports</button>
+                  <button type="button" className={buttonClass} onClick={() => { setScope(null); setPage(0) }}>Clear report filter</button>
+                </div>
+              ) : null}
+              <div aria-label="Filter enquiries" className="flex flex-wrap gap-2">
+                {queueTabs.map(key => (
+                  <button key={key} type="button" onClick={() => chooseView(key)} aria-pressed={view === key}
+                    className={`${buttonClass} ${view === key ? "border-eduvert-action-primary text-eduvert-action-primary" : ""}`}>{viewLabels[key]}</button>
+                ))}
+              </div>
+              <form className="flex flex-wrap items-end gap-2" onSubmit={event => {
+                event.preventDefault()
+                setQuery(term.trim())
+                setPage(0)
+              }}>
+                <label className="grid min-w-0 flex-1 basis-48 gap-1 eduvert-support font-eduvert-600">
+                  Search enquiries
+                  <input className={fieldClass} value={term} onChange={event => setTerm(event.target.value)} maxLength={120}
+                    placeholder="Name, contact, course, source or owner" />
+                </label>
+                <button className={buttonClass}>Search</button>
+                {query ? <button type="button" className={buttonClass} onClick={() => { setQuery(""); setTerm(""); setPage(0) }}>Clear</button> : null}
+              </form>
             </div>
-          ) : null}
-        </section>
+
+            <div aria-busy={loading} className="border-t border-eduvert-border-subtle">
+              {queueError ? <p role="alert" className="p-4 eduvert-body text-eduvert-text-secondary">{queueError}</p> :
+                loading ? <p role="status" className="p-4 eduvert-body text-eduvert-text-secondary">Loading enquiries…</p> :
+                  !queue?.rows.length ? <p className="p-4 eduvert-body text-eduvert-text-secondary">No enquiries match this view.</p> :
+                    <EnquiryRows rows={queue.rows} onOpen={openRecord} />}
+            </div>
+            {queue && !queueError && !loading ? (
+              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-eduvert-border-subtle px-4 py-3 sm:px-6">
+                <p className="eduvert-support text-eduvert-text-secondary">{queue.total ? `${page * pageSize + 1}–${page * pageSize + queue.rows.length} of ${queue.total}` : "0 enquiries"}</p>
+                {queue.total > pageSize ? <div className="flex gap-2">
+                  <button type="button" className={buttonClass} disabled={page === 0} onClick={() => setPage(page - 1)}>Previous</button>
+                  <button type="button" className={buttonClass} disabled={(page + 1) * pageSize >= queue.total} onClick={() => setPage(page + 1)}>Next</button>
+                </div> : null}
+              </div>
+            ) : null}
+          </section>
+        </>}
       </div>
 
       {selected ? (
         <EnquiryDialog key={selected} detail={activeDetail} error={detailError} identity={identity} notice={notice} demo={demo}
-          onClose={() => setSelected(null)} onSave={change => save(selected, change)} />
+          demoFees={demoFees[selected]} onDemoFees={(id, ledgers) => setDemoFees(current => ({ ...current, [id]: ledgers }))}
+          onFeesChanged={() => { if (!demo) setDetailRevision(value => value + 1) }}
+          batchData={batchData} onBatchChanged={() => { if (!demo) { setDetailRevision(value => value + 1); setRevision(value => value + 1) } }}
+          onClose={closeRecord} onRetry={() => { setDetailError(""); setDetailRevision(value => value + 1) }}
+          onSave={change => save(selected, change)} />
       ) : null}
     </main>
   )
 }
 
-function EnquiryRows({ rows, onOpen }: { rows: Enquiry[]; onOpen: (id: string) => void }) {
+function EnquiryRows({ rows, onOpen }: { rows: Enquiry[]; onOpen: (id: string, button: HTMLButtonElement) => void }) {
   return (
     <ul className="divide-y divide-eduvert-border-subtle">
       {rows.map(row => (
         <li key={row.id}>
-          <button type="button" onClick={() => onOpen(row.id)}
+          <button type="button" onClick={event => onOpen(row.id, event.currentTarget)}
             className="grid w-full min-w-0 gap-2 px-4 py-3 text-left hover:bg-eduvert-tint-soft-blue sm:px-6 lg:grid-cols-[1.15fr_1.35fr_.9fr_.85fr_auto] lg:items-center lg:gap-4">
             <span className="min-w-0 break-words">
               <span className="block eduvert-body font-eduvert-700">{row.fullName}</span>
@@ -221,13 +309,19 @@ function EnquiryRows({ rows, onOpen }: { rows: Enquiry[]; onOpen: (id: string) =
   )
 }
 
-function EnquiryDialog({ detail, error, identity, notice, demo, onClose, onSave }: {
+function EnquiryDialog({ detail, error, identity, notice, demo, demoFees, onDemoFees, onFeesChanged, batchData, onBatchChanged, onClose, onRetry, onSave }: {
   detail?: EnquiryDetail
   error: string
   identity: string
   notice: string
   demo: boolean
+  demoFees?: FeeLedger[]
+  onDemoFees: (id: string, ledgers: FeeLedger[]) => void
+  onFeesChanged: () => void
+  batchData: BatchData
+  onBatchChanged: () => void
   onClose: () => void
+  onRetry: () => void
   onSave: (change: EnquiryUpdate) => Promise<void>
 }) {
   return (
@@ -238,7 +332,9 @@ function EnquiryDialog({ detail, error, identity, notice, demo, onClose, onSave 
         <button type="button" className={buttonClass} onClick={onClose}>Close</button>
       </div>
       <div className="grid gap-6 p-4 sm:p-6">
-        {error ? <p role="alert" className="eduvert-body">{error}</p> : detail ? (
+        {error ? <div className="grid gap-3"><p role="alert" className="eduvert-body">{error}</p>
+          <button type="button" className={`${buttonClass} justify-self-start`} onClick={onRetry}>Try again</button>
+        </div> : detail ? (
           <>
             <dl className="grid grid-cols-2 gap-4 rounded-eduvert-12 bg-eduvert-tint-soft-blue p-4 eduvert-support">
               <DetailItem label="Phone">{detail.enquiry.phone ? demo ? detail.enquiry.phone : <a href={`tel:${detail.enquiry.phone.replace(/[^+\d]/g, "")}`} className="text-eduvert-link underline">{detail.enquiry.phone}</a> : "—"}</DetailItem>
@@ -248,6 +344,8 @@ function EnquiryDialog({ detail, error, identity, notice, demo, onClose, onSave 
               <DetailItem label="Source page">{detail.enquiry.originPage || "Unknown"}</DetailItem>
               <DetailItem label="Received (IST)">{formatDate(detail.enquiry.createdAt)}</DetailItem>
             </dl>
+            <EnquiryBatchPlacement enquiry={detail.enquiry} data={batchData} onChanged={onBatchChanged} />
+            <EnquiryFees enquiry={detail.enquiry} identity={identity} demo={demo} demoFees={demoFees} onDemoFees={onDemoFees} onChanged={onFeesChanged} />
             <EnquiryEditor key={detail.enquiry.updatedAt} enquiry={detail.enquiry} identity={identity} onSave={onSave} />
             <p role="status" className="eduvert-support text-eduvert-link empty:hidden">{notice}</p>
             <section aria-labelledby="activity-heading" className="border-t border-eduvert-border-subtle pt-4">
@@ -292,10 +390,13 @@ function EnquiryEditor({ enquiry, identity, onSave }: {
     setPending(true)
     setError("")
     try {
+      const followUp = String(form.get("next") ?? "")
       await onSave({
         updatedAt: enquiry.updatedAt, status, assignedTo: owner.trim(),
         channel: form.get("channel") as Channel,
-        nextActionAt: isOpen(status) ? fromIstInput(String(form.get("next") ?? "")) : null,
+        nextActionAt: isOpen(status)
+          ? followUp === toIstInput(enquiry.nextActionAt) ? enquiry.nextActionAt : fromIstInput(followUp)
+          : null,
         note: String(form.get("note") ?? "").trim(),
       })
       const note = element.elements.namedItem("note")

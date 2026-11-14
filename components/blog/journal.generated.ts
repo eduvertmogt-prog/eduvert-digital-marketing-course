@@ -26,5 +26,785 @@ export const generatedJournalArticles: RelatedArticle[] = [
     "publishedOn": "2026-02-28",
     "summary": "Viral reels are not random. They are built on two foundations: human psychology and platform algorithms. When you understand how people think, react, and behave online, you automatically understand how…",
     "mark": "quote"
+  },
+  {
+    "slug": "search-ad-copywriting-tricks-that-turn-clicks-into-customers",
+    "title": "Search Ad Copywriting Tricks That Turn Clicks into Customers",
+    "category": "Paid Advertising",
+    "publishedOn": "2026-02-28",
+    "summary": "You can spend thousands on ads.You can optimize keywords, tweak bids, and obsess over Quality Score. But if your copy doesn’t connect, convert, and convince your clicks will quietly disappear.…",
+    "mark": "pair"
+  },
+  {
+    "slug": "strategies-to-improve-google-discover-visibility-after-the-february-2026-update",
+    "title": "Strategies to Improve Google Discover Visibility After the February 2026 Update",
+    "category": "SEO & Search",
+    "publishedOn": "2026-02-27",
+    "summary": "In February 2026, Google rolled out a significant Google Discover update as part of its broader evolution in search systems and Google algorithm update cycles. Unlike traditional Google core updates…",
+    "mark": "search"
+  },
+  {
+    "slug": "e-commerce-seo-hacks-that-skyrocket-product-page-rankings",
+    "title": "E-Commerce SEO Hacks That Skyrocket Product Page Rankings",
+    "category": "SEO & Search",
+    "publishedOn": "2026-02-04",
+    "summary": "In the fiercely competitive world of e-commerce, ranking your product pages on the first page of Google is no longer optional; it is essential for survival and growth. With thousands…",
+    "mark": "search"
+  },
+  {
+    "slug": "how-to-build-your-first-digital-marketing-portfolio-without-work-experience",
+    "title": "How to Build Your First Digital Marketing Portfolio Without Work Experience",
+    "category": "Career & Skills",
+    "publishedOn": "2026-02-04",
+    "summary": "Breaking into digital marketing can feel intimidating when every job description asks for “experience.” However, the reality is that digital marketing is one of the few industries where skills and…",
+    "mark": "work"
+  },
+  {
+    "slug": "learn-the-secret-to-unstoppable-ad-success-with-google-ads-ai",
+    "title": "Learn the Secret to Unstoppable Ad Success with Google Ads AI",
+    "category": "Paid Advertising",
+    "publishedOn": "2026-01-15",
+    "summary": "Digital advertising has undergone a fundamental shift. What once relied on manual bidding, constant keyword tweaks, and human intuition is now powered by advanced machine learning. At the heart of…",
+    "mark": "pair"
+  },
+  {
+    "slug": "metas-andromeda-update-explained-why-interest-targeting-is-officially-losing-its-power",
+    "title": "Meta’s Andromeda Update Explained: Why Interest Targeting Is Officially Losing Its Power?",
+    "category": "Paid Advertising",
+    "publishedOn": "2026-01-12",
+    "summary": "Meta’s Andromeda update represents one of the most significant shifts in the history of Facebook advertising. It fundamentally changed how ads are delivered, optimized, and scaled. Powered by advanced artificial…",
+    "mark": "pair"
+  },
+  {
+    "slug": "7-powerful-reasons-why-every-working-professional-should-learn-digital-marketing",
+    "title": "7 Powerful Reasons Why Every Working Professional Should Learn Digital Marketing",
+    "category": "Digital Marketing",
+    "publishedOn": "2026-01-03",
+    "summary": "The modern workplace is no longer defined by physical offices, visiting cards or traditional advertising. It is shaped by search engines, social media, data dashboards and online consumer behavior. In…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "simple-steps-to-instantly-boost-your-brand-authority-e-e-a-t-made-easy",
+    "title": "Simple Steps to Instantly Boost Your Brand Authority: E-E-A-T Made Easy",
+    "category": "SEO & Search",
+    "publishedOn": "2026-01-03",
+    "summary": "Building brand authority is no longer optional. Google’s E-E-A-T framework Experience, Expertise, Authoritativeness, and Trustworthiness is central to how content is evaluated, especially in competitive sectors like education and digital…",
+    "mark": "search"
+  },
+  {
+    "slug": "the-3-second-rule-mastering-the-hook-that-stops-the-scroll",
+    "title": "The 3-Second Rule “Mastering the Hook That Stops the Scroll”",
+    "category": "Social Media Marketing",
+    "publishedOn": "2026-01-03",
+    "summary": "Scrolling is no longer a habit; it is a reflex. People scroll while commuting, during short breaks, before sleeping, and often without conscious intent. In the middle of this endless…",
+    "mark": "quote"
+  },
+  {
+    "slug": "how-to-use-ugc-user-generated-content-for-social-media-marketing",
+    "title": "How to Use UGC (User-Generated Content) for Social Media Marketing",
+    "category": "Social Media Marketing",
+    "publishedOn": "2025-12-03",
+    "summary": "Ever noticed how a simple customer selfie with your product gets more likes than your most polished brand post? That’s the magic of User-Generated Content (UGC). In a world overflowing…",
+    "mark": "quote"
+  },
+  {
+    "slug": "the-future-of-search-why-aeo-is-the-next-big-thing-in-digital-marketing",
+    "title": "The Future of Search Why AEO Is the Next Big Thing in Digital Marketing?",
+    "category": "SEO & Search",
+    "publishedOn": "2025-12-03",
+    "summary": "Let’s be honest: searching the internet doesn’t look anything like it did five years ago. Gone are the days of typing a few words, scanning through endless links, and hoping…",
+    "mark": "search"
+  },
+  {
+    "slug": "what-is-keyword-cannibalization-and-why-its-killing-your-seo",
+    "title": "What is Keyword Cannibalization and Why It’s Killing Your SEO?",
+    "category": "SEO & Search",
+    "publishedOn": "2025-11-07",
+    "summary": "Imagine spending months creating content for your website, only to see your rankings drop instead of rise. Frustrating, right? Keyword cannibalization occurs when two or more pages on your website…",
+    "mark": "search"
+  },
+  {
+    "slug": "how-learning-digital-marketing-can-land-you-a-high-paying-job-in-2026",
+    "title": "How Learning Digital Marketing Can Land You a High-Paying Job in 2026",
+    "category": "Career & Skills",
+    "publishedOn": "2025-11-06",
+    "summary": "The digital revolution is no longer a trend; it’s the backbone of modern business. From global conglomerates to local startups, every company now relies on a strong online presence to…",
+    "mark": "work"
+  },
+  {
+    "slug": "everything-you-should-know-about-seo-aeo-and-geo",
+    "title": "Everything You Should Know About SEO, AEO and GEO",
+    "category": "SEO & Search",
+    "publishedOn": "2025-10-30",
+    "summary": "Have you ever wondered how some brands magically appear at the top of Google, while others maybe even better one’s struggle to get noticed? You search for “Best SEO course…",
+    "mark": "search"
+  },
+  {
+    "slug": "digital-marketing-a-job-oriented-professional-course-for-fresh-graduates",
+    "title": "Digital Marketing – A Job-Oriented Professional Course for Fresh Graduates",
+    "category": "Career & Skills",
+    "publishedOn": "2025-09-29",
+    "summary": "Stepping out of college with a fresh degree in hand is both exciting and nerve-wracking. On one side, you have dreams of starting your career, and on the other, there’s…",
+    "mark": "work"
+  },
+  {
+    "slug": "how-to-build-a-strong-linkedin-profile-as-a-student-graduate",
+    "title": "How to Build a Strong LinkedIn Profile as a Student/Graduate?",
+    "category": "Social Media Marketing",
+    "publishedOn": "2025-09-29",
+    "summary": "Stepping out of college and entering the professional world can feel overwhelming. You’ve got the degree, maybe a few internships, and plenty of ambition but how do you make recruiters…",
+    "mark": "quote"
+  },
+  {
+    "slug": "how-to-build-your-personal-brand-online-while-youre-still-learning",
+    "title": "How to Build Your Personal Brand Online While You’re Still Learning",
+    "category": "Digital Marketing",
+    "publishedOn": "2025-09-29",
+    "summary": "Have you ever scrolled through LinkedIn or Instagram and wondered how some people your age already look so confident, skilled, and “established”? The truth is, they didn’t wait until they…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "15-hidden-gem-ai-tools-for-creators-in-2025",
+    "title": "15 Hidden-Gem AI Tools for Creators in 2025",
+    "category": "AI & Marketing",
+    "publishedOn": "2025-09-26",
+    "summary": "The creator economy is booming in 2025. Whether you’re a digital marketer, influencer, and designer, or content producer, one thing is clear creators who leverage AI are the ones staying…",
+    "mark": "letters"
+  },
+  {
+    "slug": "aeo-vs-seo-whats-the-difference-and-why-both-matter",
+    "title": "AEO vs SEO: What’s the Difference and Why Both Matter",
+    "category": "SEO & Search",
+    "publishedOn": "2025-08-22",
+    "summary": "The digital marketing landscape is evolving faster than ever. Just a few years ago, the main goal was to rank on Google’s first page but today, search behaviour is…",
+    "mark": "search"
+  },
+  {
+    "slug": "tracking-engagement-vs-conversions-what-metrics-matter-most-in-social-media-marketing",
+    "title": "Tracking Engagement vs Conversions: What Metrics Matter Most in Social Media Marketing?",
+    "category": "Social Media Marketing",
+    "publishedOn": "2025-08-22",
+    "summary": "If you’ve ever poured your creativity into a perfectly timed Instagram post, spent hours crafting an attention-grabbing reel, or run a paid Facebook ad, you’ve probably asked yourself: “This looks…",
+    "mark": "quote"
+  },
+  {
+    "slug": "using-whatsapp-business-for-marketing-a-small-business-success-story",
+    "title": "Using WhatsApp Business for Marketing: A Small Business Success Story",
+    "category": "Social Media Marketing",
+    "publishedOn": "2025-08-21",
+    "summary": "When you think about social media marketing, the first names that come to mind are probably Instagram, Facebook, and maybe YouTube. But there’s another platform that is changing the way…",
+    "mark": "quote"
+  },
+  {
+    "slug": "mastering-local-seo-strategies-for-small-business-clients",
+    "title": "Mastering Local SEO: Strategies for Small Business Clients",
+    "category": "SEO & Search",
+    "publishedOn": "2025-08-05",
+    "summary": "For small businesses, local visibility can be the key to growth and sustainability. While global SEO aims to increase online presence on a broad scale, local SEO focuses on targeting…",
+    "mark": "search"
+  },
+  {
+    "slug": "ethics-in-ai-marketing-what-you-need-to-know",
+    "title": "Ethics in AI Marketing: What You Need to Know?",
+    "category": "AI & Marketing",
+    "publishedOn": "2025-07-11",
+    "summary": "Artificial Intelligence (AI) is revolutionizing digital marketing by automating processes, enhancing personalization, and driving data-based decisions. However, as AI becomes increasingly embedded in marketing strategies especially across",
+    "mark": "letters"
+  },
+  {
+    "slug": "top-ai-tools-every-digital-marketer-should-learn-in-2025",
+    "title": "Top AI Tools Every Digital Marketer Should Learn in 2025",
+    "category": "AI & Marketing",
+    "publishedOn": "2025-07-11",
+    "summary": "The world of digital marketing is evolving at an unprecedented pace. As we step into 2025, artificial intelligence (AI) is no longer just a buzzword; it’s a fundamental pillar of the…",
+    "mark": "letters"
+  },
+  {
+    "slug": "common-mistakes-in-performance-max-campaigns-and-how-to-fix-them-for-better-conversions",
+    "title": "Common Mistakes in Performance Max Campaigns and How to Fix Them for Better Conversions",
+    "category": "Paid Advertising",
+    "publishedOn": "2025-06-24",
+    "summary": "Performance Max (PMax) campaigns are one of Google Ads’ most powerful tools. They use machine learning to automate ad placements across all of Google’s inventory—Search, Display, YouTube, Gmail, Discover, and…",
+    "mark": "pair"
+  },
+  {
+    "slug": "from-keywords-to-conversions-the-power-of-intent-based-keyword-research",
+    "title": "From Keywords to Conversions: The Power of Intent-Based Keyword Research",
+    "category": "SEO & Search",
+    "publishedOn": "2025-06-24",
+    "summary": "In the rapidly evolving world of digital marketing, simply driving traffic to your website isn’t enough. The ultimate goal is conversions — turning visitors into customers. One of the most…",
+    "mark": "search"
+  },
+  {
+    "slug": "how-smart-keyword-segmentation-boosts-your-organic-search-performance",
+    "title": "How Smart Keyword Segmentation Boosts Your Organic Search Performance",
+    "category": "SEO & Search",
+    "publishedOn": "2025-06-24",
+    "summary": "These days, showing up at the top of search results isn’t about stuffing your site with keywords. Search engines—and your audience—want real, helpful content. If you focus on answering real…",
+    "mark": "search"
+  },
+  {
+    "slug": "how-freelancers-are-earning-through-digital-marketing",
+    "title": "How Freelancers Are Earning Through Digital Marketing?",
+    "category": "Career & Skills",
+    "publishedOn": "2025-06-03",
+    "summary": "There’s a quiet revolution happening. It doesn’t make headlines. It doesn’t always show up in the newsfeeds. But it’s changing lives—one skill, one client, one laptop at a time. It’s…",
+    "mark": "work"
+  },
+  {
+    "slug": "how-to-optimize-your-google-business-profile-for-local-seo",
+    "title": "How to Optimize Your Google Business Profile for Local SEO",
+    "category": "SEO & Search",
+    "publishedOn": "2025-06-03",
+    "summary": "If you run a local business, this is non-negotiable: your Google Business Profile (GBP) is the #1 tool for getting found online. Without it, you’re practically invisible to local customers.…",
+    "mark": "search"
+  },
+  {
+    "slug": "best-ai-tools-to-boost-your-social-media-performance",
+    "title": "Best AI Tools to Boost Your Social Media Performance",
+    "category": "AI & Marketing",
+    "publishedOn": "2025-05-06",
+    "summary": "Is your social media strategy falling flat, no matter how much effort you put in? You’re creating content, staying consistent, following trends—yet the engagement just isn’t there. So, what’s missing?…",
+    "mark": "letters"
+  },
+  {
+    "slug": "step-by-step-guide-to-optimizing-your-search-campaign-for-maximum-results",
+    "title": "Step-by-Step Guide to Optimizing Your Search Campaign for Maximum Results",
+    "category": "Digital Marketing",
+    "publishedOn": "2025-05-02",
+    "summary": "Have you ever launched a search campaign, only to wonder why the results weren’t what you expected? You did the keyword research, wrote some ads, set a budget and yet,…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "how-can-you-effectively-grow-your-youtube-channel",
+    "title": "How Can You Effectively Grow Your YouTube Channel?",
+    "category": "Social Media Marketing",
+    "publishedOn": "2025-04-30",
+    "summary": "Have you ever wondered why some YouTube channels grow rapidly while others barely gain traction? You upload videos, share them, even try to follow all the advice online but the…",
+    "mark": "quote"
+  },
+  {
+    "slug": "why-digital-marketing-is-a-must-have-skill-in-todays-world",
+    "title": "Why Digital Marketing is a Must-Have Skill in Today’s World",
+    "category": "Digital Marketing",
+    "publishedOn": "2025-04-30",
+    "summary": "Imagine you’ve just opened a cosy little bakery in a quiet corner of town. Your pastries are perfect, your coffee is top-tier, and your smile could brighten anyone’s morning. But…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "google-ads-bidding-strategies-explained-which-one-should-you-use",
+    "title": "Google Ads Bidding Strategies Explained: Which One Should You Use?",
+    "category": "Paid Advertising",
+    "publishedOn": "2025-04-12",
+    "summary": "When running Google Ads campaigns, choosing the right bidding strategy is crucial to achieving your advertising goals. Whether you’re looking for more website visits, increased conversions, or better brand awareness,…",
+    "mark": "pair"
+  },
+  {
+    "slug": "how-chatbots-and-conversational-marketing-are-revolutionizing-customer-engagement",
+    "title": "How Chatbots and Conversational Marketing Are Revolutionizing Customer Engagement",
+    "category": "Digital Marketing",
+    "publishedOn": "2025-04-12",
+    "summary": "Imagine walking into a store where an assistant instantly knows your preferences, answers your questions in seconds, and even helps you check out—without waiting in line. Sounds like a dream,…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "the-role-of-content-length-in-seo-how-long-should-your-articles-be",
+    "title": "The Role of Content-Length in SEO: How Long Should Your Articles Be?",
+    "category": "SEO & Search",
+    "publishedOn": "2025-04-12",
+    "summary": "Content length is a widely debated topic in the world of SEO. Some argue that longer articles perform better, while others emphasize brevity and conciseness. But what does Google really…",
+    "mark": "search"
+  },
+  {
+    "slug": "why-guest-posting-is-still-a-must-have-off-page-seo-strategy",
+    "title": "Why Guest Posting Is Still a Must-Have Off-Page SEO Strategy?",
+    "category": "SEO & Search",
+    "publishedOn": "2025-04-12",
+    "summary": "Nowadays, getting more people to visit your website is key. One of the best ways to do that is through search engine optimization (SEO). While many focus on improving their…",
+    "mark": "search"
+  },
+  {
+    "slug": "top-mistakes-to-avoid-when-running-meta-ads-campaigns",
+    "title": "Top Mistakes to Avoid When Running Meta Ads Campaigns",
+    "category": "Paid Advertising",
+    "publishedOn": "2025-02-22",
+    "summary": "Running a successful Meta Ads campaign requires more than just setting up ads and hoping for the best. Many businesses waste their budgets due to common mistakes that can easily…",
+    "mark": "pair"
+  },
+  {
+    "slug": "10-ways-to-use-google-search-console-to-boost-your-website-traffic",
+    "title": "10 Ways to Use Google Search Console to Boost Your Website Traffic",
+    "category": "SEO & Search",
+    "publishedOn": "2025-02-06",
+    "summary": "Google Search Console (GSC) is a free tool offered by Google that provides a wealth of information about your website’s performance in search results. It is essential for any website…",
+    "mark": "search"
+  },
+  {
+    "slug": "how-off-page-submissions-drive-traffic-and-improve-organic-rankings",
+    "title": "How Off-Page Submissions Drive Traffic and Improve Organic Rankings",
+    "category": "SEO & Search",
+    "publishedOn": "2025-02-05",
+    "summary": "If you’re looking to enhance your website’s visibility and improve its organic rankings, mastering off-page SEO is a must. Off-page submissions play an important role in driving traffic to your…",
+    "mark": "search"
+  },
+  {
+    "slug": "on-page-seo-vs-off-page-seo-understanding-the-difference",
+    "title": "On-Page SEO vs. Off-Page SEO: Understanding the Difference",
+    "category": "SEO & Search",
+    "publishedOn": "2025-02-05",
+    "summary": "Mastering SEO (Search Engine Optimization) is important for any business or website to succeed. SEO can be broadly divided into two categories: On-Page SEO and Off-Page SEO. While both are…",
+    "mark": "search"
+  },
+  {
+    "slug": "what-consumers-expect-from-an-ideal-digital-marketer-in-2025",
+    "title": "What Consumers Expect from an Ideal Digital Marketer in 2025?",
+    "category": "Digital Marketing",
+    "publishedOn": "2025-02-04",
+    "summary": "The world of digital marketing is evolving at an unprecedented pace, driven by advancements in technology and shifting consumer behaviours. As we step into 2025, consumers have developed heightened expectations…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "ai-and-content-discovery-strategies-for-creators-in-the-age-of-algorithmic-search",
+    "title": "AI and Content Discovery: Strategies for Creators in the Age of Algorithmic Search",
+    "category": "AI & Marketing",
+    "publishedOn": "2025-01-23",
+    "summary": "The rise of AI-driven algorithms is transforming the way content is discovered and consumed on social media and search engines. For creators, this shift presents both exciting opportunities and significant…",
+    "mark": "letters"
+  },
+  {
+    "slug": "email-marketing-for-e-commerce-boosting-sales-and-engagement",
+    "title": "Email Marketing for E-commerce: Boosting Sales and Engagement",
+    "category": "Digital Marketing",
+    "publishedOn": "2025-01-23",
+    "summary": "In the competitive world of e-commerce, email marketing stands out as a powerful tool to enhance customer engagement and drive sales. As the digital marketing landscape evolves, email marketing remains…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "social-media-marketing-the-dynamic-trend-that-keeps-evolving",
+    "title": "Social Media Marketing: The Dynamic Trend That Keeps Evolving",
+    "category": "Social Media Marketing",
+    "publishedOn": "2025-01-23",
+    "summary": "Have you ever noticed how social media marketing (SMM) seems to evolve with every passing moment? In the rapidly changing world of digital marketing, SMM has become one of the…",
+    "mark": "quote"
+  },
+  {
+    "slug": "the-changing-face-of-seo-whats-new-and-what-still-works",
+    "title": "The Changing Face of SEO: What’s New and What Still Works?",
+    "category": "SEO & Search",
+    "publishedOn": "2025-01-23",
+    "summary": "Search Engine Optimization (SEO) has evolved dramatically over the years, transforming from a simple practice of keyword stuffing and link-building into a sophisticated, multi-faceted digital marketing strategy. As search engines…",
+    "mark": "search"
+  },
+  {
+    "slug": "why-every-entrepreneur-needs-digital-marketing-skills-in-2025",
+    "title": "Why Every Entrepreneur Needs Digital Marketing Skills in 2025",
+    "category": "Digital Marketing",
+    "publishedOn": "2025-01-23",
+    "summary": "As we look towards 2025, it is becoming increasingly clear that mastering digital marketing is no longer optional—it is essential. From search engine optimization (SEO) to social media marketing and…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "why-social-media-marketing-is-the-new-age-word-of-mouth",
+    "title": "Why Social Media Marketing is the New Age Word of Mouth",
+    "category": "Social Media Marketing",
+    "publishedOn": "2025-01-23",
+    "summary": "Word-of-mouth has always been a powerful marketing tool, where recommendations from trusted individuals influence purchasing decisions. Today social media marketing has emerged as the modern-day equivalent, amplifying personal",
+    "mark": "quote"
+  },
+  {
+    "slug": "google-november-2024-core-update-what-you-should-know",
+    "title": "Google November 2024 Core Update: What You Should Know",
+    "category": "SEO & Search",
+    "publishedOn": "2025-01-22",
+    "summary": "Google has launched its November 2024 Core Update, which introduces modifications to the ranking criteria for websites in search results. This update aims to improve the quality of search results,…",
+    "mark": "search"
+  },
+  {
+    "slug": "how-to-improve-your-google-ads-quality-score-quickly",
+    "title": "How to Improve Your Google Ads Quality Score Quickly",
+    "category": "Paid Advertising",
+    "publishedOn": "2025-01-22",
+    "summary": "Improving your Google Ads Quality Score is essential for maximizing ad performance and minimizing costs. A higher Quality Score means your ads are more relevant to users, leading to better…",
+    "mark": "pair"
+  },
+  {
+    "slug": "skills-every-digital-marketer-needs-in-the-age-of-ai",
+    "title": "Skills Every Digital Marketer Needs in the Age of AI",
+    "category": "AI & Marketing",
+    "publishedOn": "2025-01-22",
+    "summary": "The world of digital marketing is changing fast, thanks to artificial intelligence (AI). AI is helping businesses connect with people in new and innovative ways, making it essential for marketers…",
+    "mark": "letters"
+  },
+  {
+    "slug": "seo-in-2025-experts-reveal-key-trends-and-insights",
+    "title": "SEO in 2025: Experts Reveal Key Trends and Insights",
+    "category": "SEO & Search",
+    "publishedOn": "2025-01-21",
+    "summary": "Search Engine Optimization (SEO) remains a cornerstone of digital marketing, evolving constantly as search engines refine their algorithms and user behaviour shifts. As we step into 2025, industry experts weigh…",
+    "mark": "search"
+  },
+  {
+    "slug": "the-power-of-headers-in-on-page-seo-how-to-use-h1-h2-and-h3-tags",
+    "title": "The Power of Headers in On-Page SEO: How to Use H1, H2, and H3 Tags",
+    "category": "SEO & Search",
+    "publishedOn": "2025-01-21",
+    "summary": "When it comes to optimizing your website for search engines, headers (H1, H2, H3 tags) play an important role. These tags not only enhance the readability of your content but…",
+    "mark": "search"
+  },
+  {
+    "slug": "what-does-a-digital-marketing-career-look-like-skills-and-opportunities-explained",
+    "title": "What Does a Digital Marketing Career Look Like? Skills and Opportunities Explained",
+    "category": "Career & Skills",
+    "publishedOn": "2025-01-11",
+    "summary": "In today’s digital-first world, businesses of all sizes are using online platforms to reach their target audiences, making digital marketing one of the most sought-after career paths. Whether you’re a…",
+    "mark": "work"
+  },
+  {
+    "slug": "how-to-create-the-ultimate-social-media-strategy-that-drives-brand-awareness-roi",
+    "title": "How to Create the Ultimate Social Media Strategy that Drives Brand Awareness & ROI",
+    "category": "Social Media Marketing",
+    "publishedOn": "2024-07-27",
+    "summary": "Social media strategy is essential for businesses aiming to enhance brand awareness and drive measurable returns on investment (ROI). Social media platforms offer a unique opportunity to connect with a…",
+    "mark": "quote"
+  },
+  {
+    "slug": "the-role-of-ai-in-social-media-marketing",
+    "title": "The Role of AI in Social Media Marketing",
+    "category": "AI & Marketing",
+    "publishedOn": "2024-07-20",
+    "summary": "Artificial Intelligence (AI) is revolutionizing various industries, and social media marketing is no exception. As businesses strive to enhance their online presence and connect with audiences more effectively, AI provides…",
+    "mark": "letters"
+  },
+  {
+    "slug": "the-power-of-analytics-understanding-data-in-digital-marketing-course",
+    "title": "The Power of Analytics: Understanding Data in Digital Marketing Course",
+    "category": "Analytics",
+    "publishedOn": "2024-06-29",
+    "summary": "To become a great Digital Marketer, you need to know about Google Analytics. Before stepping into the world of digital marketing, learn the role of Google Analytics in a practical…",
+    "mark": "search"
+  },
+  {
+    "slug": "how-digital-marketing-course-can-help-housewives-and-stay-at-home-moms-to-begin-career",
+    "title": "How Digital Marketing Course Can Help Housewives and Stay-at-Home Moms to Begin Career?",
+    "category": "Career & Skills",
+    "publishedOn": "2024-05-25",
+    "summary": "Are you a homemaker seeking an avenue to work but struggling to find the time? Explore how digital marketing can empower Housewives to earn money from the comfort of their…",
+    "mark": "work"
+  },
+  {
+    "slug": "top-10-youtube-channels-every-digital-marketer-should-subscribe-to",
+    "title": "Top 10 YouTube Channels Every Digital Marketer Should Subscribe To!",
+    "category": "Social Media Marketing",
+    "publishedOn": "2024-04-26",
+    "summary": "If you’re wondering how to embark on your digital marketing journey, YouTube can be an invaluable resource. In the fast-paced world of digital marketing , staying ahead of the curve…",
+    "mark": "quote"
+  },
+  {
+    "slug": "the-10-powerful-chatgpt-prompts-will-help-you-create-seo-content-faster",
+    "title": "The 10 Powerful ChatGPT Prompts Will Help You Create SEO Content Faster",
+    "category": "SEO & Search",
+    "publishedOn": "2024-04-13",
+    "summary": "In the modern era, creating high-quality content that ranks well in search engine results has become essential for online businesses and content creators. However, generating fresh and relevant ideas for…",
+    "mark": "search"
+  },
+  {
+    "slug": "the-value-of-hands-on-learning-exploring-live-projects-in-digital-marketing-courses",
+    "title": "The Value of Hands on Learning: Exploring Live Projects in Digital Marketing Courses",
+    "category": "Digital Marketing",
+    "publishedOn": "2024-04-02",
+    "summary": "In today’s digital age and digital marketing has become a crucial aspect of business success. As more and more businesses shift their operations online and the demand for skilled digital…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "from-beginner-to-expert-the-best-progressive-seo-courses-to-elevate-your-knowledge",
+    "title": "­­­­From Beginner to Expert: The Best Progressive SEO Courses to Elevate Your Knowledge",
+    "category": "SEO & Search",
+    "publishedOn": "2024-03-05",
+    "summary": "Are you looking to become an SEO expert and elevate your digital marketing skills? Whether you’re just starting out or looking to enhance your existing knowledge, investing in progressive SEO…",
+    "mark": "search"
+  },
+  {
+    "slug": "exploring-the-power-of-social-media-marketing-in-the-digital-age",
+    "title": "Exploring the Power of Social Media Marketing in the Digital Age",
+    "category": "Social Media Marketing",
+    "publishedOn": "2024-02-14",
+    "summary": "In today’s digital age, social media has become an integral part of our lives. Its widespread usage and influence have transformed the way businesses connect with their target audience. Social…",
+    "mark": "quote"
+  },
+  {
+    "slug": "live-projects-and-real-world-experience-institutes-offering-immersion-into-digital-marketing-campaigns",
+    "title": "Live Projects and Real-World Experience: Institutes Offering Immersion into Digital Marketing Campaigns",
+    "category": "Digital Marketing",
+    "publishedOn": "2024-02-06",
+    "summary": "Digital marketing has become an integral part of every business’s marketing strategy. With the online landscape constantly evolving, it is crucial for professionals to stay updated with the latest trends…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "career-development-in-digital-marketing-practical-skills-for-professional-growth-and-success",
+    "title": "Career Development in Digital Marketing: Practical Skills for Professional Growth and Success",
+    "category": "Career & Skills",
+    "publishedOn": "2024-01-30",
+    "summary": "Introduction In today’s highly competitive digital landscape, a career in digital marketing has become increasingly appealing. As businesses continue to embrace online platforms, the demand for professionals with specialized skills…",
+    "mark": "work"
+  },
+  {
+    "slug": "how-digital-marketing-classes-can-help-for-your-dream-job",
+    "title": "How Digital Marketing Classes Can Help for Your Dream Job",
+    "category": "Career & Skills",
+    "publishedOn": "2024-01-22",
+    "summary": "In today’s digital age, businesses are increasingly relying on digital marketing strategies to promote their products and services. Digital marketing professionals are in high demand as a result. To keep…",
+    "mark": "work"
+  },
+  {
+    "slug": "unlocking-advanced-digital-marketing-courses-dive-into-specialised-training-modules-offered-by-institutes-in-navi-mumbai",
+    "title": "Unlocking Advanced Digital Marketing Courses: Dive into Specialised Training Modules offered by Institutes in Navi Mumbai",
+    "category": "Digital Marketing",
+    "publishedOn": "2024-01-11",
+    "summary": "Digital marketing has revolutionised the way businesses connect with their target audience. With the increasing importance of online presence and marketing strategies, it has become essential for professionals to equip…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "the-importance-of-data-analytics-in-digital-marketing",
+    "title": "The Importance of Data Analytics in Digital Marketing",
+    "category": "Analytics",
+    "publishedOn": "2024-01-10",
+    "summary": "In today’s rapidly evolving digital landscape, with the advent of technology and the growth of the internet, businesses have gained unprecedented access to vast amounts of data. The ability to…",
+    "mark": "search"
+  },
+  {
+    "slug": "choose-for-affordable-seo-not-for-cheap",
+    "title": "Choose for Affordable SEO not for Cheap",
+    "category": "SEO & Search",
+    "publishedOn": "2021-11-19",
+    "summary": "Be wise when it comes to choosing SEO for your website. Choosing an affordable SEO service can be a headache, and with so many companies advertising their services on the…",
+    "mark": "search"
+  },
+  {
+    "slug": "have-you-optimized-your-website-for-conversion",
+    "title": "Have You Optimized Your Website For Conversion?",
+    "category": "Digital Marketing",
+    "publishedOn": "2021-11-19",
+    "summary": "Website optimization isn’t just about the search engines. People may arrive at your site but that doesn’t mean they will stay for long or buy anything for that matter. You…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "how-to-pursue-a-career-in-digital-marketing-managerial-view",
+    "title": "How to Pursue a Career in Digital Marketing: Managerial View",
+    "category": "Career & Skills",
+    "publishedOn": "2021-11-19",
+    "summary": "It is a big step to start a profession in any sector. However, the thought of developing your career by pursuing your interests is an exciting option that will impact…",
+    "mark": "work"
+  },
+  {
+    "slug": "social-media-smo-effective-solution-for-seo",
+    "title": "Social Media (SMO) Effective Solution for SEO",
+    "category": "SEO & Search",
+    "publishedOn": "2021-11-19",
+    "summary": "Learning Social Media Marketing is not rocket science for this generation while you have access to all tools to study. Yet, strategy building is the most important role for any…",
+    "mark": "search"
+  },
+  {
+    "slug": "the-importance-of-social-media-marketing-for-your-business-2",
+    "title": "The Importance of Social Media Marketing for Your Business",
+    "category": "Social Media Marketing",
+    "publishedOn": "2021-11-18",
+    "summary": "Social Media has been the best and most effective way to market brands. It provides a platform for social interaction and engagement, which builds loyalty and trust among customers. The…",
+    "mark": "quote"
+  },
+  {
+    "slug": "top-latest-digital-marketing-trends-in-2021-part-3",
+    "title": "Top & Latest Digital Marketing Trends in 2021 Part-3",
+    "category": "Digital Marketing",
+    "publishedOn": "2021-11-18",
+    "summary": "Digital Marketing is a constantly evolving world. These trends are always emerging and changing to best adapt to the current needs of businesses. It is impossible to tell what the…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "top-latest-digital-marketing-trends-in-2021-part-4",
+    "title": "Top & Latest Digital Marketing Trends in 2021 (Part 4)",
+    "category": "Digital Marketing",
+    "publishedOn": "2021-11-18",
+    "summary": "It’s a lot happening in the digital domain. In fact it’s now safe to say that digital marketing has now gone main stream. So the rest of the world was…",
+    "mark": "tasks"
+  },
+  {
+    "slug": "5-best-free-ai-powered-tools-for-beginners-to-boost-your-content-writing-skills",
+    "title": "5 Best Free AI Powered Tools for Beginners to Boost your Content Writing Skills",
+    "category": "AI & Marketing",
+    "publishedOn": "2023-07-26",
+    "summary": "Introduction Content writing is an essential skill in today’s digital age. Whether you are writing blog posts, articles, or social media content optimization, it is crucial to create high-quality and…",
+    "mark": "letters",
+    "featuredImage": null
+  },
+  {
+    "slug": "practical-training-vs-theoretical-knowledge-in-digital-marketing-striking-the-right-balance",
+    "title": "Practical Training vs. Theoretical Knowledge in Digital Marketing: Striking the Right Balance",
+    "category": "Digital Marketing",
+    "publishedOn": "2023-05-30",
+    "summary": "Digital marketing has become a crucial component of modern business strategies, offering various opportunities for growth and success. When it comes to mastering the skills required in this field, two…",
+    "mark": "tasks",
+    "featuredImage": null
+  },
+  {
+    "slug": "skills-to-build-a-successful-career-in-digital-marketing",
+    "title": "Skills To Build A Successful Career In Digital Marketing",
+    "category": "Career & Skills",
+    "publishedOn": "2023-01-17",
+    "summary": "There are many skills and knowledge areas that you can get through Digital Marketing Practical Training can help you to build a successful digital marketing career. Some key things to…",
+    "mark": "work",
+    "featuredImage": null
+  },
+  {
+    "slug": "top-5-careers-in-digital-marketing-in-2025",
+    "title": "TOP 5 CAREERS IN DIGITAL MARKETING IN 2025",
+    "category": "Career & Skills",
+    "publishedOn": "2023-01-17",
+    "summary": "Here are a few careers in digital marketing that are likely to be in high demand in 2025 Digital Marketing Manager A digital marketing manager is responsible for developing and…",
+    "mark": "work",
+    "featuredImage": null
+  },
+  {
+    "slug": "top-5-benefits-of-a-digital-marketing-course-for-students-in-2023",
+    "title": "Top 5 Benefits of a Digital Marketing Course for Students in 2023",
+    "category": "Digital Marketing",
+    "publishedOn": "2023-01-16",
+    "summary": "Digital marketing is one of the most sought-after skills in today’s world. It involves using social media, web analytics, search engine optimization (SEO), and other digital tools to drive more…",
+    "mark": "tasks",
+    "featuredImage": null
+  },
+  {
+    "slug": "top-100-digital-marketing-terminologies-you-need-to-know-in-2025",
+    "title": "Top 100+ Digital Marketing Terminologies You Need to Know in 2025",
+    "category": "Digital Marketing",
+    "publishedOn": "2022-12-17",
+    "summary": "Digital marketing is the process of using digital tools to promote products and services. It is the process of using electronic media to create, deliver, and analyze marketing messages. Digital…",
+    "mark": "tasks",
+    "featuredImage": null
+  },
+  {
+    "slug": "youtube-seo-how-to-rank-your-videos-on-the-top-of-youtube",
+    "title": "YouTube SEO: How to Rank Your Videos on the Top of YouTube",
+    "category": "SEO & Search",
+    "publishedOn": "2022-08-10",
+    "summary": "Are you looking to get your videos ranked on the top of YouTube? If so, then you need to know about YouTube SEO. YouTube SEO is all about optimizing your…",
+    "mark": "search",
+    "featuredImage": null
+  },
+  {
+    "slug": "ultimate-guide-on-influencer-marketing-for-2025",
+    "title": "Ultimate Guide on Influencer Marketing for 2025",
+    "category": "Social Media Marketing",
+    "publishedOn": "2022-07-23",
+    "summary": "As we halfway moving into a new year, it’s important to stay up-to-date on the latest marketing trends. And one of the biggest trends right now is influencer marketing. But…",
+    "mark": "quote",
+    "featuredImage": null
+  },
+  {
+    "slug": "top-12-best-free-keyword-research-tools-you-dont-want-to-miss",
+    "title": "Top 12 Best Free Keyword Research Tools You Don’t Want To Miss",
+    "category": "SEO & Search",
+    "publishedOn": "2022-06-17",
+    "summary": "Looking for a comprehensive list of free keyword research tools? You’ve come to the right place. In this blog post, we’ll share our top picks for free tools that you…",
+    "mark": "search",
+    "featuredImage": null
+  },
+  {
+    "slug": "8-ways-to-optimize-your-social-media-marketing-strategy",
+    "title": "8 Ways to Optimize Your Social Media Marketing Strategy",
+    "category": "Social Media Marketing",
+    "publishedOn": "2022-05-23",
+    "summary": "Your social media marketing strategy can make or break your business and its reputation, so it’s important to optimize it and make sure it’s effective. Don’t want to be left…",
+    "mark": "quote",
+    "featuredImage": null
+  },
+  {
+    "slug": "top-10-digital-marketing-tools-you-need-to-be-using-in-2023",
+    "title": "Top 10 Digital Marketing Tools You Need to Be Using in 2023",
+    "category": "Digital Marketing",
+    "publishedOn": "2022-05-10",
+    "summary": "In present-day, digital marketing is crucial for your business as well as brand awareness. The more you look around, the more you will notice that every other brand has a…",
+    "mark": "tasks",
+    "featuredImage": null
+  },
+  {
+    "slug": "is-digital-marketing-a-viable-career-option",
+    "title": "Is Digital Marketing A Viable Career Option?",
+    "category": "Career & Skills",
+    "publishedOn": "2022-04-16",
+    "summary": "Digital marketing has been around for a while and the hype and need for it doesn’t seem to be dying down any soon. If anything, people have only gotten more…",
+    "mark": "work",
+    "featuredImage": null
+  },
+  {
+    "slug": "10-tips-to-optimize-content-for-social-media-platforms",
+    "title": "10 Tips to Optimize Content for Social Media Platforms",
+    "category": "Social Media Marketing",
+    "publishedOn": "2022-03-26",
+    "summary": "Social media is undoubtedly the best way to help advance your business. With over 4.5 billion people active on social media and many people using it as the primary mode…",
+    "mark": "quote",
+    "featuredImage": null
+  },
+  {
+    "slug": "building-resilient-brands-in-the-new-normal",
+    "title": "Building Resilient Brands in the New Normal",
+    "category": "Digital Marketing",
+    "publishedOn": "2022-03-22",
+    "summary": "Businesses often classify crises as periods when they must focus on risk and damage control. For a resilient company, however, crises can in turn offer opportunities for varying growth and…",
+    "mark": "tasks",
+    "featuredImage": null
+  },
+  {
+    "slug": "how-to-create-an-effective-social-media-strategy-for-your-brand-in-2025",
+    "title": "How to Create an Effective Social Media Strategy for Your Brand in 2025",
+    "category": "Social Media Marketing",
+    "publishedOn": "2022-03-07",
+    "summary": "Having a presence on social media nowadays is integral to running a business. It acts as a good headstart when it comes to making sure that your brand succeeds in…",
+    "mark": "quote",
+    "featuredImage": null
+  },
+  {
+    "slug": "guide-for-e-commerce-seo-for-beginners",
+    "title": "Guide for E-commerce SEO for Beginners",
+    "category": "SEO & Search",
+    "publishedOn": "2021-12-21",
+    "summary": "SEO plays a very crucial role in any e-commerce business. It can help them to improve their online presence and increase sales. However, SEO is not easy to achieve as…",
+    "mark": "search",
+    "featuredImage": null
+  },
+  {
+    "slug": "all-one-must-know-before-pursuing-the-digital-marketing-course",
+    "title": "All one must know before pursuing the “Digital Marketing Course”",
+    "category": "Digital Marketing",
+    "publishedOn": "2021-11-19",
+    "summary": "Nowadays, everyone wants to pursue a Digital Marketing Course; a common myth is that digital marketing is all about social media, but that’s not true. Digital marketing is for people…",
+    "mark": "tasks",
+    "featuredImage": null
+  },
+  {
+    "slug": "scope-of-digital-marketing-careers-in-2025",
+    "title": "Scope of Digital Marketing Careers in 2025",
+    "category": "Career & Skills",
+    "publishedOn": "2021-11-19",
+    "summary": "As the methods by which customers obtain knowledge shift, marketing approaches have changed. With the advent of the internet, radio ads gave way to television advertising, giving way to digital…",
+    "mark": "work",
+    "featuredImage": null
+  },
+  {
+    "slug": "significant-role-of-emerging-digital-marketing-technologies",
+    "title": "Significant Role of Emerging Digital Marketing Technologies",
+    "category": "Digital Marketing",
+    "publishedOn": "2021-11-19",
+    "summary": "Like the rest of human society, small and medium companies are doing whatever they can to keep up with the transition and development of new technology. Various companies are either…",
+    "mark": "tasks",
+    "featuredImage": null
+  },
+  {
+    "slug": "how-can-remarketing-help-you-grow-conversions",
+    "title": "How can remarketing help you grow conversions?",
+    "category": "Paid Advertising",
+    "publishedOn": "2021-11-18",
+    "summary": "Before knowing how remarketing can help you boost conversion or implement the idea of remarketing ads properly, let’s discuss what remarketing is? Maybe or may not have heard of remarketing, but you’ve almost certainly…",
+    "mark": "pair",
+    "featuredImage": null
   }
 ]

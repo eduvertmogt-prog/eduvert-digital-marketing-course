@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises"
+import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { dirname } from "node:path"
 import type { ArticleBlock, ArticleImage, ArticleInline, ArticleRecord, RelatedArticle } from "../../components/blog/article-types.ts"
 
@@ -35,9 +35,46 @@ export async function writeGeneratedModules(articlesPath: string, journalPath: s
   await writeFile(journalPath, renderGeneratedJournal(articles))
 }
 
+export async function appendGeneratedArticles(path: string, articles: ArticleRecord[]) {
+  if (articles.length === 0) return
+  for (const article of articles) assertArticle(article)
+  const source = await readFile(path, "utf8")
+  await writeFile(path, appendArrayLiteral(source, "] satisfies ArticleRecord[]", articles))
+}
+
+export async function appendGeneratedJournal(path: string, articles: ArticleRecord[]) {
+  if (articles.length === 0) return
+  const cards: RelatedArticle[] = articles.map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    category: article.category,
+    publishedOn: article.publishedOn,
+    summary: article.summary,
+    mark: article.mark,
+    ...(article.featuredImage === null ? { featuredImage: null } : {}),
+  }))
+  const source = await readFile(path, "utf8")
+  const closing = source.trimEnd().endsWith("]") ? "]" : ""
+  if (!closing) throw new Error(`Could not append journal cards in ${path}`)
+  await writeFile(path, appendArrayLiteral(source, "]", cards))
+}
+
+export async function appendMetadata(path: string, entries: unknown[]) {
+  if (entries.length === 0) return
+  const source = await readFile(path, "utf8")
+  await writeFile(path, appendArrayLiteral(source, "]", entries))
+}
+
 export async function writeMetadata(path: string, metadata: unknown) {
   await mkdir(dirname(path), { recursive: true })
   await writeFile(path, `${JSON.stringify(metadata, null, 2)}\n`)
+}
+
+function appendArrayLiteral(source: string, closing: string, entries: unknown[]) {
+  const index = source.lastIndexOf(closing)
+  if (index < 0) throw new Error(`Could not find ${closing}`)
+  const body = entries.map((entry) => JSON.stringify(entry, null, 2).split("\n").map((line) => `  ${line}`).join("\n")).join(",\n")
+  return `${source.slice(0, index).trimEnd()},\n${body}\n${source.slice(index)}`
 }
 
 function assertArticle(article: ArticleRecord) {
@@ -48,7 +85,7 @@ function assertArticle(article: ArticleRecord) {
   if (!article.summary.trim()) throw new Error(`Missing summary for ${article.slug}`)
   if (!marks.has(article.mark)) throw new Error(`Invalid mark for ${article.slug}`)
   if (article.blocks.length === 0) throw new Error(`Missing body for ${article.slug}`)
-  assertImage(article.featuredImage, article.slug)
+  if (article.featuredImage) assertImage(article.featuredImage, article.slug)
   if (article.hero) assertImage(article.hero, article.slug)
   for (const block of article.blocks) assertBlock(block, article.slug)
 }
