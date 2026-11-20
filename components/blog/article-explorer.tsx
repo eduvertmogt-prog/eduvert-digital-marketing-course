@@ -11,7 +11,7 @@ export function ArticleExplorer({ articles }: ArticleExplorerProps) {
 
   return (
     <section aria-labelledby="explore-articles-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <h2 id="explore-articles-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
           Explore Articles
         </h2>
@@ -34,7 +34,7 @@ export function ArticleExplorer({ articles }: ArticleExplorerProps) {
         <ul className="grid gap-4 min-[1100px]:grid-cols-3">
           {visibleArticles.map((article) => (
             <li key={article.slug} className="min-w-0">
-              <RelatedArticleCard article={article} />
+              <RelatedArticleCard article={article} showBanner />
             </li>
           ))}
         </ul>

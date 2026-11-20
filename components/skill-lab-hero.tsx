@@ -1,15 +1,15 @@
 import { ButtonLink } from "@/components/button-link"
 import { LearningStudio } from "@/components/learning-studio"
-import { coursesHref, demoHref } from "@/components/site-nav"
+import { coursesHref, liveClassHref, syllabusHref } from "@/components/site-nav"
 
 export function SkillLabHero() {
   return (
     <section
       id="book-a-free-demo"
       aria-labelledby="skill-lab-heading"
-      className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-[19px] px-6 pt-[31px] pb-[25px] min-[1100px]:grid-cols-[minmax(0,565fr)_minmax(0,674fr)] min-[1100px]:items-start min-[1100px]:gap-[9px] min-[1100px]:px-[clamp(24px,6.67vw,96px)] min-[1100px]:pt-[108px] min-[1100px]:pb-[158px]"
+      className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-[19px] px-6 pt-[31px] pb-[25px] min-[1100px]:grid-cols-[minmax(0,565fr)_minmax(0,674fr)] min-[1100px]:items-start min-[1100px]:gap-[9px] min-[1100px]:px-[clamp(24px,6.67vw,96px)] min-[1100px]:py-16"
     >
-      <div className="flex min-w-0 flex-col gap-[19px] min-[1100px]:mt-[66px] min-[1100px]:gap-[26px]">
+      <div className="flex min-w-0 flex-col gap-[19px] min-[1100px]:mt-8 min-[1100px]:gap-[26px]">
         <p className="eduvert-support font-eduvert-700 tracking-[0.09em] text-eduvert-action-primary">
           DIGITAL MARKETING + AI
         </p>
@@ -26,7 +26,7 @@ export function SkillLabHero() {
           online.
         </p>
         <div className="flex gap-3">
-          <ButtonLink href={demoHref}>
+          <ButtonLink href={liveClassHref}>
             Book a Free Demo
             <ArrowUpRight />
           </ButtonLink>
@@ -34,6 +34,7 @@ export function SkillLabHero() {
             Explore Courses
           </ButtonLink>
         </div>
+        <a href={syllabusHref} download className="inline-flex min-h-11 w-fit items-center eduvert-button text-eduvert-link underline underline-offset-4">Download Syllabus</a>
         <dl className="grid w-full max-w-[342px] grid-cols-[115fr_114fr_113fr] border-t border-eduvert-border-subtle pt-3 min-[1100px]:max-w-[538px] min-[1100px]:grid-cols-[176fr_181fr_181fr] min-[1100px]:pt-[18px]">
           {heroMetrics.map((metric, index) => (
             <div

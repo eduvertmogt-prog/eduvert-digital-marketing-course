@@ -3,7 +3,7 @@ import { curriculumModules } from "@/components/programs/program-content"
 export function ProgramCurriculum() {
   return (
     <section id="curriculum" aria-labelledby="curriculum-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-[52px] min-[1100px]:flex-row min-[1100px]:gap-10 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:gap-[68px] min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 pt-10 pb-[52px] min-[1100px]:flex-row min-[1100px]:gap-10 min-[1100px]:px-10 min-[1100px]:pt-16 min-[1100px]:pb-20 min-[1440px]:gap-[68px] min-[1440px]:px-[120px]">
         <div className="flex w-full flex-col gap-3.5 min-[1100px]:w-[280px] min-[1100px]:shrink-0 min-[1440px]:w-[360px]">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">CURRICULUM</p>
           <h2 id="curriculum-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">

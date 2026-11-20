@@ -2,7 +2,7 @@ import { reportEnquiryFilter } from "@/db/admin-reporting"
 import type { ReportScope } from "@/components/admin/reporting-model"
 import { and, asc, count, desc, eq, gte, inArray, lt, or, sql, type SQL } from "drizzle-orm"
 import type { Db } from "@/db/client"
-import { enquiries, enquiryCourseInterests, followUps, persons } from "@/db/schema"
+import { enquiries, enquiryCourseInterests, followUps, liveClassSessions, persons } from "@/db/schema"
 import { isOpen, istDayEnd, pageSize, type Enquiry, type EnquiryDetail, type EnquiryPage, type EnquiryUpdate, type View } from "@/components/admin/admissions-model"
 
 const nextAction = sql<string | null>`(
@@ -99,7 +99,11 @@ function countWhere(condition: SQL | undefined) {
 
 export async function getEnquiry(db: Db, id: string): Promise<EnquiryDetail | null> {
   const [[row], activity] = await Promise.all([
-    db.select(selection).from(enquiries).innerJoin(persons, eq(persons.id, enquiries.personId))
+    db.select({
+      ...selection, message: enquiries.message,
+      liveClass: { startsAt: liveClassSessions.startsAt, mode: liveClassSessions.mode, cancelledAt: liveClassSessions.cancelledAt },
+    }).from(enquiries).innerJoin(persons, eq(persons.id, enquiries.personId))
+      .leftJoin(liveClassSessions, eq(liveClassSessions.id, enquiries.liveClassSessionId))
       .where(eq(enquiries.id, id)).limit(1),
     db.select({
       id: followUps.id,
@@ -112,9 +116,14 @@ export async function getEnquiry(db: Db, id: string): Promise<EnquiryDetail | nu
       .orderBy(desc(followUps.createdAt), desc(followUps.id)).limit(50),
   ])
   if (!row) return null
+  const { liveClass, message, ...enquiry } = row
 
   return {
-    enquiry: serialize(row),
+    enquiry: serialize(enquiry),
+    message,
+    liveClass: liveClass ? {
+      startsAt: liveClass.startsAt.toISOString(), mode: liveClass.mode, unlisted: liveClass.cancelledAt !== null,
+    } : null,
     activity: activity.map(entry => ({
       ...entry,
       createdAt: entry.createdAt.toISOString(),

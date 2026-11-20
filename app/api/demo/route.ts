@@ -1,5 +1,7 @@
 import { createDb, resolveConnectionString } from "@/db/client"
+import { isLiveClassId } from "@/components/live-class-model"
 import {
+  LiveClassUnavailableError,
   ValidationError,
   createDemoEnquiry,
   demoIntents,
@@ -8,13 +10,12 @@ import {
   normalizePhone,
   preferredTimes,
   type DemoIntent,
+  type DemoEnquiryInput,
   type PreferredTime,
 } from "@/db/demo-enquiries"
 
 /**
- * POST /api/demo — stores a demo/callback/course enquiry in Neon.
- * The dialog posts JSON; the response is { ok: true } or
- * { ok: false, error } with a human-readable message the dialog shows.
+ * POST /api/demo stores booking, callback, course and admission requests in Neon.
  *
  * Production note: this route reads DATABASE_URL from the server
  * environment. Locally that is .env; on Cloudflare it must be exposed
@@ -37,6 +38,7 @@ export async function POST(request: Request) {
     return Response.json({ ok: true })
   } catch (error) {
     if (error instanceof ValidationError) return bad(error.message)
+    if (error instanceof LiveClassUnavailableError) return Response.json({ ok: false, error: error.message }, { status: 409 })
     console.error("demo enquiry failed", error)
     return Response.json(
       { ok: false, error: "Something went wrong saving your request. Please try again." },
@@ -57,6 +59,9 @@ function parseBody(body: unknown): DemoEnquiryInput | null {
   const intent: DemoIntent = demoIntents.includes(b.intent as DemoIntent)
     ? (b.intent as DemoIntent)
     : "free_demo"
+  const isContactBooking = intent === "free_demo" && b.source === "contact-live-class"
+  const liveClassSessionId = b.liveClassSessionId
+  if (liveClassSessionId !== undefined && (intent !== "free_demo" || !isLiveClassId(liveClassSessionId))) return null
   const preferredTime: PreferredTime | null = preferredTimes.includes(b.preferredTime as PreferredTime)
     ? (b.preferredTime as PreferredTime)
     : null
@@ -69,21 +74,11 @@ function parseBody(body: unknown): DemoEnquiryInput | null {
     intent,
     courseSlug: typeof b.courseSlug === "string" && b.courseSlug ? b.courseSlug.slice(0, 120) : undefined,
     courseLabel: typeof b.courseLabel === "string" && b.courseLabel ? b.courseLabel.slice(0, 200) : undefined,
-    originPage: typeof b.originPage === "string" && b.originPage ? b.originPage.slice(0, 200) : undefined,
-    originForm: "demo-dialog v1",
+    originPage: isContactBooking ? "/contact" : typeof b.originPage === "string" && b.originPage ? b.originPage.slice(0, 200) : undefined,
+    originForm: isContactBooking ? "contact-live-class v1" : "demo-dialog v1",
+    message: isContactBooking && typeof b.message === "string" ? b.message.trim().slice(0, 1000) || undefined : undefined,
+    liveClassSessionId,
   }
-}
-
-interface DemoEnquiryInput {
-  fullName: string
-  email: string
-  phone: string
-  preferredTime: PreferredTime | null
-  intent: DemoIntent
-  courseSlug?: string
-  courseLabel?: string
-  originPage?: string
-  originForm?: string
 }
 
 function bad(error: string) {

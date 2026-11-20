@@ -5,7 +5,7 @@ export function LearningFormats() {
   return (
     <>
       <section aria-labelledby="learning-formats-heading" className="bg-eduvert-surface-white">
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-6 py-12 min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:py-[72px]">
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-6 pt-10 pb-7 min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:pt-16 min-[1100px]:pb-10">
           <div className="flex flex-col gap-8 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:gap-10 min-[1440px]:gap-[88px]">
             <div className="flex min-w-0 flex-1 flex-col gap-5 min-[1440px]:max-w-[500px]">
               <div className="flex flex-col gap-2">

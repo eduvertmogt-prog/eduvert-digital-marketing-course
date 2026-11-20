@@ -1,5 +1,6 @@
 import { eq, sql } from "drizzle-orm"
 import type { Db } from "@/db/client"
+import { createLiveClassEnquiry } from "@/db/live-classes"
 import { enquiries } from "@/db/schema/enquiries"
 import { enquiryCourseInterests } from "@/db/schema/enquiry-course-interests"
 import type { EnquiryType } from "@/db/schema/enums"
@@ -15,7 +16,7 @@ import { persons } from "@/db/schema/persons"
  * A repeat enquirer gets a NEW enquiry each time but keeps ONE person.
  */
 
-export const demoIntents = ["free_demo", "counsellor_callback", "course_enquiry"] as const
+export const demoIntents = ["free_demo", "counsellor_callback", "course_enquiry", "admission_request"] as const
 
 export type DemoIntent = (typeof demoIntents)[number]
 
@@ -33,6 +34,8 @@ export interface DemoEnquiryInput {
   courseLabel?: string
   originPage?: string
   originForm?: string
+  message?: string
+  liveClassSessionId?: string
 }
 
 export function isValidEmail(raw: string): boolean {
@@ -112,26 +115,40 @@ export async function createDemoEnquiry(
     personId = created.id
   }
 
-  const [enquiry] = await db
+  const enquiryId = crypto.randomUUID()
+  if (input.liveClassSessionId) {
+    const booked = await createLiveClassEnquiry(db, input.liveClassSessionId, personId, enquiryId)
+    if (!booked) throw new LiveClassUnavailableError("This session is no longer available. Refresh the live class list and choose another session.")
+    return { enquiryId: booked, personId }
+  }
+
+  const createEnquiry = db
     .insert(enquiries)
     .values({
+      id: enquiryId,
       personId,
       type: intent,
       preferredTime,
       originPage: input.originPage?.slice(0, 200) ?? null,
       originForm: input.originForm ?? "demo-dialog v1",
+      message: input.message ?? null,
     })
-    .returning({ id: enquiries.id })
 
   if (courseSlug) {
-    await db.insert(enquiryCourseInterests).values({
-      enquiryId: enquiry.id,
-      courseSlug,
-      courseLabel: courseLabel ?? courseSlug,
-    })
+    await db.batch([
+      createEnquiry,
+      db.insert(enquiryCourseInterests).values({
+        enquiryId,
+        courseSlug,
+        courseLabel: courseLabel ?? courseSlug,
+      }),
+    ])
+  } else {
+    await createEnquiry
   }
 
-  return { enquiryId: enquiry.id, personId }
+  return { enquiryId, personId }
 }
 
 export class ValidationError extends Error {}
+export class LiveClassUnavailableError extends Error {}

@@ -6,7 +6,7 @@ interface ComparisonRow {
 export function CourseComparison({ id, rows }: { id: string; rows: ComparisonRow[] }) {
   return (
     <section id={id} aria-labelledby={`${id}-heading`} className="border-y border-eduvert-border-subtle bg-eduvert-tint-soft-blue">
-      <div className="mx-auto grid w-full max-w-[1440px] gap-6 px-6 py-12 min-[1100px]:grid-cols-[minmax(0,320px)_minmax(0,1fr)] min-[1100px]:gap-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
+      <div className="mx-auto grid w-full max-w-[1440px] gap-6 px-6 py-10 min-[1100px]:grid-cols-[minmax(0,320px)_minmax(0,1fr)] min-[1100px]:gap-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex flex-col gap-2">
           <h2 id={`${id}-heading`} className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
             What to check before you enrol

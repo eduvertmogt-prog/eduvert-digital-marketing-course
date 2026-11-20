@@ -1,5 +1,6 @@
 interface FocusedCourseContent {
   outcome: string
+  demoLabel?: string
   example: string
   tasks: string[]
   comparison: { question: string; answer: string }[]
@@ -7,6 +8,7 @@ interface FocusedCourseContent {
 
 export const focusedCourseContent: Record<string, FocusedCourseContent> = {
   "seo-course-in-navi-mumbai": {
+    demoLabel: "Start Your SEO Journey",
     outcome: "Audit a website, identify what’s holding it back in search, and decide which fixes to prioritise.",
     example: "Audit a local business website",
     tasks: ["Find relevant search terms and review page titles and content.", "Check site structure, backlinks, and visibility on Google Maps.", "Use Search Console to decide what to measure after the fixes."],
@@ -18,6 +20,7 @@ export const focusedCourseContent: Record<string, FocusedCourseContent> = {
     ],
   },
   "sem-course": {
+    demoLabel: "Start Your SEM Journey",
     outcome: "Build a Google Ads search campaign and use conversion data to decide what to improve.",
     example: "Plan a paid search campaign for enquiries",
     tasks: ["Choose search keywords, write ads, and define the target audience.", "Plan a bid and budget, then decide what to A/B test.", "Use conversion and performance data to evaluate the campaign."],
@@ -28,6 +31,7 @@ export const focusedCourseContent: Record<string, FocusedCourseContent> = {
     ],
   },
   "smm-course": {
+    demoLabel: "Start Your SMM Journey",
     outcome: "Plan a social content calendar and build a paid campaign for Facebook and Instagram.",
     example: "Plan a social launch and a Meta Ads campaign",
     tasks: ["Build a content calendar with posts and Reels.", "Choose an audience and practise setting up Facebook and Instagram ads.", "Review engagement and campaign performance to decide what to change."],

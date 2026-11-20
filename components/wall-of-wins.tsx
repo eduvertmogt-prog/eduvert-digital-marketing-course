@@ -21,7 +21,7 @@ export function WallOfWins() {
         height={1066}
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       />
-      <div className="relative mx-auto flex w-full max-w-[980px] flex-col items-center gap-5 px-6 py-12 min-[1100px]:gap-6 min-[1100px]:py-20">
+      <div className="relative mx-auto flex w-full max-w-[980px] flex-col items-center gap-5 px-6 py-10 min-[1100px]:gap-6 min-[1100px]:py-16">
         <div className="flex w-full flex-col gap-5 min-[1100px]:flex-row min-[1100px]:items-stretch min-[1100px]:gap-5">
           <Reveal className="min-w-0 flex-1 rounded-eduvert-16 bg-eduvert-surface-white px-6 py-6 shadow-[0_12px_32px_color-mix(in_srgb,var(--color-eduvert-text-primary)_8%,transparent)] min-[1100px]:px-8 min-[1100px]:py-7">
             <h2 id="wall-of-wins-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
@@ -75,6 +75,9 @@ function LearnerStat() {
   )
 }
 
+const certifiedLearnerCount = 5000
+const learnerCountFormat = new Intl.NumberFormat("en-IN")
+
 function LearnerCount() {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLSpanElement>(null)
@@ -84,7 +87,7 @@ function LearnerCount() {
     const el = ref.current
     if (!el) return
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setCount(60)
+      setCount(certifiedLearnerCount)
       return
     }
     const observer = new IntersectionObserver(
@@ -96,7 +99,7 @@ function LearnerCount() {
         const duration = 1200
         function tick(now: number) {
           const progress = Math.min((now - start) / duration, 1)
-          setCount(Math.round(60 * (1 - Math.pow(1 - progress, 3))))
+          setCount(Math.round(certifiedLearnerCount * (1 - Math.pow(1 - progress, 3))))
           if (progress < 1) requestAnimationFrame(tick)
         }
         requestAnimationFrame(tick)
@@ -109,7 +112,7 @@ function LearnerCount() {
 
   return (
     <span ref={ref}>
-      {count}
+      {learnerCountFormat.format(count)}
       <span aria-hidden="true">+</span>
     </span>
   )

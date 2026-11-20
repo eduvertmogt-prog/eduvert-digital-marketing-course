@@ -40,7 +40,7 @@ function Practical({ course }: { course: Course }) {
 
   return (
     <section aria-labelledby="smm-practical-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-[52px] min-[1100px]:px-10 min-[1100px]:py-[72px] min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex max-w-[640px] flex-col gap-3.5">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">PRACTICAL LEARNING</p>
           <h2 id="smm-practical-heading" className="eduvert-h2 tracking-[-0.025em]">
@@ -70,7 +70,7 @@ function Practical({ course }: { course: Course }) {
 function Curriculum({ course }: { course: Course }) {
   return (
     <section id="curriculum" aria-labelledby="smm-curriculum-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-[52px] min-[1100px]:flex-row min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:flex-row min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex w-full flex-col gap-3.5 min-[1100px]:w-[360px] min-[1100px]:shrink-0">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">CURRICULUM</p>
           <h2 id="smm-curriculum-heading" className="eduvert-h2 tracking-[-0.025em]">
@@ -98,7 +98,7 @@ function Tools({ course }: { course: Course }) {
 
   return (
     <section aria-labelledby="smm-tools-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[26px] px-6 py-[52px] min-[1100px]:px-10 min-[1100px]:py-[72px] min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[26px] px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex flex-col gap-3.5">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">SMM TOOLS</p>
           <h2 id="smm-tools-heading" className="eduvert-h2 tracking-[-0.025em]">
@@ -121,7 +121,7 @@ function Tools({ course }: { course: Course }) {
 function Skills({ course }: { course: Course }) {
   return (
     <section aria-labelledby="smm-skills-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-[52px] min-[1100px]:px-10 min-[1100px]:py-[72px] min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex max-w-[640px] flex-col gap-3.5">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">PRACTICAL SKILLS</p>
           <h2 id="smm-skills-heading" className="eduvert-h2 tracking-[-0.025em]">
@@ -145,7 +145,7 @@ function Audience({ course }: { course: Course }) {
 
   return (
     <section aria-labelledby="smm-audience-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-[52px] min-[1100px]:flex-row min-[1100px]:items-start min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-[68px] min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:flex-row min-[1100px]:items-start min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex w-full flex-col gap-3.5 min-[1100px]:w-[360px] min-[1100px]:shrink-0">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">WHO IT’S FOR</p>
           <h2 id="smm-audience-heading" className="eduvert-h2 tracking-[-0.025em]">
@@ -168,7 +168,7 @@ function Audience({ course }: { course: Course }) {
 function CourseDetails({ course }: { course: Course }) {
   return (
     <section aria-labelledby="smm-details-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-[52px] min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:gap-12 min-[1100px]:px-10 min-[1100px]:py-[72px] min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:gap-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex min-w-0 flex-1 flex-col gap-6">
           <h2 id="smm-details-heading" className="eduvert-h2 tracking-[-0.025em]">
             Course Details & Enquiry
@@ -207,7 +207,7 @@ function CourseDetails({ course }: { course: Course }) {
 function FinalCta({ course }: { course: Course }) {
   return (
     <section aria-labelledby="smm-cta-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto w-full max-w-[1440px] px-6 py-11 min-[1100px]:px-10 min-[1100px]:py-[60px] min-[1440px]:px-[120px]">
+      <div className="mx-auto w-full max-w-[1440px] px-6 pt-5 pb-11 min-[1100px]:px-10 min-[1100px]:pt-8 min-[1100px]:pb-[60px] min-[1440px]:px-[120px]">
         <div className="flex flex-col gap-8 rounded-eduvert-16 bg-eduvert-tint-yellow px-6 py-8 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:justify-between min-[1100px]:px-12 min-[1100px]:py-11">
           <div className="flex max-w-[620px] flex-col gap-3">
             <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">READY TO BEGIN?</p>

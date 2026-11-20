@@ -100,7 +100,6 @@ export const comparedPrograms: ComparedProgram[] = [
   {
     name: "Professional Digital Marketing Program",
     suitedFor: "Learners seeking a broad marketing foundation",
-    skill: "Plan and measure campaigns",
     duration: "4 months · 120+ hours",
     fee: programFees.flagship.line,
     feeTotal: programFees.flagship.total,
@@ -110,7 +109,6 @@ export const comparedPrograms: ComparedProgram[] = [
   {
     name: "Advanced SEO Course",
     suitedFor: "Website owners and marketers focused on organic traffic",
-    skill: "Audit and optimize websites",
     duration: "4–5 weeks",
     fee: programFees.seo.line,
     feeTotal: programFees.seo.total,
@@ -119,7 +117,6 @@ export const comparedPrograms: ComparedProgram[] = [
   {
     name: "SEM & Performance Marketing",
     suitedFor: "Learners focused on paid customer acquisition",
-    skill: "Build and optimize search ads",
     duration: "4–5 weeks",
     fee: programFees.sem.line,
     feeTotal: programFees.sem.total,
@@ -128,7 +125,6 @@ export const comparedPrograms: ComparedProgram[] = [
   {
     name: "Social Media Marketing",
     suitedFor: "Content creators and social media marketers",
-    skill: "Plan content and run Meta ads",
     duration: "4–5 weeks",
     fee: programFees.smm.line,
     feeTotal: programFees.smm.total,
@@ -137,7 +133,6 @@ export const comparedPrograms: ComparedProgram[] = [
   {
     name: "Data Analytics with Python & Excel",
     suitedFor: "Learners who want to work with data in Python and Excel",
-    skill: "Clean and visualize data",
     duration: "30 hours",
     fee: programFees.data.line,
     feeTotal: programFees.data.total,
@@ -272,17 +267,14 @@ export const programBatches: ProgramBatch[] = [
 
 export const careerSteps: CareerStep[] = [
   {
-    number: "01",
     title: "Career counselling and portfolio support",
     detail: "Discuss roles that fit your goals and get guidance on using campaign work and your capstone to build a portfolio and résumé.",
   },
   {
-    number: "02",
     title: "Interview preparation",
     detail: "Practise in mock interviews and learn to explain your campaign decisions, the tools you used, and what the results showed.",
   },
   {
-    number: "03",
     title: "Job opportunities and referrals",
     detail: "Get access to job opportunities and support with referrals for relevant roles in digital marketing.",
   },
@@ -398,7 +390,6 @@ export interface FocusedCourse {
 export interface ComparedProgram {
   name: string
   suitedFor: string
-  skill: string
   duration: string
   fee: string
   feeTotal: string
@@ -445,7 +436,6 @@ export interface ProgramBatch {
 }
 
 export interface CareerStep {
-  number: string
   title: string
   detail: string
 }

@@ -237,11 +237,11 @@ function ExpandedPanel({ course, toneClass, programLink, enterKey, frozenWidth }
           href={demoHref}
           variant="secondary"
           size="course"
-          className="course-cta min-[1100px]:w-[161px]"
+          className="course-cta px-2 text-center min-[1100px]:w-[161px]"
           data-demo-course-slug={courseInterestSlug[course.id]}
           data-demo-course-label={course.title.join(" ")}
         >
-          Book Free Demo
+          Attend a Live Class
         </ButtonLink>
       </div>
     </article>
@@ -303,11 +303,11 @@ function MobileCard({ course, open, onSelect, programLink }: MobileCardProps) {
                 href={demoHref}
                 variant="secondary"
                 size="course"
-                className="course-cta"
+                className="course-cta px-2 text-center"
                 data-demo-course-slug={courseInterestSlug[course.id]}
                 data-demo-course-label={course.title.join(" ")}
               >
-                Book Free Demo
+                Attend a Live Class
               </ButtonLink>
             </div>
           </div>

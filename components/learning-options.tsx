@@ -2,7 +2,7 @@ import { batchesHref, demoHref } from "@/components/site-nav"
 
 export function LearningOptions() {
   return (
-    <section id="batches" aria-labelledby="batches-heading" className="flex justify-center border-t border-eduvert-border-subtle bg-eduvert-surface-white px-6 py-16 min-[1100px]:px-10 min-[1100px]:py-[88px] min-[1440px]:px-[60px]">
+    <section id="batches" aria-labelledby="batches-heading" className="flex justify-center border-t border-eduvert-border-subtle bg-eduvert-surface-white px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[60px]">
       <div className="flex w-full max-w-[342px] flex-col gap-8 min-[1100px]:max-w-[1200px] min-[1100px]:gap-10">
         <div className="flex flex-col gap-2.5 min-[1100px]:w-[700px] min-[1100px]:gap-3">
           <h2 id="batches-heading" className="max-w-[250px] eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:max-w-none">

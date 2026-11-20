@@ -1,6 +1,8 @@
+import { testimonialsHref } from "@/components/site-nav"
+
 export function StudentReviews() {
   return (
-    <section id="testimonials" aria-labelledby="testimonials-heading" className="flex justify-center bg-eduvert-tint-soft-blue px-6 py-16 min-[1100px]:px-10 min-[1100px]:py-24 min-[1440px]:px-[60px]">
+    <section id="testimonials" aria-labelledby="testimonials-heading" className="flex justify-center bg-eduvert-tint-soft-blue px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[60px]">
       <div className="flex w-full max-w-[342px] flex-col gap-[30px] min-[1100px]:max-w-[1200px] min-[1100px]:gap-[44px]">
         <div className="flex flex-col gap-2.5 min-[1100px]:w-[600px] min-[1100px]:gap-3">
           <h2 id="testimonials-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
@@ -40,7 +42,7 @@ export function StudentReviews() {
           <p className="eduvert-support text-eduvert-text-secondary min-[1100px]:w-[600px] min-[1100px]:shrink-0">
             Selected excerpts from reviews displayed on EduVert&apos;s existing website.
           </p>
-          <a href={reviewsHref} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 w-fit items-center gap-2.5 eduvert-button text-eduvert-link">
+          <a href={testimonialsHref} className="inline-flex h-11 w-fit items-center gap-2.5 eduvert-button text-eduvert-link">
             Read More Student Reviews
             <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" className="shrink-0">
               <path d="M3.5 9h10.3M9.5 4.7 14 9l-4.5 4.3" fill="none" stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,8 +53,6 @@ export function StudentReviews() {
     </section>
   )
 }
-
-const reviewsHref = "https://www.eduvert.co/"
 
 const reviewSource = "Student review · Via Google on EduVert website"
 

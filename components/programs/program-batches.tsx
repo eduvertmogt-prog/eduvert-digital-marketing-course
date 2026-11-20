@@ -4,7 +4,7 @@ import { batchesHref } from "@/components/site-nav"
 export function ProgramBatches() {
   return (
     <section aria-labelledby="program-batches-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[22px] px-6 py-[52px] min-[1100px]:gap-8 min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:py-[72px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[22px] px-6 pt-10 pb-9 min-[1100px]:gap-8 min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:pt-16 min-[1100px]:pb-12">
         <div className="flex max-w-[640px] flex-col gap-3.5">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">LEARNING OPTIONS</p>
           <h2 id="program-batches-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">

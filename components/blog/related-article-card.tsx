@@ -2,10 +2,17 @@ import type { RelatedArticle } from "@/components/blog/article-types"
 import { EditorialCover } from "@/components/blog/editorial-cover"
 import { formatArticleDate } from "@/components/blog/format-article-date"
 
-export function RelatedArticleCard({ article }: RelatedArticleCardProps) {
+export function RelatedArticleCard({ article, showBanner = false }: RelatedArticleCardProps) {
+  const image = showBanner ? article.featuredImage : null
   return (
     <a href={`/blog/${article.slug}`} className="flex h-full flex-col overflow-hidden rounded-eduvert-16 border border-eduvert-border-subtle bg-eduvert-surface-white hover:border-eduvert-action-primary">
-      {article.featuredImage === null ? <EditorialCover title={article.title} category={article.category} variant="card" /> : <ArticleMark mark={article.mark} />}
+      {image ? (
+        <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" className="h-[140px] w-full object-cover" />
+      ) : article.featuredImage === null ? (
+        <EditorialCover title={article.title} category={article.category} variant="card" />
+      ) : (
+        <ArticleMark mark={article.mark} />
+      )}
       <div className="flex flex-1 flex-col gap-3 px-5 py-5">
         <p className="eduvert-support text-eduvert-text-secondary">
           <span className="font-eduvert-700 text-eduvert-action-primary">{article.category}</span>
@@ -93,4 +100,5 @@ const taskLabels = ["Research", "Write", "Analyse", "Report"]
 
 interface RelatedArticleCardProps {
   article: RelatedArticle
+  showBanner?: boolean
 }

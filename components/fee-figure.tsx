@@ -24,7 +24,7 @@ export function FeeFigure({ fee, prominent = false, headingId, showTotal = true 
           </div>
         ) : null}
       </dl>
-      {fee.emi ? <p className="eduvert-support font-eduvert-600 text-eduvert-action-primary">EMI available</p> : null}
+      {fee.emiLabel ? <p className="eduvert-support font-eduvert-600 text-eduvert-action-primary">{fee.emiLabel}</p> : null}
     </div>
   )
 }

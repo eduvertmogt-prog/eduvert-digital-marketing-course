@@ -1,7 +1,7 @@
 export function LearningBeyond() {
   return (
     <section id="learning-beyond" aria-labelledby="learning-beyond-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-16 min-[1100px]:gap-[34px] min-[1100px]:px-10 min-[1100px]:py-[88px] min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-12 min-[1100px]:gap-[34px] min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex max-w-[690px] flex-col gap-2.5 min-[1100px]:gap-3">
           <h2 id="learning-beyond-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
             Learning That Goes Beyond Theory
@@ -52,12 +52,12 @@ const learningSteps: LearningStep[] = [
   },
   {
     index: "02 /",
-    title: "Practice",
+    title: "Explore",
     body: "Work through hands-on assignments using the tools covered in your course.",
   },
   {
     index: "03 /",
-    title: "Apply",
+    title: "Grow",
     body: "Bring your learning together through course-relevant projects and assessments.",
   },
 ]

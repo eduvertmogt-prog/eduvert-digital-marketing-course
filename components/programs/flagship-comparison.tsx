@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     question: "What is the total fee?",
-    answer: `${programFees.flagship.total} including 18% GST. EMI is available.`,
+    answer: `${programFees.flagship.total} including 18% GST. ${programFees.flagship.emiLabel}.`,
   },
 ]
 

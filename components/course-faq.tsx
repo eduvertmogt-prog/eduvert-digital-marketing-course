@@ -8,7 +8,7 @@ export function CourseFaq() {
   const [openId, setOpenId] = useState(courseQuestions[0].id)
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="flex justify-center bg-eduvert-canvas-warm px-6 py-[68px] min-[1100px]:px-10 min-[1100px]:pt-24 min-[1100px]:pb-[104px] min-[1440px]:px-[60px]">
+    <section id="faq" aria-labelledby="faq-heading" className="flex justify-center bg-eduvert-canvas-warm px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[60px]">
       <div className="flex w-full max-w-[342px] flex-col items-start gap-[30px] min-[1100px]:max-w-[1200px] min-[1100px]:flex-row min-[1100px]:gap-10 min-[1440px]:gap-20">
         <div className="flex flex-col gap-2.5 min-[1100px]:w-[34%] min-[1100px]:shrink-0 min-[1100px]:gap-3.5 min-[1440px]:w-[408px]">
           <h2 id="faq-heading" className="max-w-[320px] eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:max-w-[374px]">

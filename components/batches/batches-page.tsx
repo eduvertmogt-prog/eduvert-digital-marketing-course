@@ -47,7 +47,7 @@ function Hero() {
 function Timings() {
   return (
     <section id="batch-timings" aria-labelledby="batch-timings-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex max-w-[640px] flex-col gap-2">
           <h2 id="batch-timings-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
             Published Batch Timings
@@ -85,7 +85,7 @@ function Timings() {
 function Formats() {
   return (
     <section aria-labelledby="learning-formats-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <h2 id="learning-formats-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary min-[1100px]:text-center">
           Choose How You Learn
         </h2>
@@ -112,11 +112,11 @@ function DemoCta() {
               See How a Class Works
             </h2>
             <p className="eduvert-body text-eduvert-text-secondary">
-              Book a free demo and ask EduVert about current batch availability.
+              Book a demo session and ask EduVert about current batch availability.
             </p>
           </div>
           <a href={demoHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-fit">
-            Book a Free Demo
+            Book a Demo Session
           </a>
         </div>
       </div>

@@ -11,6 +11,9 @@ import { AdmissionsBatches, EnquiryBatchPlacement } from "./admissions-batches"
 import { useBatchData, type BatchData } from "./batch-data"
 import { AdminAccountSettings, AdminSignOut } from "./admin-credentials"
 import { AdmissionsReporting } from "./admissions-reporting"
+import { AdmissionsIntake } from "./admissions-intake"
+import { AdmissionsLiveClasses } from "./admissions-live-classes"
+import { liveClassLabel } from "@/components/live-class-model"
 import { reportPeriods, type AdmissionsReport, type ReportDrilldown, type ReportPeriod } from "./reporting-model"
 import { applySampleUpdate, createSampleEnquiries, samplePage, sampleReport } from "./sample-enquiries"
 
@@ -24,7 +27,7 @@ const metrics: { view: View; note: string }[] = [
 
 const typeLabels: Record<string, string> = {
   free_demo: "Free demo", counsellor_callback: "Callback", course_enquiry: "Course enquiry",
-  contact_message: "Contact message", career_support: "Career support",
+  contact_message: "Contact message", career_support: "Career support", admission_request: "Admission request",
 }
 const dateFormatter = new Intl.DateTimeFormat("en-IN", {
   timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "numeric", minute: "2-digit",
@@ -61,7 +64,7 @@ function loadReport(period: ReportPeriod, signal: AbortSignal) {
 export function AdmissionsDashboard({ identity, owner, demo = false }: { identity: string; owner: boolean; demo?: boolean }) {
   const [demoFees, setDemoFees] = useState<DemoFees>({})
   const [records, setRecords] = useState(() => demo ? createSampleEnquiries() : [])
-  const [section, setSection] = useState<"crm" | "reports" | "batches" | "account">("crm")
+  const [section, setSection] = useState<"crm" | "reports" | "batches" | "intake" | "live-classes" | "account">("crm")
   const [period, setPeriod] = useState<ReportPeriod>("30")
   const [scope, setScope] = useState<ReportDrilldown | null>(null)
   const [view, setView] = useState<View>("active")
@@ -196,6 +199,10 @@ export function AdmissionsDashboard({ identity, owner, demo = false }: { identit
             className={section === "crm" ? primaryClass : buttonClass}>Enquiries CRM</button>
           <button type="button" aria-pressed={section === "batches"} onClick={() => setSection("batches")}
             className={section === "batches" ? primaryClass : buttonClass}>Batches</button>
+          {!demo ? <button type="button" aria-pressed={section === "intake"} onClick={() => setSection("intake")}
+            className={section === "intake" ? primaryClass : buttonClass}>Next intake</button> : null}
+          {!demo ? <button type="button" aria-pressed={section === "live-classes"} onClick={() => setSection("live-classes")}
+            className={section === "live-classes" ? primaryClass : buttonClass}>Live classes</button> : null}
           <button type="button" aria-pressed={section === "reports"} onClick={() => setSection("reports")}
             className={section === "reports" ? primaryClass : buttonClass}>Course and source reports</button>
           <button type="button" aria-pressed={section === "account"} onClick={() => setSection("account")}
@@ -203,6 +210,10 @@ export function AdmissionsDashboard({ identity, owner, demo = false }: { identit
         </nav>
         {section === "account" ? <AdminAccountSettings owner={owner} /> : section === "batches" ? (
           <AdmissionsBatches data={batchData} onOpenEnquiry={openRecord} revision={revision} />
+        ) : section === "intake" ? (
+          <AdmissionsIntake />
+        ) : section === "live-classes" ? (
+          <AdmissionsLiveClasses />
         ) : section === "reports" ? (
           <AdmissionsReporting period={period} onPeriod={setPeriod} onDrilldown={drillIntoCrm}
             loadReport={loadReport} sample={demo ? sampleReport(records, period) : undefined} />
@@ -344,6 +355,19 @@ function EnquiryDialog({ detail, error, identity, notice, demo, demoFees, onDemo
               <DetailItem label="Source page">{detail.enquiry.originPage || "Unknown"}</DetailItem>
               <DetailItem label="Received (IST)">{formatDate(detail.enquiry.createdAt)}</DetailItem>
             </dl>
+            {detail.liveClass ? (
+              <section aria-labelledby="requested-session-heading" className="grid gap-2">
+                <h3 id="requested-session-heading" className="eduvert-h4">Requested live class</h3>
+                <p className="eduvert-body">{liveClassLabel(detail.liveClass)}</p>
+                {detail.liveClass.unlisted ? <p className="eduvert-support text-eduvert-text-secondary">This session was removed from the public schedule.</p> : null}
+              </section>
+            ) : null}
+            {detail.message ? (
+              <section aria-labelledby="visitor-message-heading" className="grid gap-2">
+                <h3 id="visitor-message-heading" className="eduvert-h4">Visitor message</h3>
+                <p className="whitespace-pre-wrap break-words eduvert-body">{detail.message}</p>
+              </section>
+            ) : null}
             <EnquiryBatchPlacement enquiry={detail.enquiry} data={batchData} onChanged={onBatchChanged} />
             <EnquiryFees enquiry={detail.enquiry} identity={identity} demo={demo} demoFees={demoFees} onDemoFees={onDemoFees} onChanged={onFeesChanged} />
             <EnquiryEditor key={detail.enquiry.updatedAt} enquiry={detail.enquiry} identity={identity} onSave={onSave} />

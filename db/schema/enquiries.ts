@@ -1,5 +1,6 @@
-import { index, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core"
+import { index, pgTable, text, timestamp, uniqueIndex, uuid } from "drizzle-orm/pg-core"
 import { enquiryStatus, enquiryType } from "@/db/schema/enums"
+import { liveClassSessions } from "@/db/schema/live-classes"
 import { persons } from "@/db/schema/persons"
 
 /**
@@ -35,6 +36,7 @@ export const enquiries = pgTable(
      * filter on this column without normalizing ("after 5", "evening pls").
      */
     preferredTime: text("preferred_time"),
+    liveClassSessionId: uuid("live_class_session_id").references(() => liveClassSessions.id),
     /** Site path the enquiry originated from, e.g. "/contact". */
     originPage: text("origin_page"),
     /** Form/CTA identifier + version, e.g. "contact-form v1". */
@@ -51,5 +53,6 @@ export const enquiries = pgTable(
     index("enquiries_status_idx").on(t.status),
     index("enquiries_type_idx").on(t.type),
     index("enquiries_created_at_idx").on(t.createdAt),
+    uniqueIndex("enquiries_person_live_class_idx").on(t.personId, t.liveClassSessionId),
   ],
 )

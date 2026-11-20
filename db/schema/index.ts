@@ -8,3 +8,5 @@ export * from "@/db/schema/batches"
 export * from "@/db/schema/fees"
 
 export * from "@/db/schema/admin-auth"
+export * from "@/db/schema/intake"
+export * from "@/db/schema/live-classes"

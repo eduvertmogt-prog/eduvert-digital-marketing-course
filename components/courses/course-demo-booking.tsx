@@ -8,6 +8,7 @@ interface CourseDemoLinkProps {
   id?: string
   courseSlug: string
   courseLabel: string
+  label?: string
 }
 
 interface StickyCourseDemoProps extends Omit<CourseDemoLinkProps, "id"> {
@@ -16,7 +17,7 @@ interface StickyCourseDemoProps extends Omit<CourseDemoLinkProps, "id"> {
   total: string
 }
 
-export function CourseDemoLink({ id, courseSlug, courseLabel }: CourseDemoLinkProps) {
+export function CourseDemoLink({ id, courseSlug, courseLabel, label = "Book a Free Demo" }: CourseDemoLinkProps) {
   return (
     <ButtonLink
       id={id}
@@ -26,7 +27,7 @@ export function CourseDemoLink({ id, courseSlug, courseLabel }: CourseDemoLinkPr
       data-demo-course-slug={courseSlug}
       data-demo-course-label={courseLabel}
     >
-      Book a Free Demo
+      {label}
     </ButtonLink>
   )
 }
@@ -63,7 +64,7 @@ export function StickyCourseDemo({ triggerId, bookingId, courseSlug, courseLabel
   if (!visible) return null
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-30 border-t border-eduvert-border-subtle bg-eduvert-surface-white px-4 pt-3 pb-[max(12px,env(safe-area-inset-bottom))] min-[1100px]:hidden">
+    <div className="course-sticky-demo fixed inset-x-0 z-30 border-t border-eduvert-border-subtle bg-eduvert-surface-white px-4 py-2 min-[1100px]:hidden">
       <div className="mx-auto flex max-w-md items-center gap-4">
         <div className="shrink-0">
           <p className="eduvert-body font-eduvert-700 text-eduvert-text-primary">{total}</p>

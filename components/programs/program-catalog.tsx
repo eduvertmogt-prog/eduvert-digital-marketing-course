@@ -6,7 +6,7 @@ import type { FocusedCourse } from "@/components/programs/program-content"
 export function ProgramCatalog() {
   return (
     <section id="all-programs" aria-labelledby="all-programs-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-12 min-[1100px]:gap-7 min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:py-[72px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-10 min-[1100px]:gap-7 min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:py-16">
         <div className="flex flex-col gap-2">
           <h2 id="all-programs-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
             Explore All Programs

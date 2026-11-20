@@ -1,3 +1,4 @@
+import type { DemoIntent } from "@/db/demo-enquiries"
 import { counsellorActions } from "@/components/programs/program-content"
 
 export function CounsellorActions({
@@ -36,7 +37,7 @@ interface CounsellorActionsProps {
   stacked?: boolean
   primaryLabel?: string
   secondaryLabel?: string
-  intent?: "free_demo" | "course_enquiry"
+  intent?: DemoIntent
   courseSlug?: string
   courseLabel?: string
 }

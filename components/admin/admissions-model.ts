@@ -1,3 +1,5 @@
+import type { LiveClassSession } from "@/components/live-class-model"
+
 export const statuses = ["new", "contacted", "qualified", "enrolled", "closed", "spam"] as const
 export type Status = (typeof statuses)[number]
 
@@ -61,6 +63,8 @@ export interface Activity {
 
 export interface EnquiryDetail {
   enquiry: Enquiry
+  message?: string | null
+  liveClass?: (Pick<LiveClassSession, "startsAt" | "mode"> & { unlisted: boolean }) | null
   activity: Activity[]
 }
 

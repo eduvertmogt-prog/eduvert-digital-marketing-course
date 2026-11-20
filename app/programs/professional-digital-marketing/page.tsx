@@ -3,6 +3,7 @@ import { FlagshipStickyDemo } from "@/components/programs/flagship-booking"
 import { FlagshipComparison } from "@/components/programs/flagship-comparison"
 import { PageFaq } from "@/components/programs/page-faq"
 import { PracticalLearning } from "@/components/programs/practical-learning"
+import { ProgramAudience } from "@/components/programs/program-audience"
 import { ProgramBatches } from "@/components/programs/program-batches"
 import { EnrolmentBand, ProgramCareer } from "@/components/programs/program-career"
 import { ProgramCurriculum } from "@/components/programs/program-curriculum"
@@ -23,6 +24,7 @@ export default function ProfessionalDigitalMarketingPage() {
       <main>
         <ProgramHero />
         <PracticalLearning />
+        <ProgramAudience />
         <ProgramCurriculum />
         <FlagshipComparison />
         <ProgramCareer />

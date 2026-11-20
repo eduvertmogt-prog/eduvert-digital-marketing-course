@@ -8,7 +8,7 @@ export function PageFaq({ id, headingId, eyebrow, title, intro, questions, group
 
   return (
     <section id={id} aria-labelledby={headingId} className={canvas ? "bg-eduvert-canvas-warm" : "bg-eduvert-surface-white"}>
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-6 py-12 min-[1100px]:flex-row min-[1100px]:gap-12 min-[1100px]:px-10 min-[1100px]:py-[72px] min-[1440px]:gap-[90px] min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-6 py-10 min-[1100px]:flex-row min-[1100px]:gap-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:gap-[90px] min-[1440px]:px-[120px]">
         <div className="flex flex-col gap-2 min-[1100px]:w-[300px] min-[1100px]:shrink-0 min-[1100px]:gap-3.5 min-[1440px]:w-[360px]">
           {eyebrow ? <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">{eyebrow}</p> : null}
           <h2 id={headingId} className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">

@@ -1,9 +1,10 @@
 import type { ReactNode } from "react"
-import { dataCourseHref, flagshipProgramHref, primaryNavigation, semCourseHref, seoCourseHref, smmCourseHref } from "@/components/site-nav"
+import { SiteContactActions } from "@/components/site-contact-actions"
+import { dataCourseHref, flagshipProgramHref, phoneHref, primaryNavigation, semCourseHref, seoCourseHref, smmCourseHref } from "@/components/site-nav"
 
 export function SiteFooter() {
   return (
-    <footer className="flex justify-center border-t border-eduvert-border-subtle bg-eduvert-surface-white px-6 pt-10 pb-11 min-[1100px]:px-10 min-[1100px]:pt-16 min-[1100px]:pb-9 min-[1440px]:px-[60px]">
+    <footer className="site-footer flex justify-center border-t border-eduvert-border-subtle bg-eduvert-surface-white px-6 pt-10 pb-11 min-[1100px]:px-10 min-[1100px]:pt-16 min-[1100px]:pb-9 min-[1440px]:px-[60px]">
       <div className="flex w-full max-w-[1200px] flex-col gap-6 min-[1100px]:gap-11">
         <div className="flex flex-col gap-6 min-[1100px]:flex-row min-[1100px]:items-start min-[1100px]:gap-8 min-[1440px]:gap-10">
           <div className="flex flex-col gap-4 min-[1100px]:w-[210px] min-[1100px]:shrink-0 min-[1440px]:w-[246px]">
@@ -17,7 +18,7 @@ export function SiteFooter() {
           <FooterColumn title="Contact" className="order-2 border-t border-eduvert-border-subtle pt-6 min-[1100px]:order-4 min-[1100px]:min-w-0 min-[1100px]:flex-1 min-[1100px]:border-0 min-[1100px]:pt-0 min-[1440px]:w-[350px] min-[1440px]:flex-none">
             <ul className={linkListClass}>
               <li>
-                <a href="tel:+919619678085">+91 96196 78085</a>
+                <a href={phoneHref}>+91 96196 78085</a>
               </li>
               <li>
                 <a href="mailto:communication@eduvert.co">communication@eduvert.co</a>
@@ -45,6 +46,7 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
+      <SiteContactActions />
     </footer>
   )
 }

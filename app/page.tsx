@@ -7,6 +7,7 @@ import { StudentReviews } from "@/components/student-reviews"
 import { SkillLabHero } from "@/components/skill-lab-hero"
 import { LearningBeyond } from "@/components/learning-beyond"
 import { LearningOptions } from "@/components/learning-options"
+import { LiveClassDemo } from "@/components/live-class-demo"
 import { QuestionsBand } from "@/components/questions-band"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatYouLearn } from "@/components/what-you-learn"
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <SkillLabHero />
         <ExploreCourses />
+        <LiveClassDemo />
         <WhyEduvert />
         <LearningBeyond />
         <WhatYouLearn />

@@ -1,5 +1,5 @@
 import { demoHref } from "@/components/site-nav"
-import { ClassroomVideo } from "@/components/testimonials/classroom-video"
+import { ClassroomReel } from "@/components/testimonials/classroom-reel"
 import { ShortsStrip } from "@/components/testimonials/shorts-strip"
 
 export function TestimonialsPage() {
@@ -7,7 +7,7 @@ export function TestimonialsPage() {
     <>
       <Reviews />
       <ShortsStrip />
-      <ClassroomVideo />
+      <ClassroomReel />
       <DemoCta />
     </>
   )
@@ -50,7 +50,7 @@ function Reviews() {
 function DemoCta() {
   return (
     <section aria-labelledby="testimonials-cta-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto w-full max-w-[1440px] px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto w-full max-w-[1440px] px-6 pt-5 pb-12 min-[1100px]:px-10 min-[1100px]:pt-8 min-[1100px]:pb-16 min-[1440px]:px-[120px]">
         <div className="flex flex-col gap-8 rounded-eduvert-16 bg-eduvert-tint-yellow px-6 py-8 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:justify-between min-[1100px]:px-12 min-[1100px]:py-11">
           <div className="flex max-w-[640px] flex-col gap-3">
             <h2 id="testimonials-cta-heading" className="eduvert-h2 text-eduvert-text-primary">

@@ -2,7 +2,7 @@ import { placementsHref } from "@/components/site-nav"
 
 export function CareerPreparation() {
   return (
-    <section id="placements" aria-labelledby="placements-heading" className="flex justify-center border-t border-eduvert-border-subtle bg-eduvert-canvas-warm px-6 py-16 min-[1100px]:px-10 min-[1100px]:py-24 min-[1440px]:px-[60px]">
+    <section id="placements" aria-labelledby="placements-heading" className="flex justify-center border-t border-eduvert-border-subtle bg-eduvert-canvas-warm px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[60px]">
       <div className="flex w-full max-w-[342px] flex-col gap-8 min-[1100px]:max-w-[1200px] min-[1100px]:gap-11">
         <div className="flex flex-col gap-[38px] min-[1100px]:gap-[60px]">
           <div className="flex flex-col gap-3 min-[1100px]:w-[740px] min-[1100px]:gap-3.5">

@@ -8,7 +8,7 @@ export function WhatYouLearn() {
 
   return (
     <section id="what-you-learn" aria-labelledby="what-you-learn-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-7 px-6 py-16 min-[1100px]:gap-[38px] min-[1100px]:px-10 min-[1100px]:py-24 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-7 px-6 py-12 min-[1100px]:gap-[38px] min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex max-w-[700px] flex-col gap-2.5 min-[1100px]:gap-3">
           <h2 id="what-you-learn-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
             What You&apos;ll Learn
@@ -121,46 +121,46 @@ const curriculumHref = "/programs/professional-digital-marketing#curriculum"
 
 const curriculumModules: CurriculumModule[] = [
   {
-    id: "analytics",
+    id: "seo",
     index: "01",
-    label: "Analytics & Heatmaps",
-    title: "Web Analytics, Digital Analytics & Heatmaps",
-    tools: "Google Analytics 4 (GA4) · Google Tag Manager · Microsoft Clarity · Hotjar",
-  },
-  {
-    id: "social",
-    index: "02",
-    label: "Social Media & AI",
-    title: "Advanced Social Media Marketing & Automation with AI",
-    tools: "Meta Ads · Instagram · LinkedIn · X Advertising",
+    label: "Advanced AEO, GEO & AI SEO",
+    title: "Advanced Search Engine Optimization: AEO, GEO & AI SEO",
+    tools: "Google Search Console · Keyword Research · AEO, GEO & AI SEO",
   },
   {
     id: "search",
-    index: "03",
+    index: "02",
     label: "Paid Search & Performance",
     title: "Search Engine Marketing with Google Ads & Bing Ads",
     tools: "Google Ads · Bing Ads · YouTube Marketing",
   },
   {
-    id: "email",
+    id: "social",
+    index: "03",
+    label: "Social Media & AI",
+    title: "Advanced Social Media Marketing & Automation with AI",
+    tools: "Meta Ads · Instagram · LinkedIn · X Advertising",
+  },
+  {
+    id: "analytics",
     index: "04",
+    label: "Analytics & Heatmaps",
+    title: "Web Analytics, Digital Analytics & Heatmaps",
+    tools: "Google Analytics 4 (GA4) · Google Tag Manager · Microsoft Clarity · Hotjar",
+  },
+  {
+    id: "email",
+    index: "05",
     label: "Email & Automation",
     title: "Email Marketing & Automation",
     tools: "Newsletters · A/B Split Testing · Email Automation",
   },
   {
     id: "mobile",
-    index: "05",
+    index: "06",
     label: "Mobile Marketing",
     title: "Mobile Marketing",
     tools: "SMS Marketing · WhatsApp Automation · Mobile Advertising",
-  },
-  {
-    id: "seo",
-    index: "06",
-    label: "Advanced SEO, AEO & GEO",
-    title: "Advanced Search Engine Optimization: AEO, GEO & AI SEO",
-    tools: "Google Search Console · Keyword Research · AEO, GEO & AI SEO",
   },
   {
     id: "projects",

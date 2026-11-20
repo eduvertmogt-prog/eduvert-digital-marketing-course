@@ -14,7 +14,7 @@ export function PlacementsPage() {
 function Hero() {
   return (
     <section aria-labelledby="placements-page-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto grid w-full max-w-[1440px] items-center gap-10 px-6 py-12 min-[1100px]:grid-cols-[minmax(0,1fr)_420px] min-[1100px]:gap-16 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto grid w-full max-w-[1440px] items-center gap-10 px-6 py-12 min-[1100px]:grid-cols-[minmax(0,1fr)_420px] min-[1100px]:gap-16 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex min-w-0 flex-col gap-5">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">PLACEMENTS & CAREER SUPPORT</p>
           <h1 id="placements-page-heading" className="max-w-[620px] eduvert-h1 text-eduvert-text-primary">
@@ -47,7 +47,7 @@ function Hero() {
 function Steps() {
   return (
     <section aria-labelledby="career-steps-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <h2 id="career-steps-heading" className="max-w-[640px] eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
           Career Preparation, Step by Step
         </h2>
@@ -68,7 +68,7 @@ function Steps() {
 function Portfolio() {
   return (
     <section aria-labelledby="portfolio-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="grid gap-4 min-[1100px]:grid-cols-2">
           <article className="flex flex-col gap-3 rounded-eduvert-16 bg-eduvert-surface-white px-6 py-7">
             <h2 id="portfolio-heading" className="eduvert-h3 text-eduvert-text-primary">Turn Projects Into Portfolio Pieces</h2>

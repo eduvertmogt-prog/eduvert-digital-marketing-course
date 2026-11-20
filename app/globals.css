@@ -1,5 +1,55 @@
 @import "tailwindcss";
 
+:root {
+  --mobile-contact-bar-height: calc(60px + env(safe-area-inset-bottom));
+}
+
+html:has(.eduvert-site-header) {
+  scroll-padding-top: 76px;
+}
+
+.site-contact-actions {
+  position: fixed;
+  display: grid;
+  gap: 8px;
+}
+
+@media (width < 1100px) {
+  .site-contact-actions {
+    inset: auto 0 0;
+    grid-template-columns: 1.25fr minmax(0, 0.75fr) 1fr;
+    align-content: start;
+    height: var(--mobile-contact-bar-height);
+    padding: 7px 12px 8px;
+    border-top: 1px solid var(--color-eduvert-border-subtle);
+    background: var(--color-eduvert-surface-white);
+  }
+
+  body:has(.course-sticky-demo) .site-contact-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body:has(.course-sticky-demo) .site-contact-start {
+    display: none;
+  }
+
+  .site-footer {
+    padding-bottom: calc(44px + var(--mobile-contact-bar-height));
+  }
+
+  .course-sticky-demo {
+    bottom: var(--mobile-contact-bar-height);
+  }
+}
+
+@media (width >= 1100px) {
+  .site-contact-actions {
+    right: 24px;
+    bottom: 24px;
+    filter: drop-shadow(0 3px 9px rgb(36 37 43 / 12%));
+  }
+}
+
 @theme static {
   --color-eduvert-canvas-warm: #fffbf7;
   --color-eduvert-surface-white: #ffffff;
@@ -321,6 +371,9 @@
 }
 
 .demo-art img {
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -575,15 +628,18 @@
 
   .demo-panel {
     grid-template-columns: 380px minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
     width: min(880px, calc(100vw - 64px));
     max-width: none;
     border-radius: var(--radius-eduvert-16);
+    min-height: min(560px, calc(100dvh - 64px));
     max-height: calc(100dvh - 64px);
+    overflow: hidden;
   }
 
   .demo-art {
+    position: relative;
     display: block;
-    min-height: 560px;
   }
 
   .demo-body {

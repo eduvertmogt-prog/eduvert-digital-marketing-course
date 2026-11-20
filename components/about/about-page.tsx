@@ -16,7 +16,7 @@ export function AboutPage() {
 function Hero() {
   return (
     <section aria-labelledby="about-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto grid w-full max-w-[1440px] items-center gap-10 px-6 py-12 min-[1100px]:grid-cols-[minmax(0,1fr)_480px] min-[1100px]:gap-16 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto grid w-full max-w-[1440px] items-center gap-10 px-6 py-10 min-[1100px]:grid-cols-[minmax(0,1fr)_520px] min-[1100px]:gap-16 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:grid-cols-[minmax(0,1fr)_560px] min-[1440px]:px-[120px]">
         <div className="flex min-w-0 flex-col gap-5">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">ABOUT EDUVERT</p>
           <h1 id="about-heading" className="max-w-[620px] eduvert-h1 text-eduvert-text-primary">
@@ -32,11 +32,11 @@ function Hero() {
         <img
           src="/images/seawoods/reception-1440.webp"
           srcSet="/images/seawoods/reception-768.webp 768w, /images/seawoods/reception-1440.webp 1440w"
-          sizes="(min-width: 1100px) 480px, calc(100vw - 48px)"
+          sizes="(min-width: 1440px) 560px, (min-width: 1100px) 520px, calc(100vw - 48px)"
           alt="EduVert’s Seawoods reception with a gold wall sign and a colorful front desk"
           width={1440}
           height={810}
-          className="aspect-[8/5] w-full rounded-eduvert-16 object-cover saturate-[0.90] min-[1100px]:aspect-[3/2]"
+          className="aspect-[3/2] w-full rounded-eduvert-16 object-cover saturate-[0.90]"
         />
       </div>
     </section>
@@ -46,9 +46,9 @@ function Hero() {
 function Practice() {
   return (
     <section aria-labelledby="practice-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <h2 id="practice-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
-          Learn. Practice. Apply.
+          Learn. Explore. Apply.
         </h2>
         <ol className="grid gap-6 min-[1100px]:grid-cols-3">
           {practiceSteps.map((step) => (
@@ -67,7 +67,7 @@ function Practice() {
 function Difference() {
   return (
     <section aria-labelledby="difference-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto grid w-full max-w-[1440px] gap-8 px-6 py-12 min-[1100px]:grid-cols-[360px_minmax(0,1fr)] min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto grid w-full max-w-[1440px] gap-8 px-6 py-10 min-[1100px]:grid-cols-[360px_minmax(0,1fr)] min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <h2 id="difference-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
           What Makes EduVert Different
         </h2>
@@ -87,7 +87,7 @@ function Difference() {
 function Courses() {
   return (
     <section aria-labelledby="about-courses-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto grid w-full max-w-[1440px] gap-8 px-6 py-12 min-[1100px]:grid-cols-[360px_minmax(0,1fr)] min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto grid w-full max-w-[1440px] gap-8 px-6 py-10 min-[1100px]:grid-cols-[360px_minmax(0,1fr)] min-[1100px]:gap-[68px] min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex flex-col gap-3.5">
           <h2 id="about-courses-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
             Courses & Skills
@@ -117,7 +117,7 @@ function Courses() {
 function Audience() {
   return (
     <section aria-labelledby="about-audience-heading" className="bg-eduvert-canvas-warm">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <h2 id="about-audience-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
           Who We Help
         </h2>
@@ -158,7 +158,7 @@ function TeamCta() {
 
 const practiceSteps = [
   { number: "01", title: "Learn", detail: "Understand the concepts and tools behind the work." },
-  { number: "02", title: "Practice", detail: "Work through guided exercises and practical assignments." },
+  { number: "02", title: "Explore", detail: "Work through guided exercises and practical assignments." },
   { number: "03", title: "Apply", detail: "Use what you’ve learned to plan, build, or analyse a project." },
 ]
 

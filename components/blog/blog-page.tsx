@@ -1,8 +1,14 @@
 import { ArticleExplorer } from "@/components/blog/article-explorer"
-import { portfolioArticle } from "@/components/blog/articles"
+import { getArticle, portfolioArticle } from "@/components/blog/articles"
 import { formatArticleDate } from "@/components/blog/format-article-date"
 import { journalArticles } from "@/components/blog/journal"
 import { coursesHref } from "@/components/site-nav"
+
+const articlesWithBanners = journalArticles.map(article => {
+  if (article.featuredImage) return article
+  const record = getArticle(article.slug)
+  return { ...article, featuredImage: record?.featuredImage ?? record?.hero ?? article.featuredImage }
+})
 
 export function BlogPage() {
   const featured = portfolioArticle
@@ -10,7 +16,7 @@ export function BlogPage() {
   return (
     <>
       <section aria-labelledby="journal-heading" className="bg-eduvert-canvas-warm">
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 pt-12 pb-10 min-[1100px]:px-10 min-[1100px]:pt-16 min-[1100px]:pb-12 min-[1440px]:px-[120px]">
           <div className="flex max-w-[760px] flex-col gap-3.5">
             <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">THE EDUVERT JOURNAL</p>
             <h1 id="journal-heading" className="eduvert-h1 text-eduvert-text-primary">
@@ -48,9 +54,9 @@ export function BlogPage() {
           </article>
         </div>
       </section>
-      <ArticleExplorer articles={journalArticles} />
+      <ArticleExplorer articles={articlesWithBanners} />
       <section aria-labelledby="journal-cta-heading" className="bg-eduvert-canvas-warm">
-        <div className="mx-auto w-full max-w-[1440px] px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+        <div className="mx-auto w-full max-w-[1440px] px-6 pt-5 pb-12 min-[1100px]:px-10 min-[1100px]:pt-8 min-[1100px]:pb-16 min-[1440px]:px-[120px]">
           <div className="flex flex-col gap-6 rounded-eduvert-16 bg-eduvert-tint-yellow px-6 py-8 min-[1100px]:flex-row min-[1100px]:items-center min-[1100px]:justify-between min-[1100px]:px-12 min-[1100px]:py-11">
             <div className="flex max-w-[720px] flex-col gap-3">
               <h2 id="journal-cta-heading" className="eduvert-h2 tracking-[-0.02em] text-eduvert-text-primary">

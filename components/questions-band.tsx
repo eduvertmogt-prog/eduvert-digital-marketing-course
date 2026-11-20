@@ -1,4 +1,4 @@
-import { demoHref } from "@/components/site-nav"
+import { demoHref, liveClassHref } from "@/components/site-nav"
 
 export function QuestionsBand() {
   return (
@@ -13,7 +13,7 @@ export function QuestionsBand() {
           </p>
         </div>
         <div className="flex w-full max-w-[294px] flex-col gap-3 min-[1100px]:w-auto min-[1100px]:max-w-none min-[1100px]:flex-row min-[1100px]:gap-3.5">
-          <a href={demoHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-[181px]">
+          <a href={liveClassHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-[181px]">
             Book a Free Demo
           </a>
           <a href={demoHref} data-demo-intent="counsellor_callback" className="flex h-12 w-full items-center justify-center rounded-eduvert-8 border border-eduvert-border-subtle bg-eduvert-surface-white eduvert-button text-eduvert-text-primary hover:bg-eduvert-tint-soft-blue min-[1100px]:w-[194px]">

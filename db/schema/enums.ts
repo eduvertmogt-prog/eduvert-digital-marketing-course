@@ -7,6 +7,7 @@ import { pgEnum } from "drizzle-orm/pg-core"
  * - course_enquiry: "Enquire About ..." on course detail pages
  * - contact_message: the contact-page form
  * - career_support: placements-page "Enquire About Career Support"
+ * - admission_request: flagship Program's "Reserve My Seat"
  *
  * New values are added with a follow-up migration. Never rename or
  * delete a value in place; retired values stay readable for history.
@@ -17,6 +18,7 @@ export const enquiryType = pgEnum("enquiry_type", [
   "course_enquiry",
   "contact_message",
   "career_support",
+  "admission_request",
 ])
 
 /**

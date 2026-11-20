@@ -1,4 +1,9 @@
 export const demoHref = "/#book-a-free-demo"
+export const liveClassSectionId = "live-class-demo"
+export const liveClassHref = `/#${liveClassSectionId}`
+export const phoneHref = "tel:+919619678085"
+export const whatsAppHref = "https://wa.me/919619678085"
+export const syllabusHref = "/downloads/eduvert-digital-marketing-syllabus.pdf"
 
 export const coursesHref = "/programs"
 

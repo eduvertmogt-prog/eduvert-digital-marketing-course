@@ -9,7 +9,7 @@ import { shorts } from "@/components/shorts-data"
 export function ShortsStrip() {
   return (
     <section aria-labelledby="shorts-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-12 min-[1100px]:px-10 min-[1100px]:py-20 min-[1440px]:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-10 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="flex max-w-[720px] flex-col gap-3.5">
           <p className="eduvert-support font-eduvert-700 text-eduvert-action-primary">
             STUDENT SHORTS

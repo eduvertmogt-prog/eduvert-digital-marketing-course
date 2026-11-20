@@ -36,7 +36,7 @@ export function FocusedCourseHero({ course }: { course: Course }) {
               <p className="eduvert-h3 tabular-nums text-eduvert-text-primary">{fee?.total ?? "Ask for the current fee"}</p>
               {fee ? <p className="eduvert-support text-eduvert-text-secondary">Total including GST</p> : null}
             </div>
-            <CourseDemoLink id={heroDemoId} courseSlug={course.slug} courseLabel={course.title} />
+            <CourseDemoLink id={heroDemoId} courseSlug={course.slug} courseLabel={course.title} label={content.demoLabel} />
             <p className="eduvert-support text-eduvert-text-secondary">Share your details and EduVert will call to schedule your free session.</p>
           </div>
         </div>

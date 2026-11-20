@@ -4,7 +4,7 @@ import { testimonialsHref } from "@/components/site-nav"
 export function PracticalLearning() {
   return (
     <section aria-labelledby="practical-learning-heading" className="bg-eduvert-surface-white">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[22px] px-6 py-[52px] min-[1100px]:gap-[30px] min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:py-[70px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[22px] px-6 py-10 min-[1100px]:gap-[30px] min-[1100px]:px-10 min-[1440px]:px-[120px] min-[1100px]:py-16">
         <div className="flex max-w-[640px] flex-col gap-3.5">
           <h2 id="practical-learning-heading" className="eduvert-h2 tracking-[-0.025em] text-eduvert-text-primary">
             What you’ll build

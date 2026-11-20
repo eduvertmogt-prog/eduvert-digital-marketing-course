@@ -12,7 +12,7 @@ import type { DemoIntent, PreferredTime } from "@/db/demo-enquiries"
  * this provider catches those clicks and opens a dialog instead. Course
  * context travels on data attributes the course pages add:
  * `data-demo-course-slug`, `data-demo-course-label`,
- * `data-demo-intent` (free_demo | counsellor_callback | course_enquiry).
+ * `data-demo-intent` identifies the request the visitor wants to make.
  * Tech words: delegated click interception in one effect, native <dialog>
  * for modal/Esc/backdrop/focus semantics, animated close via a closing
  * state before .close().
@@ -34,11 +34,13 @@ export function DemoDialogProvider({ children }: { children: React.ReactNode }) 
       const intentAttr = anchor.dataset.demoIntent
       setRequest({
         intent:
-          intentAttr === "counsellor_callback" || intentAttr === "course_enquiry"
+          intentAttr === "counsellor_callback" || intentAttr === "course_enquiry" || intentAttr === "admission_request"
             ? intentAttr
             : "free_demo",
         courseSlug: anchor.dataset.demoCourseSlug || undefined,
         courseLabel: anchor.dataset.demoCourseLabel || undefined,
+        liveClassSessionId: anchor.dataset.demoSessionId || undefined,
+        liveClassLabel: anchor.dataset.demoSessionLabel || undefined,
         originPage: window.location.pathname,
       })
       setOpenCount((n) => n + 1)
@@ -67,6 +69,8 @@ interface DemoRequest {
   intent: DemoIntent
   courseSlug?: string
   courseLabel?: string
+  liveClassSessionId?: string
+  liveClassLabel?: string
   originPage?: string
 }
 
@@ -134,7 +138,7 @@ function DemoDialog({ request, onClosed }: { request: DemoRequest; onClosed: () 
     >
       <div className="demo-panel">
         <div className="demo-art" aria-hidden="true">
-          <img src="/images/program-workspace.png" alt="" loading="lazy" />
+          <img src="/images/demo-session-workspace.webp" width={800} height={1200} alt="" />
         </div>
         <div className="demo-body">
           <button
@@ -162,7 +166,14 @@ function DemoDialog({ request, onClosed }: { request: DemoRequest; onClosed: () 
                   const response = await fetch("/api/demo", {
                     method: "POST",
                     headers: { "content-type": "application/json" },
-                    body: JSON.stringify({ ...values, ...request }),
+                    body: JSON.stringify({
+                      ...values,
+                      intent: request.intent,
+                      courseSlug: request.courseSlug,
+                      courseLabel: request.courseLabel,
+                      originPage: request.originPage,
+                      liveClassSessionId: request.liveClassSessionId,
+                    }),
                   })
                   const payload = (await response.json()) as { ok: boolean; error?: string }
                   if (!payload.ok) throw new Error(payload.error || "Please try again.")
@@ -233,7 +244,9 @@ function DemoForm({
         {copy.title}
       </h2>
       <p className="ce-2 eduvert-body text-eduvert-text-secondary">{copy.sub}</p>
-      {request.courseLabel ? (
+      {request.liveClassLabel ? (
+        <p className="ce-3 demo-course-chip">Selected session · <strong>{request.liveClassLabel}</strong></p>
+      ) : request.courseLabel ? (
         <p className="ce-3 demo-course-chip">
           Enquiring about: <strong>{request.courseLabel}</strong>
         </p>
@@ -286,7 +299,7 @@ function DemoForm({
           />
           {touched && phoneError ? <em id="demo-phone-error">{phoneError}</em> : null}
         </label>
-        <fieldset className="demo-times">
+        {!request.liveClassSessionId ? <fieldset className="demo-times">
           <legend>
             Preferred time to call <i>(optional)</i>
           </legend>
@@ -306,7 +319,7 @@ function DemoForm({
               )
             })}
           </div>
-        </fieldset>
+        </fieldset> : null}
       </div>
       {serverError ? (
         <p className="demo-error" role="alert">
@@ -341,17 +354,25 @@ function DemoSuccess({
       <h2 id="demo-dialog-title" className="eduvert-h3 tracking-[-0.02em] text-eduvert-text-primary">
         Request received
       </h2>
-      <p className="eduvert-body text-eduvert-text-secondary">
-        Thanks {name}. We&apos;ll call you within 24 hours
-        {request.courseLabel ? (
-          <>
-            {" "}about <strong>{request.courseLabel}</strong>
-          </>
-        ) : (
-          " about your free demo"
-        )}
-        .
-      </p>
+      {request.liveClassLabel ? (
+        <p className="eduvert-body text-eduvert-text-secondary">
+          Thanks {name}. We’ll contact you to confirm joining details for <strong>{request.liveClassLabel}</strong>.
+        </p>
+      ) : request.intent === "admission_request" ? (
+        <p className="eduvert-body text-eduvert-text-secondary">
+          Thanks {name}. Admissions will contact you about availability and next steps.
+        </p>
+      ) : (
+        <p className="eduvert-body text-eduvert-text-secondary">
+          Thanks {name}. We&apos;ll call you within 24 hours
+          {request.courseLabel ? (
+            <>{" "}about <strong>{request.courseLabel}</strong></>
+          ) : (
+            " about your free demo"
+          )}
+          .
+        </p>
+      )}
       <button type="button" className="demo-submit" onClick={onDone} autoFocus>
         Done
       </button>
@@ -360,6 +381,22 @@ function DemoSuccess({
 }
 
 function dialogCopy(request: DemoRequest): DialogCopy {
+  if (request.liveClassSessionId) {
+    return {
+      eyebrow: "LIVE CLASS",
+      title: "Book a Live Class",
+      sub: "Share your details so EduVert can confirm your session and send joining instructions.",
+      submit: "Book My Live Class",
+    }
+  }
+  if (request.intent === "admission_request") {
+    return {
+      eyebrow: "ADMISSIONS",
+      title: "Request Admission",
+      sub: "Share your details and the admissions team will contact you about seat availability and next steps.",
+      submit: "Send Admission Request",
+    }
+  }
   if (request.intent === "counsellor_callback") {
     return {
       eyebrow: "COUNSELLOR",
@@ -378,8 +415,8 @@ function dialogCopy(request: DemoRequest): DialogCopy {
   }
   return {
     eyebrow: "FREE DEMO",
-    title: "Book a Free Demo",
-    sub: "Share your details and we'll schedule your free session.",
+    title: "Schedule a Demo Session",
+    sub: "Share your details, and we'll get in touch to schedule your session.",
     submit: "Book My Free Demo",
   }
 }
