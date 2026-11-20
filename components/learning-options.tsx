@@ -70,7 +70,7 @@ export function LearningOptions() {
             </div>
             <div className="flex flex-col gap-1.5">
               <a href={demoHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover">
-                Book a Free Demo
+                Book a Demo Session
               </a>
               <a href={batchesHref} className="inline-flex h-11 w-fit items-center gap-[9px] eduvert-button text-eduvert-link">
                 View All Batches

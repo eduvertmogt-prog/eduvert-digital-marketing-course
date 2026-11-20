@@ -24,11 +24,11 @@ export function ProgramHero() {
               Professional Digital Marketing Program with AI
             </p>
             <h1 id="program-hero-heading" className="eduvert-h1 text-balance text-eduvert-text-primary">
-              Become Job-Ready in Digital Marketing
+              Become Job-Ready in Digital Marketing: Run Live Campaigns and Learn to Optimise Them from Day 1
             </h1>
             <p className="max-w-[52ch] eduvert-body-large text-eduvert-text-secondary">
-              Run real campaigns from your first class and learn how to optimise them. Over four months,
-              work on live projects in small batches of 5–8 students.
+              Apply what you learn from your first class. In 4 months, run result-driven campaigns, learn how
+              to optimise them, and become job-ready, in small batches of 5-8 students with live projects.
             </p>
             <p className="eduvert-support font-eduvert-600 text-eduvert-action-primary">
               120+ training hours · Navi Mumbai or live online
@@ -40,7 +40,7 @@ export function ProgramHero() {
               <p className="eduvert-support text-eduvert-text-secondary">Total including GST · {programFees.flagship.emiLabel}</p>
             </div>
             <FlagshipDemoLink inHero />
-            <IntakeAnnouncement />
+            <IntakeAnnouncement wording="program" />
             <p className="eduvert-support text-eduvert-text-secondary">Share your details and EduVert will call to schedule your free session.</p>
             <a href={syllabusHref} download className="inline-flex min-h-11 w-fit items-center eduvert-button text-eduvert-link underline underline-offset-4">Download Syllabus</a>
           </div>

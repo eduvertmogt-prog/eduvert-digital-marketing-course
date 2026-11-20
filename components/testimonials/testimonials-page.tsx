@@ -57,11 +57,11 @@ function DemoCta() {
               Experience a Class for Yourself
             </h2>
             <p className="eduvert-body text-eduvert-text-secondary">
-              Book a free demo to get a feel for EduVert’s approach to practical learning.
+              Book a demo session to get a feel for EduVert’s approach to practical learning.
             </p>
           </div>
           <a href={demoHref} className="flex h-12 w-full items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover min-[1100px]:w-fit">
-            Book a Free Demo
+            Book a Demo Session
           </a>
         </div>
       </div>

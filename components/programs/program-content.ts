@@ -356,7 +356,7 @@ export const flagshipQuestions: FaqItem[] = [
 
 export const counsellorActions = {
   demoHref,
-  demoLabel: "Book a Free Demo",
+  demoLabel: "Book a Demo Session",
   talkLabel: "Talk to Our Counsellor",
 }
 

@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "Contact · EduVert",
-  description: "Ask EduVert about courses, available batches, or booking a free demo in Seawoods, Navi Mumbai.",
+  description: "Ask EduVert about courses, available batches, or booking a demo session in Seawoods, Navi Mumbai.",
 }
 
 export default function ContactRoute() {

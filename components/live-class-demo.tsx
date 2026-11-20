@@ -30,16 +30,18 @@ export function LiveClassDemo() {
     <section id={liveClassSectionId} aria-labelledby="live-class-heading" className="scroll-mt-6 border-t border-eduvert-border-subtle bg-eduvert-tint-soft-blue">
       <div className="mx-auto grid w-full max-w-[1440px] items-start gap-8 px-6 py-10 min-[950px]:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] min-[950px]:gap-12 min-[1100px]:px-10 min-[1100px]:py-16 min-[1440px]:px-[120px]">
         <div className="max-w-[590px] space-y-4">
-          <h2 id="live-class-heading" className="eduvert-h2 text-balance text-eduvert-text-primary">Try a Real Class Before You Enrol</h2>
-          <p className="eduvert-body-large text-eduvert-text-secondary">Join a live, interactive 60-minute class with an EduVert trainer and students from a running batch.</p>
-          <ul className="space-y-3 eduvert-body text-eduvert-text-primary">
-            <li>See how students work on assignments and real campaigns.</li>
-            <li>Look for morning, afternoon, evening or Sunday sessions in Seawoods or live online.</li>
-            <li>Ask questions during the class and speak with a counsellor afterwards.</li>
+          <h2 id="live-class-heading" className="eduvert-h2 text-balance text-eduvert-text-primary">Experience a class, not a sales pitch</h2>
+          <p className="eduvert-body-large text-eduvert-text-secondary">Sit in on a live 60-minute session in the batch timing that suits you:</p>
+          <ul className="list-disc space-y-3 pl-5 eduvert-body text-eduvert-text-primary">
+            <li>Live and interactive, with real students and a real trainer</li>
+            <li>Choose any batch: morning, afternoon, evening or Sunday</li>
+            <li>Classroom in Seawoods or live online</li>
+            <li>Ask your questions and meet the counsellor after the session</li>
           </ul>
+          <IntakeAnnouncement wording="demo" />
         </div>
         <div className="grid min-w-0 gap-4 rounded-eduvert-16 border border-eduvert-border-subtle bg-eduvert-surface-white p-5 sm:p-7">
-          <h3 className="eduvert-h4 text-eduvert-text-primary">Book a Free Demo</h3>
+          <h3 className="eduvert-h4 text-eduvert-text-primary">Book a Demo Session</h3>
           {sessions?.length ? (
             <label className="grid min-w-0 gap-2 eduvert-support font-eduvert-600 text-eduvert-text-primary">
               Choose a date and time (IST)
@@ -71,7 +73,6 @@ export function LiveClassDemo() {
               </button>
             ) : null}
           </div>
-          <IntakeAnnouncement />
         </div>
       </div>
     </section>

@@ -15,19 +15,19 @@ export function SkillLabHero() {
         </p>
         <h1 id="skill-lab-heading" className="flex flex-col text-balance eduvert-h1">
           <span className="text-eduvert-text-primary">
-            We just don&apos;t teach,
+            Start Applying Digital Marketing Skills from Day 1.
           </span>
           <span className="text-eduvert-action-primary">
-            we build with you.
+            Run, Measure and Optimise Real Campaigns
           </span>
         </h1>
         <p className="max-w-[520px] eduvert-body-large text-eduvert-text-secondary">
-          Hands-on courses, real projects, and expert guidance. Learn in Seawoods, Navi Mumbai, or live
-          online.
+          Apply what you learn from your first class. In 4 months, run result-driven campaigns, learn how
+          to optimise them, and become job-ready, in small batches of 5-8 students with live projects.
         </p>
         <div className="flex gap-3">
           <ButtonLink href={liveClassHref}>
-            Book a Free Demo
+            Book a Demo Session
             <ArrowUpRight />
           </ButtonLink>
           <ButtonLink href={coursesHref} variant="secondary">

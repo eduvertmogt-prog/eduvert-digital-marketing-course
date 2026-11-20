@@ -368,7 +368,7 @@ function DemoSuccess({
           {request.courseLabel ? (
             <>{" "}about <strong>{request.courseLabel}</strong></>
           ) : (
-            " about your free demo"
+            " about your demo session"
           )}
           .
         </p>
@@ -414,10 +414,10 @@ function dialogCopy(request: DemoRequest): DialogCopy {
     }
   }
   return {
-    eyebrow: "FREE DEMO",
+    eyebrow: "DEMO SESSION",
     title: "Schedule a Demo Session",
     sub: "Share your details, and we'll get in touch to schedule your session.",
-    submit: "Book My Free Demo",
+    submit: "Book My Live Class",
   }
 }
 

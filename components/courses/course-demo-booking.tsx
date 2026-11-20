@@ -17,7 +17,7 @@ interface StickyCourseDemoProps extends Omit<CourseDemoLinkProps, "id"> {
   total: string
 }
 
-export function CourseDemoLink({ id, courseSlug, courseLabel, label = "Book a Free Demo" }: CourseDemoLinkProps) {
+export function CourseDemoLink({ id, courseSlug, courseLabel, label = "Book a Demo Session" }: CourseDemoLinkProps) {
   return (
     <ButtonLink
       id={id}

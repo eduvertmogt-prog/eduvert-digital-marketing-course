@@ -25,7 +25,7 @@ function Hero() {
           </p>
           <div className="flex flex-col gap-3 min-[1100px]:flex-row">
             <a href={demoHref} className="flex h-12 items-center justify-center rounded-eduvert-8 bg-eduvert-action-primary px-5 eduvert-button text-eduvert-surface-white hover:bg-eduvert-action-hover">
-              Book a Free Demo
+              Book a Demo Session
             </a>
             <a href="#batch-timings" className="flex h-12 items-center justify-center rounded-eduvert-8 border border-eduvert-border-subtle bg-eduvert-surface-white px-5 eduvert-button text-eduvert-text-primary hover:bg-eduvert-tint-soft-blue">
               View Batch Timings

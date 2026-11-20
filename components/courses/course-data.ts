@@ -144,7 +144,7 @@ export const courses: Course[] = [
         answer: programFees.flagship.detail,
       },
     ],
-    ctaLabel: "Book a Free Demo",
+    ctaLabel: "Book a Demo Session",
   },
   {
     slug: "seo-course-in-navi-mumbai",
